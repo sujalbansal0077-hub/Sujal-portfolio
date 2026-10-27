@@ -3,621 +3,1125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080d19">
-<meta name="description" content="Sujal Bansal — Finance portfolio focused on financial analysis, equity research and fundamental analysis.">
+<meta name="theme-color" content="#101512">
+<meta name="description" content="Sujal Bansal — Finance, Fundamental Analysis and Financial Research Portfolio">
 <title>Sujal Bansal | Finance Portfolio</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-
 :root {
-  --bg:#080d19;
-  --surface:#101829;
-  --surface2:#172238;
-  --text:#f1f5ff;
-  --muted:#98a8c2;
-  --border:rgba(161,181,220,.14);
-  --accent:#62e5ff;
-  --accent2:#9290ff;
-  --green:#77f0bd;
-  --shadow:0 25px 70px rgba(0,0,0,.23);
+  --bg:#101512;
+  --surface:#171e19;
+  --card:#1c261f;
+  --text:#f3f2e9;
+  --muted:#a4afa5;
+  --line:#303b32;
+  --accent:#65d6a0;
+  --accent-soft:#c5f2d8;
+  --gold:#d7bb7c;
+  --nav:rgba(16,21,18,.92);
+  --shadow:0 20px 60px rgba(0,0,0,.2);
 }
 
 body.light {
-  --bg:#f4f7fb;
-  --surface:#fff;
-  --surface2:#eaf0fa;
-  --text:#111b2e;
-  --muted:#65748b;
-  --border:rgba(26,48,84,.13);
-  --accent:#087fbb;
-  --accent2:#6658d8;
-  --green:#16875d;
-  --shadow:0 20px 55px rgba(26,48,84,.09);
+  --bg:#f3f2eb;
+  --surface:#e9eee7;
+  --card:#ffffff;
+  --text:#18231c;
+  --muted:#68766d;
+  --line:#dce4dc;
+  --accent:#14774f;
+  --accent-soft:#d9f4e5;
+  --gold:#9b7934;
+  --nav:rgba(243,242,235,.93);
+  --shadow:0 20px 60px rgba(24,47,31,.08);
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{
-  background:var(--bg);color:var(--text);
-  font-family:"DM Sans",sans-serif;line-height:1.6;
-  transition:background .25s,color .25s;
+* { box-sizing:border-box; }
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
 }
-a{color:inherit;text-decoration:none}
-button,input{font:inherit}
-button{cursor:pointer}
-.container{width:min(1160px,91%);margin:auto}
-.mono{font-family:"DM Mono",monospace}
-.muted{color:var(--muted)}
-.eyebrow{
-  color:var(--accent);font:500 11px "DM Mono",monospace;
-  text-transform:uppercase;letter-spacing:2px
+
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  line-height:1.65;
+  transition:background .3s,color .3s;
 }
-.section{padding:88px 0}
-.section-heading{
-  font:600 clamp(30px,4vw,44px)/1.15 "Space Grotesk",sans-serif;
-  letter-spacing:-1.6px;margin:12px 0
+
+a { color:inherit;text-decoration:none; }
+button,input { font:inherit; }
+button { cursor:pointer; }
+::selection { background:var(--accent);color:#102117; }
+
+.wrap {
+  width:min(1160px,calc(100% - 44px));
+  margin:auto;
 }
-.section-intro{color:var(--muted);max-width:650px;font-size:14px}
-.rule{height:1px;background:var(--border);margin:23px 0}
-.section-head{
-  display:flex;justify-content:space-between;align-items:end;
-  gap:25px;margin-bottom:32px
+
+.progress {
+  height:3px;
+  width:0;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:999;
+  background:var(--accent);
 }
-.section-index{font:10px "DM Mono",monospace;color:var(--muted)}
 
 /* NAVIGATION */
-.nav-wrap{
-  position:sticky;top:0;z-index:100;
-  background:color-mix(in srgb,var(--bg) 89%,transparent);
-  backdrop-filter:blur(18px);border-bottom:1px solid var(--border)
-}
-nav{
-  min-height:75px;display:flex;align-items:center;
-  justify-content:space-between;gap:20px
-}
-.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
-.brand-icon{
-  width:43px;height:43px;border-radius:13px;display:grid;place-items:center;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#08101c;font-weight:700
-}
-.brand-name{font:700 14px "Space Grotesk",sans-serif}
-.brand-sub{font:9px "DM Mono",monospace;color:var(--muted);letter-spacing:1px}
-.nav-links{display:flex;gap:21px;align-items:center}
-.nav-links a{font-size:11px;color:var(--muted);transition:color .2s}
-.nav-links a:hover,.nav-links a.active{color:var(--accent)}
-.nav-actions{display:flex;gap:8px}
-.icon-btn{
-  width:38px;height:38px;border:1px solid var(--border);
-  border-radius:10px;background:var(--surface);color:var(--text)
-}
-.menu-btn{display:none}
-.progress-bar{
-  position:absolute;bottom:-1px;left:0;height:2px;width:0;
-  background:var(--accent)
+
+header {
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:var(--nav);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
 }
 
-/* BUTTONS */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  padding:12px 16px;border-radius:9px;border:1px solid var(--border);
-  font-size:12px;font-weight:700;transition:transform .2s,opacity .2s
-}
-.btn:hover{transform:translateY(-2px)}
-.btn-primary{background:var(--accent);color:#08101c;border-color:var(--accent)}
-.btn-secondary{background:var(--surface);color:var(--text)}
-
-/* FIRST PAGE / HERO */
-.hero{
-  padding:76px 0 72px;position:relative;overflow:hidden;min-height:600px
-}
-.hero:before{
-  content:"";position:absolute;width:470px;height:470px;right:-120px;top:0;
-  border-radius:50%;background:var(--accent);opacity:.055;
-  filter:blur(100px);pointer-events:none
-}
-.hero-grid{
-  display:grid;grid-template-columns:1.05fr .95fr;
-  gap:55px;align-items:center
-}
-.hero-intro{max-width:590px}
-.hero-kicker{
-  display:flex;align-items:center;gap:11px;
-  font:500 11px "DM Mono",monospace;letter-spacing:2px;
-  color:var(--accent);text-transform:uppercase;margin-bottom:25px
-}
-.hero-kicker:before{content:"";width:25px;height:1px;background:var(--accent)}
-.hero h1{
-  font:600 clamp(46px,5.6vw,72px)/1.04 "Space Grotesk",sans-serif;
-  letter-spacing:-3.7px;margin-bottom:23px
-}
-.hero h1 .headline-accent{
-  display:block;color:var(--accent);background:none;
-  -webkit-text-fill-color:initial
-}
-.hero-description{
-  max-width:530px;color:var(--muted);font-size:14px;line-height:1.95
-}
-.hero-identity{
-  display:flex;flex-wrap:wrap;gap:9px 18px;
-  margin-top:22px;color:var(--muted);font-size:11px
-}
-.hero-identity span{display:inline-flex;align-items:center;gap:7px}
-.hero-identity span:before{
-  content:"";width:5px;height:5px;border-radius:50%;background:var(--green)
-}
-.hero-buttons{display:flex;gap:11px;flex-wrap:wrap;margin-top:27px}
-.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:23px}
-.tag{
-  border:1px solid var(--border);background:var(--surface);
-  padding:6px 10px;border-radius:7px;font-size:10px;color:var(--muted)
+.nav {
+  height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
 }
 
-/* DASHBOARD CARD */
-.hero-card{
-  position:relative;overflow:hidden;
-  background:linear-gradient(145deg,#112038,#09121f);
-  border:1px solid rgba(98,229,255,.19);border-radius:20px;
-  padding:24px;color:#f2f6ff;box-shadow:var(--shadow)
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
-body.light .hero-card{background:linear-gradient(145deg,#14263e,#091525)}
-.card-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.terminal-label{font:10px "DM Mono",monospace;color:#a3b8d5}
-.live-pill{
-  font:10px "DM Mono",monospace;color:#77f0bd;
-  border:1px solid rgba(119,240,189,.2);
-  background:rgba(119,240,189,.055);padding:7px 9px;border-radius:6px
-}
-.hero-card h3{font:500 23px "Space Grotesk",sans-serif;margin-top:26px}
-.hero-card>p{font-size:12px;color:#a7b8ce;margin-top:5px}
-.chart-box{height:175px;margin-top:17px;position:relative}
-#heroChart{width:100%;height:100%;display:block}
-.chart-labels{
-  display:flex;justify-content:space-between;gap:6px;
-  font:9px "DM Mono",monospace;color:#8297b3
-}
-.card-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:18px}
-.card-stat{
-  background:rgba(255,255,255,.045);
-  border:1px solid rgba(255,255,255,.09);
-  padding:12px 10px;border-radius:9px
-}
-.card-stat small{display:block;font:9px "DM Mono",monospace;color:#9aacc4}
-.card-stat strong{display:block;font-size:12px;margin-top:7px}
-.card-stat span{display:block;font-size:10px;color:#9aacc4;margin-top:3px}
-.demo-note{font:9px "DM Mono",monospace;color:#8297b3;margin-top:16px}
 
-/* SNAPSHOT */
-.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
-.quick-card{
-  padding:20px;border:1px solid var(--border);
-  background:var(--surface);border-radius:14px
+.logo {
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:var(--accent);
+  color:#102117;
+  font-weight:900;
+  font-size:16px;
 }
-.quick-card small{
-  display:block;color:var(--muted);font:10px "DM Mono",monospace;
-  text-transform:uppercase
+
+.brand-name {
+  font-size:13px;
+  font-weight:850;
+  letter-spacing:.05em;
+  line-height:1.4;
 }
-.quick-card strong{display:block;font:600 20px "Space Grotesk",sans-serif;margin:10px 0 3px}
-.quick-card span{font-size:11px;color:var(--muted)}
+
+.brand-sub {
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+  letter-spacing:.14em;
+  font-family:monospace;
+}
+
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.nav-links a {
+  color:var(--muted);
+  font-size:12px;
+  font-weight:650;
+  transition:color .2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color:var(--accent);
+}
+
+.nav-actions {
+  display:flex;
+  gap:8px;
+}
+
+.icon-btn {
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--line);
+  border-radius:13px;
+  background:var(--surface);
+  color:var(--text);
+  font-size:17px;
+}
+
+.menu-btn { display:none; }
+
+/* HERO */
+
+.hero {
+  min-height:670px;
+  padding:80px 0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:55px;
+}
+
+.eyebrow,
+.kicker {
+  color:var(--accent);
+  font-family:monospace;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.eyebrow {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:22px;
+}
+
+.eyebrow:before {
+  content:"";
+  width:25px;
+  height:2px;
+  background:var(--accent);
+}
+
+h1 {
+  margin:0 0 24px;
+  font-size:clamp(48px,6.3vw,79px);
+  line-height:.99;
+  letter-spacing:-.065em;
+  font-weight:850;
+}
+
+.accent { color:var(--accent); }
+
+.hero-copy {
+  max-width:570px;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.9;
+}
+
+.hero-copy strong { color:var(--text); }
+
+.pills {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin:24px 0;
+}
+
+.pill {
+  padding:7px 11px;
+  border:1px solid var(--line);
+  border-radius:30px;
+  background:var(--surface);
+  color:var(--muted);
+  font-size:11px;
+}
+
+.pill b { color:var(--accent); }
+
+.btn-row {
+  display:flex;
+  flex-wrap:wrap;
+  gap:11px;
+}
+
+.btn {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  padding:12px 17px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  font-size:12px;
+  font-weight:800;
+  transition:transform .2s,background .2s;
+}
+
+.btn:hover { transform:translateY(-3px); }
+
+.btn-primary {
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#102117;
+}
+
+.btn-secondary {
+  background:var(--surface);
+  color:var(--text);
+}
+
+.hero-note {
+  margin-top:22px;
+  font:10px monospace;
+  color:var(--muted);
+  letter-spacing:.04em;
+}
+
+.hero-note span { color:var(--accent); }
+
+/* INTERACTIVE DASHBOARD */
+
+.dashboard {
+  position:relative;
+  overflow:hidden;
+  padding:25px;
+  border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line));
+  border-radius:26px;
+  background:linear-gradient(145deg,var(--card),var(--surface));
+  box-shadow:var(--shadow);
+}
+
+.dashboard:before {
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+  top:-130px;
+  right:-80px;
+  border-radius:50%;
+  background:var(--accent);
+  opacity:.09;
+  filter:blur(30px);
+  pointer-events:none;
+}
+
+.dash-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  color:var(--muted);
+  font:10px monospace;
+}
+
+.status {
+  color:var(--accent);
+  border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
+  border-radius:8px;
+  padding:6px 9px;
+  white-space:nowrap;
+}
+
+.status:before {
+  content:"";
+  display:inline-block;
+  width:6px;
+  height:6px;
+  margin-right:6px;
+  border-radius:50%;
+  background:var(--accent);
+}
+
+.dashboard h2 {
+  margin:27px 0 2px;
+  font-size:24px;
+  letter-spacing:-.04em;
+}
+
+.dash-caption {
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.chart-wrap {
+  height:210px;
+  margin:20px 0 12px;
+}
+
+#heroChart {
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+.chart-labels {
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted);
+  font:9px monospace;
+}
+
+.dash-stats {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+  margin-top:18px;
+}
+
+.stat {
+  padding:12px;
+  min-width:0;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--surface);
+}
+
+.stat small {
+  display:block;
+  color:var(--muted);
+  font:9px monospace;
+  text-transform:uppercase;
+}
+
+.stat strong {
+  display:block;
+  margin:6px 0 3px;
+  font-size:13px;
+  line-height:1.35;
+}
+
+.stat span {
+  color:var(--muted);
+  font-size:10px;
+}
+
+.dash-foot {
+  margin-top:15px;
+  color:var(--muted);
+  font:9px monospace;
+}
+
+/* GENERAL SECTIONS */
+
+.section {
+  padding:78px 0;
+  border-top:1px solid var(--line);
+}
+
+.section-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:25px;
+  margin-bottom:30px;
+}
+
+.section-title {
+  margin:8px 0 0;
+  font-size:clamp(31px,4vw,46px);
+  line-height:1.08;
+  letter-spacing:-.055em;
+}
+
+.section-desc {
+  max-width:430px;
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.grid-3 {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.card {
+  padding:23px;
+  border:1px solid var(--line);
+  border-radius:21px;
+  background:var(--card);
+  transition:transform .25s,border-color .25s,box-shadow .25s;
+}
+
+.card:hover {
+  transform:translateY(-5px);
+  border-color:var(--accent);
+  box-shadow:var(--shadow);
+}
+
+.card-tag {
+  color:var(--accent);
+  font:10px monospace;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.card h3 {
+  margin:13px 0 9px;
+  font-size:19px;
+  letter-spacing:-.035em;
+}
+
+.card p {
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.9;
+}
+
+.card-bottom {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:20px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+}
+
+.text-link {
+  color:var(--accent);
+  font-size:11px;
+  font-weight:800;
+}
 
 /* PROJECTS */
-.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.project-card{
-  border:1px solid var(--border);border-radius:16px;
-  background:var(--surface);padding:25px;
-  transition:transform .2s,border-color .2s
-}
-.project-card:hover{transform:translateY(-4px);border-color:var(--accent)}
-.project-top{display:flex;justify-content:space-between;gap:12px;align-items:start}
-.project-number{font:11px "DM Mono",monospace;color:var(--accent)}
-.project-type{
-  font:9px "DM Mono",monospace;border:1px solid var(--border);
-  padding:5px 8px;border-radius:6px;color:var(--muted)
-}
-.project-card h3{font:600 23px "Space Grotesk",sans-serif;margin:20px 0 10px}
-.project-card>p{font-size:13px;color:var(--muted)}
-.project-tags{display:flex;gap:7px;flex-wrap:wrap;margin:17px 0}
-.project-tags span{
-  font-size:10px;padding:5px 8px;background:var(--surface2);
-  border-radius:6px;color:var(--muted)
-}
-.expand-btn{border:0;background:none;color:var(--text);font-size:11px}
-.project-details{display:none;border-top:1px solid var(--border);margin-top:20px;padding-top:18px}
-.project-details.open{display:block;animation:fadeIn .25s ease}
-.project-details h4{font-size:11px;color:var(--accent);margin:13px 0 4px}
-.project-details p{font-size:12px;color:var(--muted)}
-.project-footer{
-  display:flex;justify-content:space-between;align-items:center;
-  gap:10px;margin-top:22px;flex-wrap:wrap
-}
-.project-footer a{font-size:11px;color:var(--accent)}
 
-/* COMPANIES */
-.company-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
-.company-card{
-  border:1px solid var(--border);background:var(--surface);
-  border-radius:14px;padding:21px;transition:transform .2s
-}
-.company-card:hover{transform:translateY(-3px)}
-.company-symbol{
-  width:42px;height:42px;display:grid;place-items:center;
-  border-radius:11px;background:var(--surface2);color:var(--accent);
-  font:700 12px "Space Grotesk",sans-serif;margin-bottom:15px
-}
-.company-card h3{font:600 17px "Space Grotesk",sans-serif}
-.company-card p{font-size:12px;color:var(--muted);margin-top:7px}
-.company-card .focus{font:10px "DM Mono",monospace;color:var(--accent);margin-top:15px}
-
-/* ANALYSIS TABS */
-.analysis-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}
-.analysis-menu{display:flex;flex-direction:column;gap:9px}
-.analysis-tab{
-  text-align:left;padding:17px;border-radius:12px;
-  border:1px solid var(--border);background:var(--surface);color:var(--text)
-}
-.analysis-tab.active{border-color:var(--accent);background:var(--surface2)}
-.analysis-tab strong{display:block;font-size:13px}
-.analysis-tab span{font-size:11px;color:var(--muted)}
-.analysis-panel{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:16px;padding:25px;min-height:280px
-}
-.analysis-panel h3{font:600 22px "Space Grotesk",sans-serif;margin:10px 0}
-.analysis-panel p{color:var(--muted);font-size:13px}
-.analysis-points{margin-top:20px;display:grid;gap:11px}
-.analysis-point{display:flex;gap:10px;font-size:12px}
-.check{color:var(--green);font-weight:700}
-
-/* SKILLS */
-.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.skill-box{
-  padding:24px;border:1px solid var(--border);
-  background:var(--surface);border-radius:15px
-}
-.skill-box h3{font:600 17px "Space Grotesk",sans-serif;margin-bottom:20px}
-.skill-row{margin-top:17px}
-.skill-row-top{display:flex;justify-content:space-between;gap:10px;font-size:12px;margin-bottom:7px}
-.skill-row-top span:last-child{font:9px "DM Mono",monospace;color:var(--muted)}
-.skill-track{height:5px;border-radius:10px;background:var(--surface2);overflow:hidden}
-.skill-fill{
-  height:100%;width:0;border-radius:10px;
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
-  transition:width 1.2s ease
-}
-.tool-grid{display:flex;flex-wrap:wrap;gap:9px}
-.tool-chip{
-  border:1px solid var(--border);background:var(--surface2);
-  padding:10px 12px;border-radius:8px;font-size:11px
+.projects {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:17px;
 }
 
-/* METHODOLOGY */
-.method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.method-card{border:1px solid var(--border);background:var(--surface);padding:20px;border-radius:13px}
-.method-card .num{font:11px "DM Mono",monospace;color:var(--accent)}
-.method-card h3{font:600 16px "Space Grotesk",sans-serif;margin:17px 0 8px}
-.method-card p{font-size:11px;color:var(--muted)}
+.project {
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:var(--card);
+  transition:transform .25s,border-color .25s;
+}
+
+.project:hover {
+  transform:translateY(-4px);
+  border-color:var(--accent);
+}
+
+.project-visual {
+  min-height:135px;
+  padding:22px;
+  display:flex;
+  align-items:start;
+  justify-content:space-between;
+  gap:15px;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(135deg,var(--surface),var(--card));
+}
+
+.project-symbol {
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  border-radius:16px;
+  border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
+  background:color-mix(in srgb,var(--accent) 13%,transparent);
+  color:var(--accent);
+  font-size:22px;
+  font-weight:900;
+}
+
+.mini-bars {
+  height:42px;
+  display:flex;
+  align-items:end;
+  gap:6px;
+  margin-top:12px;
+}
+
+.mini-bars i {
+  display:block;
+  width:13px;
+  border-radius:4px 4px 0 0;
+  background:var(--accent);
+  opacity:.75;
+  transform-origin:bottom;
+  animation:rise .8s both;
+}
+
+.mini-bars i:nth-child(even) { opacity:.35; }
+
+@keyframes rise {
+  from { transform:scaleY(.05); }
+  to { transform:scaleY(1); }
+}
+
+.project-body { padding:22px; }
+
+.project-meta {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  color:var(--muted);
+  font:9px monospace;
+  text-transform:uppercase;
+}
+
+.project h3 {
+  margin:12px 0 8px;
+  font-size:22px;
+  letter-spacing:-.04em;
+}
+
+.project-body>p {
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.9;
+}
+
+.project-tabs {
+  display:flex;
+  gap:5px;
+  margin-top:18px;
+  padding-bottom:8px;
+  border-bottom:1px solid var(--line);
+}
+
+.project-tabs button {
+  padding:7px 10px;
+  border:0;
+  border-radius:7px;
+  background:transparent;
+  color:var(--muted);
+  font-size:10px;
+}
+
+.project-tabs button.active {
+  background:color-mix(in srgb,var(--accent) 14%,transparent);
+  color:var(--accent);
+}
+
+.project-detail {
+  min-height:78px;
+  padding:12px 0;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.9;
+}
+
+.project-links { margin-top:8px; }
+
+/* DARK TERMINAL */
+
+.terminal {
+  padding:24px;
+  border:1px solid rgba(101,214,160,.22);
+  border-radius:22px;
+  background:#0b100d;
+  color:#e8f2e9;
+  box-shadow:var(--shadow);
+  font:12px/1.8 monospace;
+}
+
+.terminal-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-bottom:20px;
+  padding-bottom:15px;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.terminal-dots { display:flex;gap:6px; }
+
+.terminal-dots i {
+  width:8px;height:8px;border-radius:50%;background:#43534a;
+}
+
+.terminal-dots i:first-child { background:#65d6a0; }
+
+.terminal-label { color:#80dcb0;font-size:10px; }
+
+.terminal-line {
+  display:flex;
+  gap:12px;
+  margin:12px 0;
+}
+
+.prompt { color:#65d6a0;flex-shrink:0; }
+.terminal-value { color:#f1d9a0; }
+.terminal-muted { color:#9ba99e; }
+
+.cursor {
+  display:inline-block;
+  width:7px;
+  height:13px;
+  margin-left:5px;
+  background:#65d6a0;
+  vertical-align:-2px;
+  animation:blink 1s steps(2,start) infinite;
+}
+
+@keyframes blink { to { visibility:hidden; } }
+
+/* TOOLKIT */
+
+.toolkit {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.tool-group {
+  padding:23px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:var(--card);
+}
+
+.tool-group h3 { margin:0 0 18px;font-size:17px; }
+
+.skill { margin:17px 0; }
+
+.skill-top {
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:8px;
+  font-size:11px;
+}
+
+.skill-top span:last-child {
+  color:var(--muted);
+  font:10px monospace;
+}
+
+.skill-track {
+  height:6px;
+  overflow:hidden;
+  border-radius:99px;
+  background:var(--surface);
+}
+
+.skill-fill {
+  width:0;
+  height:100%;
+  border-radius:99px;
+  background:var(--accent);
+  transition:width 1.2s ease;
+}
+
+.skill-note {
+  color:var(--muted);
+  font-size:10px;
+  margin-top:15px;
+}
 
 /* EDUCATION */
-.timeline{border-left:1px solid var(--border);margin-left:8px;padding-left:24px;display:grid;gap:23px}
-.timeline-item{position:relative}
-.timeline-item:before{
-  content:"";position:absolute;left:-30px;top:7px;width:10px;height:10px;
-  background:var(--accent);border-radius:50%;box-shadow:0 0 0 5px var(--bg)
+
+.education {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
 }
-.timeline-item h3{font:600 17px "Space Grotesk",sans-serif}
-.timeline-item p{font-size:12px;color:var(--muted);margin-top:5px}
+
+.edu-card {
+  padding:23px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:var(--card);
+}
+
+.edu-date {
+  color:var(--accent);
+  font:10px monospace;
+}
+
+.edu-card h3 { margin:11px 0 5px;font-size:18px; }
+
+.edu-card p { margin:0;color:var(--muted);font-size:12px; }
+
+.edu-score {
+  display:inline-flex;
+  margin-top:16px;
+  padding:7px 10px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  color:var(--accent);
+  font:10px monospace;
+}
 
 /* CONTACT */
-.contact-card{
-  padding:clamp(25px,5vw,50px);border-radius:22px;
-  background:linear-gradient(120deg,#142842,#151d3a);
-  border:1px solid rgba(126,168,230,.22);
-  color:#f3f7ff;position:relative;overflow:hidden
-}
-.contact-card h2{font:600 clamp(30px,4vw,46px)/1.12 "Space Grotesk",sans-serif;margin:15px 0}
-.contact-card p{font-size:13px;color:#afc0d6;max-width:570px}
-.contact-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px;position:relative;z-index:1}
-.contact-links .btn-secondary{
-  background:rgba(255,255,255,.07);
-  border-color:rgba(255,255,255,.15);color:white
+
+.contact-box {
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:30px;
+  padding:clamp(25px,5vw,50px);
+  border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line));
+  border-radius:26px;
+  background:var(--card);
 }
 
-/* FOOTER */
-footer{padding:25px 0;border-top:1px solid var(--border);margin-top:65px}
-.footer-inner{
-  display:flex;justify-content:space-between;gap:15px;
-  flex-wrap:wrap;font-size:11px;color:var(--muted)
+.contact-box h2 {
+  margin:10px 0 12px;
+  font-size:clamp(31px,4.5vw,48px);
+  line-height:1.08;
+  letter-spacing:-.05em;
 }
-.back-top{color:var(--accent)}
+
+.contact-box p {
+  max-width:530px;
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.contact-actions {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-width:180px;
+}
+
+footer {
+  padding:25px 0 35px;
+  color:var(--muted);
+  font-size:10px;
+}
+
+.footer-row {
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:15px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+}
+
+/* ANIMATIONS */
+
+.reveal {
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .65s ease,transform .65s ease;
+}
+
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
 
 /* SEARCH */
-.search-overlay{
-  position:fixed;inset:0;background:rgba(2,6,15,.78);
-  backdrop-filter:blur(8px);z-index:200;display:none;
-  align-items:flex-start;justify-content:center;padding:15vh 20px 20px
-}
-.search-overlay.open{display:flex}
-.search-box{
-  width:min(550px,100%);padding:22px;border:1px solid var(--border);
-  border-radius:16px;background:var(--surface);box-shadow:var(--shadow)
-}
-.search-box input{
-  width:100%;margin:15px 0;padding:13px;border:1px solid var(--border);
-  border-radius:9px;background:var(--bg);color:var(--text);outline:none
-}
-.search-results{display:grid;gap:6px}
-.search-results a{padding:10px;border-radius:7px;font-size:12px}
-.search-results a:hover{background:var(--surface2);color:var(--accent)}
-.toast{
-  position:fixed;bottom:25px;left:50%;transform:translate(-50%,20px);
-  padding:12px 17px;border-radius:10px;background:var(--accent);
-  color:#08101c;font-size:12px;opacity:0;pointer-events:none;
-  transition:.25s;z-index:300
-}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}
-.reveal.visible{opacity:1;transform:translateY(0)}
-@keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 
-@media(max-width:1000px){
-  .nav-links{gap:12px}
-  .nav-links a{font-size:10px}
-  .hero-grid{gap:30px}
-  .hero h1{font-size:clamp(44px,5.4vw,65px)}
+.search-overlay {
+  position:fixed;
+  inset:0;
+  z-index:200;
+  display:none;
+  justify-content:center;
+  align-items:flex-start;
+  padding:15vh 20px 20px;
+  background:rgba(0,0,0,.7);
 }
-@media(max-width:850px){
-  .hero{padding-top:55px}
-  .hero-grid{grid-template-columns:1fr;gap:35px}
-  .hero-intro{max-width:680px}
-  .hero-card{width:100%;max-width:650px}
-  .quick-grid{grid-template-columns:repeat(2,1fr)}
-  .method-grid{grid-template-columns:repeat(2,1fr)}
+
+.search-overlay.open { display:flex; }
+
+.search-box {
+  width:min(550px,100%);
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:var(--card);
+  box-shadow:var(--shadow);
 }
-@media(max-width:680px){
-  .section{padding:62px 0}
-  nav{min-height:68px}
-  .menu-btn{display:block}
-  .nav-links{
-    display:none;position:absolute;left:0;right:0;top:68px;
-    padding:18px 5%;background:var(--surface);
-    border-bottom:1px solid var(--border);
-    flex-direction:column;align-items:stretch
+
+.search-box input {
+  width:100%;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  outline:none;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.search-results {
+  display:grid;
+  gap:5px;
+  margin-top:12px;
+}
+
+.search-results a {
+  padding:10px;
+  border-radius:8px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.search-results a:hover {
+  background:var(--surface);
+  color:var(--accent);
+}
+
+@media(max-width:950px) {
+  .nav-links { gap:12px; }
+  .nav-links a { font-size:11px; }
+  .hero { gap:28px; }
+  .dash-stats { grid-template-columns:1fr; }
+}
+
+@media(max-width:720px) {
+  .wrap { width:calc(100% - 30px); }
+  .nav { height:68px; }
+  .logo { width:39px;height:39px; }
+  .menu-btn { display:grid; }
+
+  .nav-links {
+    display:none;
+    position:absolute;
+    top:68px;
+    left:0;
+    right:0;
+    padding:15px 22px 20px;
+    border-bottom:1px solid var(--line);
+    background:var(--bg);
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
   }
-  .nav-links.open{display:flex}
-  .nav-links a{padding:8px;font-size:13px}
-  .hero{padding:45px 0 55px;min-height:auto}
-  .hero h1{font-size:clamp(42px,12vw,59px);letter-spacing:-2.5px}
-  .hero-card{padding:17px}
-  .hero-card h3{font-size:20px}
-  .card-stats{grid-template-columns:1fr}
-  .card-stat{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:5px}
-  .card-stat small{grid-column:1/-1}
-  .card-stat span{margin:0;text-align:right}
-  .project-grid,.company-grid,.analysis-layout,.skills-layout{grid-template-columns:1fr}
-  .section-head{align-items:start;flex-direction:column}
-  .method-grid{grid-template-columns:repeat(2,1fr)}
-  .quick-card{padding:15px}
-  .quick-card strong{font-size:18px}
+
+  .nav-links.open { display:flex; }
+
+  .nav-links a {
+    padding:12px 4px;
+    border-bottom:1px solid var(--line);
+    font-size:13px;
+  }
+
+  .hero {
+    grid-template-columns:1fr;
+    gap:35px;
+    padding:55px 0;
+    min-height:auto;
+  }
+
+  h1 { font-size:clamp(48px,12vw,70px); }
+
+  .hero-copy { font-size:14px; }
+
+  .dashboard { padding:19px; }
+  .chart-wrap { height:175px; }
+  .dash-stats { grid-template-columns:repeat(3,1fr); }
+  .stat { padding:10px; }
+  .stat strong { font-size:11px; }
+
+  .section { padding:58px 0; }
+
+  .section-head {
+    display:block;
+  }
+
+  .section-desc { margin-top:13px; }
+
+  .grid-3,.projects,.toolkit,.education {
+    grid-template-columns:1fr;
+  }
+
+  .contact-box { grid-template-columns:1fr; }
+
+  .contact-actions {
+    min-width:0;
+    flex-direction:row;
+    flex-wrap:wrap;
+  }
 }
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
-  .reveal{opacity:1;transform:none}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
 }
 </style>
 </head>
 
 <body>
+<div class="progress" id="scrollProgress"></div>
 
-<!-- NAVIGATION -->
-<div class="nav-wrap">
-  <nav class="container">
-    <a class="brand" href="#home" aria-label="Sujal Bansal home">
-      <div class="brand-icon">SB.</div>
-      <div>
-        <div class="brand-name">SUJAL BANSAL</div>
-        <div class="brand-sub">FINANCE PORTFOLIO</div>
-      </div>
+<header>
+  <div class="wrap nav">
+
+    <a class="brand" href="#overview">
+      <span class="logo">SB.</span>
+      <span class="brand-name">
+        SUJAL BANSAL
+        <span class="brand-sub">FINANCE PORTFOLIO</span>
+      </span>
     </a>
 
-    <div class="nav-links" id="navLinks">
-      <a href="#home">Overview</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#overview" class="active">Overview</a>
       <a href="#research">Research</a>
       <a href="#companies">Companies</a>
       <a href="#analysis">Analysis</a>
-      <a href="#skills">Toolkit</a>
+      <a href="#toolkit">Toolkit</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
-    </div>
+    </nav>
 
     <div class="nav-actions">
-      <button class="icon-btn" id="searchBtn" aria-label="Search portfolio" title="Search">⌕</button>
-      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">◐</button>
-      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+      <button class="icon-btn" id="searchOpen" aria-label="Search">⌕</button>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">◐</button>
+      <button class="icon-btn menu-btn" id="menuToggle" aria-label="Open menu">☰</button>
     </div>
-  </nav>
-  <div class="progress-bar" id="progressBar"></div>
-</div>
+
+  </div>
+</header>
 
 <main>
 
-<!-- FIRST PAGE -->
-<section class="hero" id="home">
-  <div class="container hero-grid">
+<!-- INTRODUCTION -->
+<section class="wrap hero" id="overview">
 
-    <div class="hero-intro">
-      <div class="hero-kicker">FINANCE · RESEARCH · ANALYSIS</div>
+  <div>
+    <div class="eyebrow">Finance · Research · Analysis</div>
 
-      <h1>
-        Sujal Bansal.
-        <span class="headline-accent">Finance meets</span>
-        <span class="headline-accent">insight.</span>
-      </h1>
+    <h1>
+      Sujal Bansal.<br>
+      <span class="accent">Finance meets<br>insight.</span>
+    </h1>
 
-      <p class="hero-description">
-        I am a PGDM Financial Management student at FIIB with a BBA Finance
-        background. My interest lies in understanding businesses through
-        financial statements, profitability, cash flows and fundamental
-        analysis—not just looking at the numbers, but understanding the
-        business story behind them.
-      </p>
+    <p class="hero-copy">
+      I’m a <strong>PGDM Financial Management student at FIIB</strong>
+      with a BBA Finance background. My interest lies in understanding
+      businesses through financial statements, profitability, cash flows
+      and fundamental analysis—not just looking at the numbers, but
+      understanding the business story behind them.
+    </p>
 
-      <div class="hero-identity">
-        <span>PGDM Financial Management · FIIB</span>
-        <span>BBA Finance · CGPA 8.05</span>
-      </div>
-
-      <div class="hero-buttons">
-        <a class="btn btn-primary" href="#research">Explore my research ↗</a>
-        <a class="btn btn-secondary" href="https://github.com/sujalbansal0077-hub" target="_blank" rel="noopener">GitHub profile ↗</a>
-      </div>
-
-      <div class="hero-tags">
-        <span class="tag">Equity Research</span>
-        <span class="tag">Fundamental Analysis</span>
-        <span class="tag">Financial Analysis</span>
-      </div>
+    <div class="pills">
+      <span class="pill"><b>PGDM FM</b> · FIIB</span>
+      <span class="pill">BBA Finance · CGPA 8.05</span>
+      <span class="pill">Fundamental Analysis</span>
     </div>
 
-    <div class="hero-card">
-      <div class="card-top">
-        <span class="terminal-label">SUJAL_BANSAL / FINANCE_LAB</span>
-        <span class="live-pill">● PORTFOLIO ACTIVE</span>
-      </div>
-
-      <h3>Financial intelligence</h3>
-      <p>A workspace for examining business performance.</p>
-
-      <div class="chart-box">
-        <canvas id="heroChart" aria-label="Illustrative financial trend graphic"></canvas>
-      </div>
-
-      <div class="chart-labels">
-        <span>RESEARCH</span><span>ANALYSIS</span><span>INSIGHT</span><span>DECISION</span>
-      </div>
-
-      <div class="card-stats">
-        <div class="card-stat">
-          <small>EDUCATION</small>
-          <strong>PGDM Finance</strong>
-          <span>FIIB</span>
-        </div>
-        <div class="card-stat">
-          <small>RESEARCH</small>
-          <strong>Fundamentals</strong>
-          <span>Business quality</span>
-        </div>
-        <div class="card-stat">
-          <small>PROJECTS</small>
-          <strong>Financial analysis</strong>
-          <span>Suzlon & FMCG</span>
-        </div>
-      </div>
-
-      <div class="demo-note">PORTFOLIO VISUAL · NOT LIVE MARKET DATA</div>
+    <div class="btn-row">
+      <a href="#research" class="btn btn-primary">Explore my research ↗</a>
+      <a href="https://github.com/sujalbansal0077-hub"
+         target="_blank" rel="noopener" class="btn btn-secondary">
+         GitHub profile ↗
+      </a>
     </div>
 
-  </div>
-</section>
-
-<!-- PROFILE SNAPSHOT -->
-<section class="container" style="padding:12px 0 55px">
-  <div class="quick-grid reveal">
-    <div class="quick-card">
-      <small>Current programme</small>
-      <strong>PGDM</strong>
-      <span>Financial Management · FIIB</span>
-    </div>
-    <div class="quick-card">
-      <small>Undergraduate degree</small>
-      <strong>BBA Finance</strong>
-      <span>CGPA 8.05</span>
-    </div>
-    <div class="quick-card">
-      <small>Research projects</small>
-      <strong>02</strong>
-      <span>Suzlon Energy & FMCG analysis</span>
-    </div>
-    <div class="quick-card">
-      <small>Career direction</small>
-      <strong>Fundamentals</strong>
-      <span>Equity & financial research</span>
+    <div class="hero-note">
+      <span>●</span> FINANCIAL RESEARCH PORTFOLIO / PROJECTS & LEARNING
     </div>
   </div>
+
+  <!-- Interactive dashboard -->
+  <aside class="dashboard">
+    <div class="dash-top">
+      <span>SUJAL_BANSAL / FINANCE_LAB</span>
+      <span class="status">PORTFOLIO ACTIVE</span>
+    </div>
+
+    <h2 id="chartHeading">Financial intelligence</h2>
+    <p class="dash-caption" id="chartCaption">
+      A workspace for examining business performance.
+    </p>
+
+    <div class="chart-wrap">
+      <canvas id="heroChart" aria-label="Illustrative chart"></canvas>
+    </div>
+
+    <div class="chart-labels">
+      <span>RESEARCH</span>
+      <span>ANALYSIS</span>
+      <span>INSIGHT</span>
+      <span>DECISION</span>
+    </div>
+
+    <div class="dash-stats">
+      <div class="stat">
+        <small>Education</small>
+        <strong>PGDM Finance</strong>
+        <span>FIIB</span>
+      </div>
+
+      <div class="stat">
+        <small>Research</small>
+        <strong>Fundamentals</strong>
+        <span>Business quality</span>
+      </div>
+
+      <div class="stat">
+        <small>Projects</small>
+        <strong>Financial analysis</strong>
+        <span>Suzlon & FMCG</span>
+      </div>
+    </div>
+
+    <div class="dash-foot">
+      ILLUSTRATIVE VISUAL · NOT LIVE MARKET DATA
+    </div>
+  </aside>
 </section>
 
-<!-- RESEARCH PROJECTS -->
+<!-- RESEARCH -->
 <section class="section" id="research">
-  <div class="container">
+  <div class="wrap">
+
     <div class="section-head reveal">
       <div>
-        <div class="eyebrow">01 / SELECTED WORK</div>
-        <h2 class="section-heading">Research & analysis.</h2>
-        <p class="section-intro">Academic projects focused on financial statements, company performance and comparative analysis.</p>
+        <div class="kicker">01 / Research focus</div>
+        <h2 class="section-title">Questions behind<br>the numbers.</h2>
       </div>
-      <div class="section-index">PROJECT ARCHIVE · 02</div>
+
+      <p class="section-desc">
+        I use financial statements as a starting point to investigate
+        business performance, financial strength and the quality of growth.
+      </p>
     </div>
 
-    <div class="project-grid">
+    <div class="grid-3">
 
-      <article class="project-card reveal">
-        <div class="project-top">
-          <span class="project-number">PROJECT_001</span>
-          <span class="project-type">EQUITY RESEARCH</span>
-        </div>
-
-        <h3>Suzlon Energy</h3>
-        <p>Five-year financial analysis examining company performance through financial statements, profitability, liquidity and key financial ratios.</p>
-
-        <div class="project-tags">
-          <span>5-year analysis</span><span>Financial ratios</span>
-          <span>Trend analysis</span><span>Renewable energy</span>
-        </div>
-
-        <button class="expand-btn" data-expand="suzlonDetails" aria-expanded="false">+ Explore project details</button>
-
-        <div class="project-details" id="suzlonDetails">
-          <h4>OBJECTIVE</h4>
-          <p>Study the company's financial performance across a five-year period.</p>
-          <h4>APPROACH</h4>
-          <p>Organise financial statement data, review year-on-year trends and examine selected financial ratios.</p>
-          <h4>ANALYTICAL FOCUS</h4>
-          <p>Profitability, financial position, cash flow and changes in financial performance.</p>
-        </div>
-
-        <div class="project-footer">
-          <a href="https://github.com/sujalbansal0077-hub/Suzlon_Energy_5-Year_Financial_Analysis" target="_blank" rel="noopener">View project on GitHub ↗</a>
-          <span class="muted mono" style="font-size:10px">FINANCIAL ANALYSIS</span>
+      <article class="card reveal">
+        <div class="card-tag">01 · Fundamentals</div>
+        <h3>Business quality</h3>
+        <p>
+          Understanding revenue drivers, operating margins, profitability
+          and how a company converts business activity into financial results.
+        </p>
+        <div class="card-bottom">
+          <span class="text-link">Financial statements</span>
+          <span class="accent">↗</span>
         </div>
       </article>
 
-      <article class="project-card reveal">
-        <div class="project-top">
-          <span class="project-number">PROJECT_002</span>
-          <span class="project-type">SECTOR COMPARISON</span>
+      <article class="card reveal">
+        <div class="card-tag">02 · Financial health</div>
+        <h3>Cash flow & capital</h3>
+        <p>
+          Looking beyond reported profit to cash generation, working capital,
+          debt levels and the way capital is deployed.
+        </p>
+        <div class="card-bottom">
+          <span class="text-link">Cash flow analysis</span>
+          <span class="accent">↗</span>
         </div>
+      </article>
 
-        <h3>FMCG Financial Analysis</h3>
-        <p>A comparative financial study of Hindustan Unilever, Britannia Industries and Nestlé India across a five-year period.</p>
-
-        <div class="project-tags">
-          <span>HUL</span><span>Britannia</span><span>Nestlé India</span><span>Ratio analysis</span>
-        </div>
-
-        <button class="expand-btn" data-expand="fmcgDetails" aria-expanded="false">+ Explore project details</button>
-
-        <div class="project-details" id="fmcgDetails">
-          <h4>OBJECTIVE</h4>
-          <p>Compare the financial performance of three companies operating in the FMCG sector.</p>
-          <h4>APPROACH</h4>
-          <p>Review income statements, balance sheets, cash flow statements and selected financial ratios over five years.</p>
-          <h4>ANALYTICAL FOCUS</h4>
-          <p>Compare profitability, liquidity, financial efficiency and trends across companies.</p>
-        </div>
-
-        <div class="project-footer">
-          <a href="https://github.com/sujalbansal0077-hub/FMCG-5-year-Financial-Report-Analysis" target="_blank" rel="noopener">View project on GitHub ↗</a>
-          <span class="muted mono" style="font-size:10px">COMPANY COMPARISON</span>
+      <article class="card reveal">
+        <div class="card-tag">03 · Decision support</div>
+        <h3>Evidence-led insight</h3>
+        <p>
+          Comparing trends over time, documenting assumptions and connecting
+          quantitative findings with business context.
+        </p>
+        <div class="card-bottom">
+          <span class="text-link">Research process</span>
+          <span class="accent">↗</span>
         </div>
       </article>
 
@@ -625,623 +1129,725 @@ footer{padding:25px 0;border-top:1px solid var(--border);margin-top:65px}
   </div>
 </section>
 
-<!-- COMPANIES -->
-<section class="section" id="companies" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-  <div class="container">
+<!-- COMPANY PROJECTS -->
+<section class="section" id="companies">
+  <div class="wrap">
+
     <div class="section-head reveal">
       <div>
-        <div class="eyebrow">02 / COMPANY COVERAGE</div>
-        <h2 class="section-heading">Businesses under the lens.</h2>
-        <p class="section-intro">Companies included in my academic financial-analysis work. This is not investment advice.</p>
+        <div class="kicker">02 / Company studies</div>
+        <h2 class="section-title">Research in practice.</h2>
       </div>
-      <div class="section-index">COMPANY UNIVERSE</div>
+      <p class="section-desc">
+        Academic projects focused on multi-year financial analysis and
+        comparing performance across businesses.
+      </p>
     </div>
 
-    <div class="company-grid">
-      <article class="company-card reveal">
-        <div class="company-symbol">SUZ</div>
-        <h3>Suzlon Energy</h3>
-        <p>Renewable energy and wind power. Studied through a five-year financial-analysis project.</p>
-        <div class="focus">FOCUS → FINANCIAL TRENDS</div>
+    <div class="projects">
+
+      <!-- SUZLON -->
+      <article class="project reveal">
+        <div class="project-visual">
+          <div>
+            <div class="card-tag">Company study · Energy</div>
+            <div class="mini-bars">
+              <i style="height:24%"></i>
+              <i style="height:39%"></i>
+              <i style="height:32%"></i>
+              <i style="height:55%"></i>
+              <i style="height:72%"></i>
+              <i style="height:62%"></i>
+              <i style="height:86%"></i>
+            </div>
+          </div>
+          <div class="project-symbol">S</div>
+        </div>
+
+        <div class="project-body">
+          <div class="project-meta">5-YEAR REVIEW · FINANCIAL STATEMENTS</div>
+          <h3>Suzlon Energy</h3>
+          <p>
+            A multi-year financial analysis project examining company
+            performance through reported financial statements and key indicators.
+          </p>
+
+          <div class="project-tabs">
+            <button class="active" data-project="suzlon" data-view="purpose">Purpose</button>
+            <button data-project="suzlon" data-view="process">Process</button>
+            <button data-project="suzlon" data-view="outcome">Output</button>
+          </div>
+
+          <div class="project-detail" id="detail-suzlon">
+            Review reported financial statements over five years to understand
+            the company’s financial trajectory.
+          </div>
+
+          <div class="project-links">
+            <a class="text-link"
+               href="https://github.com/sujalbansal0077-hub/Suzlon_Energy_5-Year_Financial_Analysis"
+               target="_blank" rel="noopener">
+               View project repository ↗
+            </a>
+          </div>
+        </div>
       </article>
 
-      <article class="company-card reveal">
-        <div class="company-symbol">HUL</div>
-        <h3>Hindustan Unilever</h3>
-        <p>Consumer goods business included in my comparative FMCG financial study.</p>
-        <div class="focus">FOCUS → PROFITABILITY</div>
+      <!-- FMCG -->
+      <article class="project reveal">
+        <div class="project-visual">
+          <div>
+            <div class="card-tag">Sector comparison · FMCG</div>
+            <div class="mini-bars">
+              <i style="height:66%"></i>
+              <i style="height:47%"></i>
+              <i style="height:78%"></i>
+              <i style="height:57%"></i>
+              <i style="height:86%"></i>
+              <i style="height:63%"></i>
+              <i style="height:74%"></i>
+            </div>
+          </div>
+          <div class="project-symbol">F</div>
+        </div>
+
+        <div class="project-body">
+          <div class="project-meta">5-YEAR REVIEW · PEER COMPARISON</div>
+          <h3>FMCG: HUL, Britannia & Nestlé India</h3>
+          <p>
+            A comparative project built around five-year financial information
+            for three listed FMCG businesses.
+          </p>
+
+          <div class="project-tabs">
+            <button class="active" data-project="fmcg" data-view="purpose">Purpose</button>
+            <button data-project="fmcg" data-view="process">Process</button>
+            <button data-project="fmcg" data-view="outcome">Output</button>
+          </div>
+
+          <div class="project-detail" id="detail-fmcg">
+            Compare companies in the same broad sector to explore differences
+            in financial performance and structure.
+          </div>
+
+          <div class="project-links">
+            <a class="text-link"
+               href="https://github.com/sujalbansal0077-hub/FMCG-5-year-Financial-Report-Analysis"
+               target="_blank" rel="noopener">
+               View project repository ↗
+            </a>
+          </div>
+        </div>
       </article>
 
-      <article class="company-card reveal">
-        <div class="company-symbol">BRI</div>
-        <h3>Britannia Industries</h3>
-        <p>Food company included in the comparative analysis of financial statements and ratios.</p>
-        <div class="focus">FOCUS → EFFICIENCY</div>
-      </article>
-
-      <article class="company-card reveal">
-        <div class="company-symbol">NES</div>
-        <h3>Nestlé India</h3>
-        <p>FMCG company examined alongside HUL and Britannia in my academic project.</p>
-        <div class="focus">FOCUS → COMPARABILITY</div>
-      </article>
-
-      <article class="company-card reveal">
-        <div class="company-symbol">+</div>
-        <h3>Future research</h3>
-        <p>Additional listed companies and sectors as new projects are completed.</p>
-        <div class="focus">STATUS → PLANNED</div>
-      </article>
-
-      <article class="company-card reveal">
-        <div class="eyebrow">RESEARCH PRINCIPLE</div>
-        <h3 style="margin-top:14px">Numbers need context.</h3>
-        <p>Financial ratios are most useful when interpreted alongside business conditions and historical trends.</p>
-      </article>
     </div>
   </div>
 </section>
 
-<!-- INTERACTIVE ANALYSIS -->
+<!-- ANALYSIS PROCESS -->
 <section class="section" id="analysis">
-  <div class="container">
+  <div class="wrap">
+
     <div class="section-head reveal">
       <div>
-        <div class="eyebrow">03 / ANALYTICAL FRAMEWORK</div>
-        <h2 class="section-heading">Explore how I analyse.</h2>
-        <p class="section-intro">Select a lens to explore the questions that guide financial analysis.</p>
+        <div class="kicker">03 / Analytical workflow</div>
+        <h2 class="section-title">From raw data<br>to a clear view.</h2>
       </div>
-      <div class="section-index">INTERACTIVE WORKSPACE</div>
+      <p class="section-desc">
+        A repeatable approach for keeping analysis structured, transparent
+        and easy to follow.
+      </p>
     </div>
 
-    <div class="analysis-layout reveal">
-      <div class="analysis-menu" role="tablist" aria-label="Analysis topics">
-        <button class="analysis-tab active" data-analysis="profitability" role="tab" aria-selected="true">
-          <strong>01 / Profitability</strong><span>How effectively does the business earn?</span>
-        </button>
-        <button class="analysis-tab" data-analysis="liquidity" role="tab" aria-selected="false">
-          <strong>02 / Liquidity</strong><span>Can it meet short-term obligations?</span>
-        </button>
-        <button class="analysis-tab" data-analysis="cashflow" role="tab" aria-selected="false">
-          <strong>03 / Cash flow</strong><span>How do earnings translate into cash?</span>
-        </button>
-        <button class="analysis-tab" data-analysis="efficiency" role="tab" aria-selected="false">
-          <strong>04 / Efficiency</strong><span>How well are resources used?</span>
-        </button>
+    <div class="terminal reveal">
+      <div class="terminal-top">
+        <div class="terminal-dots"><i></i><i></i><i></i></div>
+        <span class="terminal-label">FINANCE_TERMINAL / WORKFLOW.LOG</span>
+        <span style="color:#84958a;font-size:10px">SESSION 001</span>
       </div>
 
-      <div class="analysis-panel" id="analysisPanel" role="tabpanel" aria-live="polite">
-        <div class="eyebrow">ANALYSIS_LENS / 01</div>
-        <h3>Profitability</h3>
-        <p>Understand earnings in relation to revenue, assets and shareholders' funds.</p>
-        <div class="analysis-points">
-          <div class="analysis-point"><span class="check">↗</span><span>Examine gross, operating and net profit margins.</span></div>
-          <div class="analysis-point"><span class="check">↗</span><span>Compare return ratios across years and companies.</span></div>
-          <div class="analysis-point"><span class="check">↗</span><span>Investigate changes alongside revenue and cost trends.</span></div>
-          <div class="analysis-point"><span class="check">↗</span><span>Use evidence to develop questions, not jump to conclusions.</span></div>
-        </div>
+      <div class="terminal-line">
+        <span class="prompt">01 &gt;</span>
+        <span>Collect annual reports and identify the relevant reporting period.</span>
+      </div>
+
+      <div class="terminal-line">
+        <span class="prompt">02 &gt;</span>
+        <span>Organise the income statement, balance sheet and cash flow statement.</span>
+      </div>
+
+      <div class="terminal-line">
+        <span class="prompt">03 &gt;</span>
+        <span>Calculate and review selected financial ratios and multi-year trends.</span>
+      </div>
+
+      <div class="terminal-line">
+        <span class="prompt">04 &gt;</span>
+        <span>Compare results, investigate unusual movements and record limitations.</span>
+      </div>
+
+      <div class="terminal-line">
+        <span class="prompt">05 &gt;</span>
+        <span class="terminal-value">
+          Communicate findings with evidence, context and clear caveats.
+        </span>
+      </div>
+
+      <div class="terminal-line">
+        <span class="prompt">$</span>
+        <span class="terminal-muted">ready_for_next_question<span class="cursor"></span></span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- SKILLS -->
-<section class="section" id="skills" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-  <div class="container">
+<section class="section" id="toolkit">
+  <div class="wrap">
+
     <div class="section-head reveal">
       <div>
-        <div class="eyebrow">04 / CAPABILITIES</div>
-        <h2 class="section-heading">My analytical toolkit.</h2>
-        <p class="section-intro">Finance concepts and tools developed through coursework and project-based learning.</p>
+        <div class="kicker">04 / Toolkit</div>
+        <h2 class="section-title">Tools I’m building<br>my edge with.</h2>
       </div>
-      <div class="section-index">SKILLS & TOOLS</div>
+      <p class="section-desc">
+        A developing toolkit for financial research and analysis.
+        The bars are visual indicators, not formal proficiency test scores.
+      </p>
     </div>
 
-    <div class="skills-layout">
-      <div class="skill-box reveal">
-        <h3>Finance & research</h3>
+    <div class="toolkit">
 
-        <div class="skill-row">
-          <div class="skill-row-top"><span>Financial statement analysis</span><span>PROJECT EXPERIENCE</span></div>
-          <div class="skill-track"><div class="skill-fill" data-width="76%"></div></div>
+      <div class="tool-group reveal">
+        <h3>Financial analysis</h3>
+
+        <div class="skill">
+          <div class="skill-top">
+            <span>Financial statement analysis</span>
+            <span>Developing</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="72%"></div>
+          </div>
         </div>
 
-        <div class="skill-row">
-          <div class="skill-row-top"><span>Financial ratio analysis</span><span>PROJECT EXPERIENCE</span></div>
-          <div class="skill-track"><div class="skill-fill" data-width="72%"></div></div>
+        <div class="skill">
+          <div class="skill-top">
+            <span>Ratio analysis</span>
+            <span>Developing</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="70%"></div>
+          </div>
         </div>
 
-        <div class="skill-row">
-          <div class="skill-row-top"><span>Company comparison</span><span>PROJECT EXPERIENCE</span></div>
-          <div class="skill-track"><div class="skill-fill" data-width="70%"></div></div>
-        </div>
-
-        <div class="skill-row">
-          <div class="skill-row-top"><span>Fundamental research</span><span>DEVELOPING</span></div>
-          <div class="skill-track"><div class="skill-fill" data-width="58%"></div></div>
-        </div>
-
-        <p class="muted" style="font-size:10px;margin-top:20px">
-          Progress bars are illustrative self-assessment indicators, not test scores or certifications.
-        </p>
-      </div>
-
-      <div class="skill-box reveal">
-        <h3>Tools & methods</h3>
-        <p class="muted" style="font-size:12px;margin-bottom:18px">Methods relevant to my project work and ongoing learning.</p>
-
-        <div class="tool-grid">
-          <span class="tool-chip">Microsoft Excel</span>
-          <span class="tool-chip">Financial Statements</span>
-          <span class="tool-chip">Ratio Analysis</span>
-          <span class="tool-chip">Trend Analysis</span>
-          <span class="tool-chip">Company Comparison</span>
-          <span class="tool-chip">Annual Reports</span>
-          <span class="tool-chip">Data Interpretation</span>
-          <span class="tool-chip">Business Research</span>
-        </div>
-
-        <div class="rule"></div>
-        <h3>Currently building</h3>
-        <div class="tool-grid">
-          <span class="tool-chip">Advanced Excel</span>
-          <span class="tool-chip">Valuation Methods</span>
-          <span class="tool-chip">Financial Modelling</span>
-          <span class="tool-chip">Data Visualisation</span>
+        <div class="skill">
+          <div class="skill-top">
+            <span>Fundamental research</span>
+            <span>Learning</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="62%"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- METHODOLOGY -->
-<section class="section" id="method">
-  <div class="container">
-    <div class="section-head reveal">
-      <div>
-        <div class="eyebrow">05 / RESEARCH PROCESS</div>
-        <h2 class="section-heading">From raw data to insight.</h2>
-        <p class="section-intro">A structured approach to understanding company performance.</p>
+      <div class="tool-group reveal">
+        <h3>Data & communication</h3>
+
+        <div class="skill">
+          <div class="skill-top">
+            <span>Excel & spreadsheet modelling</span>
+            <span>Developing</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="68%"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-top">
+            <span>Data visualisation</span>
+            <span>Learning</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="60%"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-top">
+            <span>Research presentation</span>
+            <span>Developing</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="66%"></div>
+          </div>
+        </div>
       </div>
+
     </div>
 
-    <div class="method-grid">
-      <article class="method-card reveal">
-        <div class="num">STEP_01</div><h3>Collect</h3>
-        <p>Identify relevant financial statements and supporting disclosures from company reports.</p>
-      </article>
-      <article class="method-card reveal">
-        <div class="num">STEP_02</div><h3>Organise</h3>
-        <p>Structure the information consistently and check figures before analysis.</p>
-      </article>
-      <article class="method-card reveal">
-        <div class="num">STEP_03</div><h3>Compare</h3>
-        <p>Examine historical trends, selected ratios and differences between businesses.</p>
-      </article>
-      <article class="method-card reveal">
-        <div class="num">STEP_04</div><h3>Interpret</h3>
-        <p>Explain what the evidence may indicate, note limitations and identify further questions.</p>
-      </article>
-    </div>
+    <p class="skill-note reveal">
+      Skill indicators are self-described learning-stage visuals, not
+      certifications or externally assessed ratings.
+    </p>
   </div>
 </section>
 
 <!-- EDUCATION -->
-<section class="section" id="education" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-  <div class="container">
+<section class="section" id="education">
+  <div class="wrap">
+
     <div class="section-head reveal">
       <div>
-        <div class="eyebrow">06 / ACADEMIC PROFILE</div>
-        <h2 class="section-heading">Education & background.</h2>
+        <div class="kicker">05 / Education</div>
+        <h2 class="section-title">The foundation.</h2>
       </div>
-      <div class="section-index">ACADEMICS</div>
+      <p class="section-desc">
+        Academic background in finance, supported by practical financial
+        analysis projects.
+      </p>
     </div>
 
-    <div class="timeline reveal">
-      <div class="timeline-item">
-        <div class="eyebrow">CURRENT PROGRAMME</div>
-        <h3>Post Graduate Diploma in Management — Financial Management</h3>
+    <div class="education">
+
+      <article class="edu-card reveal">
+        <div class="edu-date">2026 — 2028 · CURRENT</div>
+        <h3>PGDM — Financial Management</h3>
         <p>Fortune Institute of International Business (FIIB)</p>
-        <p>Focus: financial management, business analysis and finance-related learning.</p>
-      </div>
+        <span class="edu-score">FINANCE SPECIALISATION</span>
+      </article>
 
-      <div class="timeline-item">
-        <div class="eyebrow">UNDERGRADUATE</div>
-        <h3>Bachelor of Business Administration — Finance</h3>
-        <p>Chandigarh Group of Colleges, Landran · 2023–2026</p>
-        <p>CGPA: 8.05</p>
-      </div>
+      <article class="edu-card reveal">
+        <div class="edu-date">2023 — 2026</div>
+        <h3>BBA — Finance</h3>
+        <p>Chandigarh Group of Colleges, Landran</p>
+        <span class="edu-score">CGPA · 8.05</span>
+      </article>
 
-      <div class="timeline-item">
-        <div class="eyebrow">CLASS XII</div>
-        <h3>CBSE Senior Secondary</h3>
-        <p>87% · Mathematics</p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="eyebrow">CLASS X</div>
-        <h3>CBSE Secondary</h3>
-        <p>88.8%</p>
-      </div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="section" id="contact">
-  <div class="container">
-    <div class="contact-card reveal">
-      <div class="eyebrow">07 / LET'S CONNECT</div>
-      <h2>Let's talk finance,<br>business and ideas.</h2>
-      <p>
-        I am interested in learning from finance professionals, exploring
-        analytical opportunities and connecting with people who enjoy
-        understanding businesses beyond their headlines.
-      </p>
-      <div class="contact-links">
-        <a class="btn btn-primary" href="mailto:sujalbansal0077@gmail.com">✉ Email me</a>
-        <a class="btn btn-secondary" href="https://www.linkedin.com/in/sujal-bansal-544842328/" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a class="btn btn-secondary" href="https://github.com/sujalbansal0077-hub" target="_blank" rel="noopener">GitHub ↗</a>
+  <div class="wrap">
+
+    <div class="contact-box reveal">
+      <div>
+        <div class="kicker">06 / Contact</div>
+        <h2>
+          Let’s talk finance<br>
+          <span class="accent">and opportunity.</span>
+        </h2>
+        <p>
+          I’m interested in financial research, analysis projects and
+          opportunities to keep learning. Feel free to connect with me.
+        </p>
+      </div>
+
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:sujalbansal0077@gmail.com">
+          Email me ↗
+        </a>
+
+        <a class="btn btn-secondary"
+           href="https://www.linkedin.com/in/sujal-bansal-544842328/"
+           target="_blank" rel="noopener">
+          LinkedIn profile ↗
+        </a>
+
+        <a class="btn btn-secondary"
+           href="https://github.com/sujalbansal0077-hub"
+           target="_blank" rel="noopener">
+          GitHub profile ↗
+        </a>
       </div>
     </div>
+
   </div>
 </section>
 
 </main>
 
 <footer>
-  <div class="container footer-inner">
+  <div class="wrap footer-row">
     <span>© <span id="year"></span> Sujal Bansal · Finance Portfolio</span>
-    <span class="mono">BUILT AROUND CURIOSITY & EVIDENCE</span>
-    <a class="back-top" href="#home">Back to top ↑</a>
+    <span>Built around curiosity, evidence and financial thinking.</span>
+    <a href="#overview" class="text-link">Back to top ↑</a>
   </div>
 </footer>
 
-<!-- SEARCH DIALOG -->
-<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search portfolio">
+<!-- SEARCH -->
+<div class="search-overlay" id="searchOverlay" role="dialog"
+     aria-modal="true" aria-label="Search portfolio">
   <div class="search-box">
-    <div style="display:flex;justify-content:space-between;align-items:center">
-      <strong style="font-family:'Space Grotesk'">Search portfolio</strong>
-      <button class="icon-btn" id="closeSearch" aria-label="Close search">✕</button>
-    </div>
-    <input id="searchInput" type="search" placeholder="Try: Suzlon, education, skills..." autocomplete="off">
+    <input id="searchInput" type="search"
+           placeholder="Search research, projects, skills…"
+           autocomplete="off" aria-label="Search portfolio">
     <div class="search-results" id="searchResults"></div>
-    <p class="muted" style="font-size:10px;margin-top:15px">Press Escape to close.</p>
   </div>
 </div>
 
-<div class="toast" id="toast" role="status"></div>
-
 <script>
-/* Initialise the chart before calling applyTheme.
-   This prevents the earlier heroChart initialisation error. */
+document.addEventListener("DOMContentLoaded", () => {
 
-const $ = (selector, root = document) => root.querySelector(selector);
-const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const $ = (selector, parent = document) =>
+    parent.querySelector(selector);
 
-const body = document.body;
-const themeBtn = $("#themeBtn");
-const chartCanvas = $("#heroChart");
-const chartContext = chartCanvas ? chartCanvas.getContext("2d") : null;
+  const $$ = (selector, parent = document) =>
+    [...parent.querySelectorAll(selector)];
 
-$("#year").textContent = new Date().getFullYear();
+  const body = document.body;
+  const canvas = $("#heroChart");
+  const ctx = canvas.getContext("2d");
 
-/* Theme */
-function applyTheme(theme) {
-  body.classList.toggle("light", theme === "light");
-  themeBtn.textContent = theme === "light" ? "☼" : "◐";
+  let chartProgress = 0;
+  let animationFrame = 0;
+  let resizeTimer;
+
+  /* THEME SWITCHER */
 
   try {
-    localStorage.setItem("sujal-portfolio-theme", theme);
-  } catch (error) {}
-
-  drawHeroChart();
-}
-
-let savedTheme = "dark";
-try {
-  savedTheme = localStorage.getItem("sujal-portfolio-theme") || "dark";
-} catch (error) {}
-
-themeBtn.addEventListener("click", () => {
-  applyTheme(body.classList.contains("light") ? "dark" : "light");
-});
-
-/* Illustrative chart — no stock prices or live market data */
-function drawHeroChart() {
-  if (!chartCanvas || !chartContext) return;
-
-  const rect = chartCanvas.getBoundingClientRect();
-  if (!rect.width || !rect.height) return;
-
-  const ratio = Math.min(window.devicePixelRatio || 1, 2);
-  chartCanvas.width = Math.round(rect.width * ratio);
-  chartCanvas.height = Math.round(rect.height * ratio);
-
-  const ctx = chartContext;
-  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-
-  const width = rect.width;
-  const height = rect.height;
-  ctx.clearRect(0, 0, width, height);
-
-  const points = [
-    [0,.79],[.12,.68],[.24,.74],[.36,.42],
-    [.49,.55],[.63,.26],[.76,.39],[.88,.22],[1,.04]
-  ];
-
-  const coords = points.map(([x,y]) => ({
-    x:x*width,
-    y:12+y*(height-25)
-  }));
-
-  ctx.strokeStyle = "rgba(148,169,204,.13)";
-  ctx.lineWidth = 1;
-
-  for (let i=1;i<=3;i++) {
-    const y=height*i/4;
-    ctx.beginPath();
-    ctx.moveTo(0,y);
-    ctx.lineTo(width,y);
-    ctx.stroke();
+    const savedTheme = localStorage.getItem("sujal-portfolio-theme");
+    if (savedTheme === "light") body.classList.add("light");
+  } catch (error) {
+    // Website still works if browser storage is unavailable.
   }
 
-  const gradient = ctx.createLinearGradient(0,0,0,height);
-  gradient.addColorStop(0,"rgba(98,229,255,.22)");
-  gradient.addColorStop(1,"rgba(98,229,255,0)");
+  $("#themeToggle").addEventListener("click", () => {
+    body.classList.toggle("light");
 
-  ctx.beginPath();
-  ctx.moveTo(coords[0].x,height);
+    try {
+      localStorage.setItem(
+        "sujal-portfolio-theme",
+        body.classList.contains("light") ? "light" : "dark"
+      );
+    } catch (error) {}
 
-  coords.forEach((p,i) => {
-    if (i===0) {
-      ctx.lineTo(p.x,p.y);
-    } else {
-      const prev=coords[i-1];
-      const mid=(prev.x+p.x)/2;
-      ctx.bezierCurveTo(mid,prev.y,mid,p.y,p.x,p.y);
-    }
+    drawChart();
   });
 
-  ctx.lineTo(width,height);
-  ctx.closePath();
-  ctx.fillStyle=gradient;
-  ctx.fill();
+  /* ANIMATED CANVAS CHART
+     The data is illustrative, not company performance data. */
 
-  ctx.beginPath();
-  coords.forEach((p,i) => {
-    if (i===0) ctx.moveTo(p.x,p.y);
-    else {
-      const prev=coords[i-1];
-      const mid=(prev.x+p.x)/2;
-      ctx.bezierCurveTo(mid,prev.y,mid,p.y,p.x,p.y);
+  function css(variable) {
+    return getComputedStyle(body).getPropertyValue(variable).trim();
+  }
+
+  function drawChart() {
+    const rect = canvas.getBoundingClientRect();
+    const dpr = Math.max(1, window.devicePixelRatio || 1);
+
+    const width = Math.max(280, rect.width);
+    const height = Math.max(150, rect.height);
+
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
+
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, width, height);
+
+    const values = [
+      .25, .31, .28, .43, .39, .55,
+      .49, .67, .59, .75, .71, .88
+    ];
+
+    const left = 5;
+    const right = width - 5;
+    const top = 12;
+    const bottom = height - 12;
+
+    const x = i => left + i * (right-left) / (values.length-1);
+    const y = v => bottom - v * (bottom-top);
+
+    /* Grid */
+    ctx.strokeStyle = css("--line");
+    ctx.lineWidth = 1;
+
+    for (let i = 1; i <= 3; i++) {
+      ctx.beginPath();
+      ctx.moveTo(0, height*i/4);
+      ctx.lineTo(width, height*i/4);
+      ctx.stroke();
     }
+
+    const visibleCount = Math.max(
+      2,
+      Math.ceil((values.length-1) * chartProgress) + 1
+    );
+
+    const visible = values.slice(0, visibleCount);
+
+    /* Area */
+    ctx.beginPath();
+
+    visible.forEach((value, i) => {
+      if (i === 0) ctx.moveTo(x(i), y(value));
+      else ctx.lineTo(x(i), y(value));
+    });
+
+    ctx.lineTo(x(visible.length-1), bottom);
+    ctx.lineTo(x(0), bottom);
+    ctx.closePath();
+
+    ctx.fillStyle = css("--accent") + "20";
+    ctx.fill();
+
+    /* Line */
+    ctx.beginPath();
+
+    visible.forEach((value, i) => {
+      if (i === 0) ctx.moveTo(x(i), y(value));
+      else ctx.lineTo(x(i), y(value));
+    });
+
+    ctx.strokeStyle = css("--accent");
+    ctx.lineWidth = 2.5;
+    ctx.lineJoin = "round";
+    ctx.lineCap = "round";
+    ctx.stroke();
+
+    /* Last point */
+    const last = visible.length - 1;
+
+    ctx.beginPath();
+    ctx.arc(x(last), y(visible[last]), 4, 0, Math.PI * 2);
+    ctx.fillStyle = css("--accent");
+    ctx.fill();
+  }
+
+  function animateChart() {
+    cancelAnimationFrame(animationFrame);
+
+    const start = performance.now();
+    const duration = 1200;
+
+    function tick(now) {
+      chartProgress = Math.min(1, (now-start)/duration);
+      drawChart();
+
+      if (chartProgress < 1) {
+        animationFrame = requestAnimationFrame(tick);
+      }
+    }
+
+    chartProgress = 0;
+    animationFrame = requestAnimationFrame(tick);
+  }
+
+  /* Important: initialise the chart only after the canvas exists. */
+  animateChart();
+
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(drawChart, 100);
   });
 
-  ctx.strokeStyle="#62e5ff";
-  ctx.lineWidth=2.2;
-  ctx.stroke();
+  /* FOOTER YEAR */
 
-  const last=coords[coords.length-1];
-  ctx.beginPath();
-  ctx.arc(last.x,last.y,3.5,0,Math.PI*2);
-  ctx.fillStyle="#77f0bd";
-  ctx.fill();
-}
+  $("#year").textContent = new Date().getFullYear();
 
-applyTheme(savedTheme);
+  /* MOBILE NAVIGATION */
 
-let resizeTimer;
-window.addEventListener("resize",() => {
-  clearTimeout(resizeTimer);
-  resizeTimer=setTimeout(drawHeroChart,100);
-});
+  $("#menuToggle").addEventListener("click", () => {
+    $("#navLinks").classList.toggle("open");
+  });
 
-/* Mobile navigation */
-const navLinks=$("#navLinks");
-$("#menuBtn").addEventListener("click",() => navLinks.classList.toggle("open"));
+  $$("#navLinks a").forEach(link => {
+    link.addEventListener("click", () => {
+      $("#navLinks").classList.remove("open");
+    });
+  });
 
-$$("#navLinks a").forEach(link => {
-  link.addEventListener("click",() => navLinks.classList.remove("open"));
-});
+  /* SCROLL PROGRESS */
 
-/* Reading progress */
-function updateProgress() {
-  const scrollable=document.documentElement.scrollHeight-window.innerHeight;
-  const progress=scrollable>0 ? window.scrollY/scrollable*100 : 0;
-  $("#progressBar").style.width=progress+"%";
-}
-window.addEventListener("scroll",updateProgress,{passive:true});
-updateProgress();
+  const progress = $("#scrollProgress");
 
-/* Active navigation */
-if ("IntersectionObserver" in window) {
-  const sectionObserver=new IntersectionObserver(entries => {
+  function updateProgress() {
+    const maxScroll =
+      document.documentElement.scrollHeight - window.innerHeight;
+
+    const percentage = maxScroll > 0
+      ? (window.scrollY / maxScroll) * 100
+      : 0;
+
+    progress.style.width = percentage + "%";
+  }
+
+  window.addEventListener("scroll", updateProgress, {passive:true});
+  updateProgress();
+
+  /* ACTIVE NAVIGATION */
+
+  const navObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      $$("#navLinks a").forEach(link => {
+
+      $$(".nav-links a").forEach(link => {
         link.classList.toggle(
           "active",
-          link.getAttribute("href")==="#"+entry.target.id
+          link.getAttribute("href") === "#" + entry.target.id
         );
       });
     });
-  },{rootMargin:"-25% 0px -60% 0px"});
+  }, {rootMargin:"-30% 0px -60% 0px"});
 
-  $$("main section[id]").forEach(section => sectionObserver.observe(section));
-}
+  $$("main section[id]").forEach(section => {
+    navObserver.observe(section);
+  });
 
-/* Scroll reveal */
-if ("IntersectionObserver" in window) {
-  const revealObserver=new IntersectionObserver(entries => {
+  /* REVEAL ANIMATIONS */
+
+  const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
         revealObserver.unobserve(entry.target);
       }
     });
-  },{threshold:.08});
+  }, {threshold:.12});
 
-  $$(".reveal").forEach(el => revealObserver.observe(el));
+  $$(".reveal").forEach(element => {
+    revealObserver.observe(element);
+  });
 
-  const skillObserver=new IntersectionObserver(entries => {
+  /* ANIMATED SKILL BARS */
+
+  const skillObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.width=entry.target.dataset.width || "0%";
-        skillObserver.unobserve(entry.target);
-      }
+      if (!entry.isIntersecting) return;
+
+      $$(".skill-fill", entry.target).forEach(fill => {
+        fill.style.width = fill.dataset.width;
+      });
+
+      skillObserver.unobserve(entry.target);
     });
-  },{threshold:.3});
+  }, {threshold:.2});
 
-  $$(".skill-fill").forEach(el => skillObserver.observe(el));
-} else {
-  $$(".reveal").forEach(el => el.classList.add("visible"));
-  $$(".skill-fill").forEach(el => el.style.width=el.dataset.width || "0%");
-}
-
-/* Expandable project details */
-$$("[data-expand]").forEach(button => {
-  button.addEventListener("click",() => {
-    const panel=document.getElementById(button.dataset.expand);
-    if (!panel) return;
-
-    const open=panel.classList.toggle("open");
-    button.setAttribute("aria-expanded",String(open));
-    button.textContent=open ? "− Hide project details" : "+ Explore project details";
+  $$(".tool-group").forEach(group => {
+    skillObserver.observe(group);
   });
-});
 
-/* Interactive financial analysis tabs */
-const analysisContent = {
-  profitability:{
-    number:"01",
-    title:"Profitability",
-    intro:"Understand earnings in relation to revenue, assets and shareholders' funds.",
-    points:[
-      "Examine gross, operating and net profit margins.",
-      "Compare return ratios across years and companies.",
-      "Investigate changes alongside revenue and cost trends.",
-      "Use evidence to develop questions, not jump to conclusions."
-    ]
-  },
-  liquidity:{
-    number:"02",
-    title:"Liquidity",
-    intro:"Examine the relationship between short-term assets and short-term obligations.",
-    points:[
-      "Review current and quick ratios where the required data is available.",
-      "Consider the composition and quality of current assets.",
-      "Compare working-capital movements across reporting periods.",
-      "Interpret ratios in the context of the company's business model."
-    ]
-  },
-  cashflow:{
-    number:"03",
-    title:"Cash flow",
-    intro:"Study cash movements through operating, investing and financing activities.",
-    points:[
-      "Examine operating cash flow across periods.",
-      "Compare operating cash flow with reported earnings.",
-      "Review investing and financing cash-flow movements.",
-      "Investigate material differences between profit and cash generation."
-    ]
-  },
-  efficiency:{
-    number:"04",
-    title:"Efficiency",
-    intro:"Consider how effectively the company uses its assets and working capital.",
-    points:[
-      "Review asset utilisation and turnover ratios.",
-      "Examine receivables and inventory trends where relevant.",
-      "Compare performance consistently across companies.",
-      "Consider industry context before interpreting differences."
-    ]
+  /* INTERACTIVE PROJECT TABS */
+
+  const projectCopy = {
+    suzlon: {
+      purpose:
+        "Review reported financial statements over five years to understand the company's financial trajectory.",
+
+      process:
+        "Organise multi-year statement data and examine selected profitability, liquidity, leverage and cash-flow indicators. Verify figures against underlying reports before drawing conclusions.",
+
+      outcome:
+        "A structured financial-analysis project. The repository contains the working materials; specific conclusions should be read alongside the underlying data and report."
+    },
+
+    fmcg: {
+      purpose:
+        "Compare HUL, Britannia Industries and Nestlé India using a consistent multi-year financial-analysis framework.",
+
+      process:
+        "Organise financial statement items into a comparable format, review selected ratios and trends, and consider how business models affect peer comparisons.",
+
+      outcome:
+        "A comparative FMCG financial-report analysis project, with company-level materials available in the project repository."
+    }
+  };
+
+  $$(".project-tabs button").forEach(button => {
+    button.addEventListener("click", () => {
+      const project = button.dataset.project;
+      const view = button.dataset.view;
+      const parent = button.closest(".project-body");
+
+      $$(".project-tabs button", parent).forEach(tab => {
+        tab.classList.toggle("active", tab === button);
+      });
+
+      $("#detail-" + project).textContent = projectCopy[project][view];
+    });
+  });
+
+  /* SEARCH */
+
+  const overlay = $("#searchOverlay");
+  const input = $("#searchInput");
+  const results = $("#searchResults");
+
+  const searchable = [
+    ["Overview", "Introduction to Sujal Bansal", "#overview"],
+    ["Research", "Fundamental analysis and research interests", "#research"],
+    ["Companies", "Suzlon Energy and FMCG projects", "#companies"],
+    ["Analysis", "Financial analysis workflow", "#analysis"],
+    ["Toolkit", "Excel, ratios, statements and skills", "#toolkit"],
+    ["Education", "PGDM Finance at FIIB and BBA Finance", "#education"],
+    ["Contact", "Email, LinkedIn and GitHub", "#contact"]
+  ];
+
+  function renderSearch(query = "") {
+    const term = query.toLowerCase().trim();
+
+    const matches = searchable.filter(item =>
+      item.join(" ").toLowerCase().includes(term)
+    );
+
+    if (matches.length === 0) {
+      results.innerHTML =
+        '<p style="padding:10px;color:var(--muted);font-size:12px">' +
+        'No matching section. Try “research”, “companies” or “education”.</p>';
+      return;
+    }
+
+    results.innerHTML = matches.map(item =>
+      `<a href="${item[2]}">
+        <strong>${item[0]}</strong><br>
+        <span>${item[1]}</span>
+      </a>`
+    ).join("");
+
+    $$("#searchResults a").forEach(link => {
+      link.addEventListener("click", () => {
+        overlay.classList.remove("open");
+        input.value = "";
+      });
+    });
   }
-};
 
-$$("[data-analysis]").forEach(button => {
-  button.addEventListener("click",() => {
-    const data=analysisContent[button.dataset.analysis];
-    if (!data) return;
-
-    $$("[data-analysis]").forEach(tab => {
-      const active=tab===button;
-      tab.classList.toggle("active",active);
-      tab.setAttribute("aria-selected",String(active));
-    });
-
-    $("#analysisPanel").innerHTML=`
-      <div class="eyebrow">ANALYSIS_LENS / ${data.number}</div>
-      <h3>${data.title}</h3>
-      <p>${data.intro}</p>
-      <div class="analysis-points">
-        ${data.points.map(point=>`
-          <div class="analysis-point">
-            <span class="check">↗</span><span>${point}</span>
-          </div>
-        `).join("")}
-      </div>
-    `;
+  $("#searchOpen").addEventListener("click", () => {
+    overlay.classList.add("open");
+    renderSearch();
+    input.focus();
   });
-});
 
-/* Portfolio search */
-const searchOverlay=$("#searchOverlay");
-const searchInput=$("#searchInput");
-const searchResults=$("#searchResults");
-
-const searchableSections=[
-  {title:"Overview — Sujal Bansal",url:"#home",words:"profile finance introduction"},
-  {title:"Suzlon Energy financial analysis",url:"#research",words:"suzlon equity research ratios five year"},
-  {title:"FMCG financial analysis",url:"#research",words:"hul britannia nestle comparison"},
-  {title:"Company coverage",url:"#companies",words:"companies renewable energy consumer goods"},
-  {title:"Financial analysis framework",url:"#analysis",words:"profitability liquidity cash flow efficiency"},
-  {title:"Skills and tools",url:"#skills",words:"excel financial modelling research"},
-  {title:"Research methodology",url:"#method",words:"collect organise compare interpret"},
-  {title:"Education",url:"#education",words:"fiib pgdm bba cgpa academics"},
-  {title:"Contact and LinkedIn",url:"#contact",words:"email linkedin github contact"}
-];
-
-function renderSearch(query="") {
-  const q=query.trim().toLowerCase();
-  const matches=searchableSections.filter(item =>
-    (item.title+" "+item.words).toLowerCase().includes(q)
-  );
-
-  searchResults.innerHTML=matches.length
-    ? matches.map(item=>`<a href="${item.url}">${item.title} ↗</a>`).join("")
-    : `<p class="muted" style="font-size:12px;padding:10px">No matching section found.</p>`;
-
-  $$("#searchResults a").forEach(link => {
-    link.addEventListener("click",() => {
-      searchOverlay.classList.remove("open");
-      searchInput.value="";
-    });
+  input.addEventListener("input", () => {
+    renderSearch(input.value);
   });
-}
 
-function openSearch() {
-  searchOverlay.classList.add("open");
-  renderSearch("");
-  setTimeout(()=>searchInput.focus(),50);
-}
+  overlay.addEventListener("click", event => {
+    if (event.target === overlay) {
+      overlay.classList.remove("open");
+    }
+  });
 
-$("#searchBtn").addEventListener("click",openSearch);
-$("#closeSearch").addEventListener("click",()=>searchOverlay.classList.remove("open"));
-searchInput.addEventListener("input",()=>renderSearch(searchInput.value));
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      overlay.classList.remove("open");
+    }
 
-searchOverlay.addEventListener("click",event => {
-  if (event.target===searchOverlay) searchOverlay.classList.remove("open");
-});
+    if (
+      event.key === "/" &&
+      !["INPUT","TEXTAREA"].includes(document.activeElement.tagName)
+    ) {
+      event.preventDefault();
+      overlay.classList.add("open");
+      input.focus();
+    }
+  });
 
-document.addEventListener("keydown",event => {
-  if (event.key==="Escape") searchOverlay.classList.remove("open");
-  if ((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==="k") {
-    event.preventDefault();
-    openSearch();
-  }
 });
 </script>
-
 </body>
 </html>
