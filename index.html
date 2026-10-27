@@ -1,43 +1,1472 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b100e">
 <title>Sujal Bansal | Finance Portfolio</title>
+
 <style>
-:root{--bg:#101713;--panel:#18231d;--panel2:#202d25;--text:#f1f0e7;--muted:#b8c1b8;--green:#9bc4a4;--gold:#d8b46b;--line:#35453a;--white:#fffdf5}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}.topbar{position:sticky;top:0;z-index:5;background:rgba(16,23,19,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:17px 0}.brand{font-weight:800;letter-spacing:.04em}.brand span{color:var(--gold)}nav{display:flex;gap:22px;flex-wrap:wrap;font-size:13px;color:var(--muted)}nav a:hover,.textlink:hover{color:var(--gold)}.hero{padding:82px 0 66px;display:grid;grid-template-columns:1.35fr .65fr;gap:46px;align-items:center}.eyebrow{color:var(--green);font-size:12px;font-weight:800;letter-spacing:.19em;text-transform:uppercase}.hero h1{font-size:clamp(43px,7vw,78px);line-height:.98;letter-spacing:-.055em;margin:20px 0 18px}.hero h1 em{font-style:normal;color:var(--gold)}.lead{max-width:630px;color:var(--muted);font-size:17px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{padding:12px 17px;border-radius:7px;border:1px solid var(--line);font-size:13px;font-weight:750;display:inline-flex;align-items:center;gap:8px}.btn.primary{background:var(--gold);color:#1c211a;border-color:var(--gold)}.btn:hover{transform:translateY(-1px)}.hero-card{border:1px solid var(--line);border-radius:16px;padding:23px;background:linear-gradient(145deg,#203027,#151e18);box-shadow:0 25px 70px #0003}.monogram{width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#182019;font-weight:900;font-size:26px;letter-spacing:-.05em;margin-bottom:24px}.hero-card .label{color:var(--muted);font-size:12px}.hero-card h3{margin:4px 0 15px;font-size:21px}.tags{display:flex;gap:7px;flex-wrap:wrap}.tag{font-size:11px;border:1px solid #4a604f;color:var(--green);padding:5px 8px;border-radius:99px}.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}.mini{padding:14px;border:1px solid var(--line);border-radius:10px;background:#ffffff04}.mini strong{display:block;color:var(--gold);font-size:17px}.mini span{font-size:11px;color:var(--muted)}section{padding:62px 0;border-top:1px solid var(--line)}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}.section-head h2{font-size:clamp(27px,4vw,42px);letter-spacing:-.04em;margin:8px 0 0}.section-head p{color:var(--muted);max-width:450px;margin:0;font-size:14px}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.box{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:23px}.box h3{margin:0 0 10px;font-size:17px}.box p{color:var(--muted);font-size:14px;margin:0}.timeline{display:grid;gap:13px}.timeline-row{display:flex;gap:16px;align-items:start}.year{color:var(--gold);font-size:12px;font-weight:800;min-width:84px;padding-top:3px}.timeline-row strong{display:block}.timeline-row span{font-size:13px;color:var(--muted)}.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.project{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}.project-top{padding:22px;background:linear-gradient(125deg,#26382b,#19231c);border-bottom:1px solid var(--line)}.project-top .number{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.12em}.project-top h3{font-size:22px;margin:10px 0 6px}.project-top p{color:var(--muted);font-size:13px;margin:0}.project-body{padding:21px}.p-o{display:grid;gap:13px}.p-o div{border-left:2px solid var(--green);padding-left:12px}.p-o strong{font-size:11px;letter-spacing:.12em;color:var(--gold);text-transform:uppercase}.p-o p{font-size:13px;color:var(--muted);margin:4px 0 0}.project-foot{padding:0 21px 21px;display:flex;gap:9px;flex-wrap:wrap}.small-btn{font-size:12px;color:var(--green);border:1px solid var(--line);border-radius:6px;padding:8px 10px}.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.skill h3{font-size:15px;margin:0 0 14px}.skill-list{display:flex;gap:8px;flex-wrap:wrap}.skill-list span{font-size:12px;background:#ffffff07;border:1px solid var(--line);padding:7px 9px;border-radius:6px;color:var(--muted)}.note{color:var(--muted);font-size:12px;margin-top:16px}.contact{display:grid;grid-template-columns:1fr auto;align-items:center;gap:25px;background:linear-gradient(110deg,#203127,#172019);padding:30px;border:1px solid var(--line);border-radius:15px}.contact h2{margin:0 0 8px;font-size:30px}.contact p{color:var(--muted);margin:0}.contact-links{display:flex;gap:10px;flex-wrap:wrap}.footer{padding:26px 0;color:#8d9b90;font-size:11px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.status{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold)}.modal{position:fixed;inset:0;background:#000b;display:none;place-items:center;padding:20px;z-index:10}.modal.open{display:grid}.modal-card{max-width:650px;width:100%;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:25px;max-height:85vh;overflow:auto}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:15px}.modal-head button{background:none;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:7px 10px;cursor:pointer}.modal-card p,.modal-card li{color:var(--muted);font-size:14px}
-@media(max-width:760px){.nav{align-items:flex-start;flex-direction:column}.hero{grid-template-columns:1fr;padding-top:54px}.hero-card{max-width:450px}.mini-grid{grid-template-columns:1fr 1fr 1fr}.about-grid,.project-grid,.skills-grid{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}.contact{grid-template-columns:1fr}.contact-links{margin-top:5px}}@media(max-width:440px){nav{gap:13px}.mini-grid{grid-template-columns:1fr}.hero h1{font-size:48px}}
+:root {
+  --bg: #0b100e;
+  --panel: #142019;
+  --panel2: #1c2b20;
+  --txt: #f4f2e9;
+  --muted: #aab7ac;
+  --green: #a4d3ae;
+  --gold: #e2bb69;
+  --line: #304034;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--txt);
+  font: 15px/1.6 Inter, system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.15;
+  background-image:
+    linear-gradient(#78927c12 1px, transparent 1px),
+    linear-gradient(90deg, #78927c12 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrap {
+  width: min(1120px, 91%);
+  margin: auto;
+}
+
+/* NAVIGATION */
+
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  background: #0b100ee8;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #ffffff14;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+}
+
+.brand {
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.brand b {
+  color: var(--gold);
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--gold);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+  background: none;
+  color: var(--txt);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 7px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 45px;
+  padding: 65px 0;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 850;
+}
+
+.pulse {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-right: 8px;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 0 3px #e2bb6944;
+  }
+}
+
+h1 {
+  font-size: clamp(56px, 8vw, 98px);
+  line-height: 0.92;
+  letter-spacing: -0.075em;
+  margin: 22px 0;
+}
+
+h1 span {
+  color: var(--gold);
+  font: italic 500 1em Georgia, serif;
+}
+
+.lead {
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  padding: 11px 15px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 800;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+}
+
+.primary {
+  background: var(--gold);
+  color: #171b14;
+  border-color: var(--gold);
+}
+
+.meta {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.meta strong {
+  display: block;
+  color: var(--txt);
+  font-size: 14px;
+}
+
+/* ANIMATED HERO GRAPHIC */
+
+.visual {
+  height: 440px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid #526a5540;
+  border-radius: 50%;
+  animation: spin 32s linear infinite;
+}
+
+.o1 {
+  width: 350px;
+  height: 350px;
+}
+
+.o2 {
+  width: 270px;
+  height: 270px;
+  animation-direction: reverse;
+  animation-duration: 24s;
+}
+
+.o3 {
+  width: 185px;
+  height: 185px;
+}
+
+.orbit::after {
+  content: "";
+  position: absolute;
+  top: 14%;
+  left: 15%;
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 18px #e2bb6977;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.core {
+  width: 145px;
+  height: 145px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #e7c77f, #927034);
+  color: #151a13;
+  font-size: 42px;
+  font-weight: 950;
+  box-shadow: 0 0 80px #d8b46b20;
+}
+
+.float {
+  position: absolute;
+  background: #16221bee;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 12px 14px;
+  box-shadow: 0 20px 60px #0005;
+  animation: float 5s ease-in-out infinite;
+}
+
+.float small {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+.float strong {
+  font-size: 12px;
+}
+
+.f1 {
+  top: 10%;
+  right: 0;
+}
+
+.f2 {
+  top: 47%;
+  left: 0;
+  animation-delay: -1.4s;
+}
+
+.f3 {
+  bottom: 8%;
+  right: 0;
+  animation-delay: -2.5s;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+/* MOVING TEXT STRIP */
+
+.ticker {
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  padding: 12px 0;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  gap: 30px;
+  color: #809584;
+  font-size: 10px;
+  letter-spacing: 0.17em;
+  font-weight: 850;
+  animation: marquee 32s linear infinite;
+}
+
+.track span::after {
+  content: "✳";
+  color: var(--gold);
+  margin-left: 30px;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* SECTIONS */
+
+section.content {
+  padding: 82px 0;
+  border-bottom: 1px solid #ffffff0c;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.7s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.head h2 {
+  font-size: clamp(32px, 5vw, 52px);
+  letter-spacing: -0.06em;
+  line-height: 1.05;
+  margin: 9px 0 0;
+}
+
+.head > p {
+  max-width: 420px;
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.panel,
+.project,
+.skill,
+.edu {
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, #17231b, #101713);
+  border-radius: 12px;
+  padding: 23px;
+}
+
+.panel h3,
+.skill h3,
+.edu h3 {
+  margin: 0 0 10px;
+  font-size: 17px;
+}
+
+.panel p,
+.edu p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+.focus {
+  display: grid;
+  gap: 11px;
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.focus span::before {
+  content: "↗";
+  color: var(--gold);
+  margin-right: 10px;
+}
+
+/* PROJECT CARDS */
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.project {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, border-color 0.25s;
+  background: var(--panel);
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  border-color: #759477;
+}
+
+.chart {
+  height: 170px;
+  position: relative;
+  display: flex;
+  align-items: end;
+  gap: 9px;
+  padding: 24px 25px 0;
+  background:
+    radial-gradient(circle at 75% 20%, #35553b, transparent 42%),
+    linear-gradient(135deg, #1c2c20, #101713);
+}
+
+.chart.fmcg {
+  background:
+    radial-gradient(circle at 70% 25%, #735b30, transparent 40%),
+    linear-gradient(135deg, #25291d, #101713);
+}
+
+.chart label {
+  position: absolute;
+  top: 15px;
+  left: 22px;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: #d6e4d5;
+  font-weight: 850;
+}
+
+.bar {
+  flex: 1;
+  max-width: 35px;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(#a4d3ae, #47744e);
+  border: 1px solid #a4d3ae55;
+  transform-origin: bottom;
+  animation: grow 1.3s both;
+  animation-delay: var(--d);
+}
+
+.fmcg .bar {
+  background: linear-gradient(#e2bb69, #856634);
+}
+
+@keyframes grow {
+  from {
+    transform: scaleY(0.05);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.pbody {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.kicker {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.project h3 {
+  font-size: 22px;
+  line-height: 1.25;
+  margin: 7px 0;
+}
+
+.desc {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 15px;
+}
+
+/* INTERACTIVE PURPOSE / PROCESS / OUTCOME */
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--line);
+  gap: 4px;
+}
+
+.tab {
+  background: none;
+  border: 0;
+  color: #819285;
+  padding: 9px 8px;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.case {
+  color: var(--muted);
+  font-size: 12px;
+  min-height: 78px;
+  padding: 13px 0;
+}
+
+.pactions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.pactions .btn {
+  font-size: 10px;
+  padding: 9px;
+}
+
+.note {
+  color: #849386;
+  font-size: 11px;
+  margin-top: 18px;
+}
+
+/* SKILLS */
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.skill .symbol {
+  font-size: 21px;
+  color: var(--gold);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.chips span {
+  font-size: 10px;
+  color: var(--muted);
+  border: 1px solid #344538;
+  border-radius: 5px;
+  padding: 6px 8px;
+}
+
+/* EDUCATION */
+
+.education {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+
+.edu {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 12px;
+}
+
+.year {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.edu h3 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* CONTACT */
+
+.contact {
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 90% 10%, #2b4933, transparent 42%),
+    var(--panel);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.contact h2 {
+  font-size: clamp(32px, 5vw, 48px);
+  letter-spacing: -0.06em;
+  margin: 8px 0;
+}
+
+.contact p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 24px 0;
+  color: #7d8d80;
+  font-size: 10px;
+}
+
+/* SCROLL PROGRESS AND TOP BUTTON */
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--gold);
+  width: 0;
+  z-index: 30;
+}
+
+.topbtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--panel2);
+  border: 1px solid var(--line);
+  color: var(--gold);
+  z-index: 8;
+}
+
+.topbtn.show {
+  display: grid;
+}
+
+/* PROJECT DETAILS POP-UP */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: #000b;
+  display: none;
+  place-items: center;
+  padding: 18px;
+  z-index: 40;
+}
+
+.modal.open {
+  display: grid;
+}
+
+.modalbox {
+  max-width: 570px;
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 24px;
+}
+
+.modalhead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.modalhead button {
+  background: none;
+  color: var(--txt);
+  border: 1px solid var(--line);
+  padding: 7px 10px;
+  border-radius: 6px;
+}
+
+.modalbox p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.modalbox a {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 780px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 50px 0;
+  }
+
+  .visual {
+    height: 390px;
+  }
+
+  .grid2,
+  .projects,
+  .education {
+    grid-template-columns: 1fr;
+  }
+
+  .skills {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .head {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .contact {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .menu {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    padding: 18px 5%;
+    background: #0b100e;
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .visual {
+    height: 340px;
+  }
+
+  .o1 {
+    width: 285px;
+    height: 285px;
+  }
+
+  .o2 {
+    width: 220px;
+    height: 220px;
+  }
+
+  .o3 {
+    width: 155px;
+    height: 155px;
+  }
+
+  .core {
+    width: 115px;
+    height: 115px;
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+  }
+
+  section.content {
+    padding: 62px 0;
+  }
+
+  .contact {
+    padding: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
 </style>
 </head>
+
 <body>
-<header class="topbar"><div class="wrap nav"><a class="brand" href="#home">SB<span>.</span> / FINANCE</a><nav aria-label="Main navigation"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></nav></div></header>
+
+<div class="progress" id="progress"></div>
+
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#home">SB<b>.</b> / FINANCE</a>
+
+    <button class="menu" id="menu">☰ Menu</button>
+
+    <nav id="nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
 <main id="home" class="wrap">
-<section class="hero" style="border-top:0">
-<div><div class="eyebrow">Finance • Research • Analysis</div><h1>Sujal<br><em>Bansal.</em></h1><p class="lead">PGDM Finance Management student building a practical understanding of businesses through financial statements, ratio analysis and sector research.</p><div class="actions"><a class="btn primary" href="#projects">Explore my work ↘</a><a class="btn" href="mailto:sujalbansal0077@gmail.com">Contact me ↗</a><a class="btn" href="https://www.linkedin.com/in/sujal-bansal-544842328/" target="_blank" rel="noopener">LinkedIn ↗</a></div><div class="mini-grid"><div class="mini"><strong>02</strong><span>Featured projects</span></div><div class="mini"><strong>Finance</strong><span>PGDM focus</span></div><div class="mini"><strong>2026–28</strong><span>FIIB, New Delhi</span></div></div></div>
-<aside class="hero-card"><div class="monogram">SB</div><div class="label">CURRENT POSITION</div><h3>PGDM — Financial Management</h3><div class="tags"><span class="tag">Equity Research</span><span class="tag">Financial Analysis</span><span class="tag">Corporate Finance</span></div><hr style="border:0;border-top:1px solid var(--line);margin:22px 0"><div class="label">RESEARCH INTERESTS</div><p style="font-size:13px;color:var(--muted);margin:7px 0 0">Business performance · Financial statements · Industry comparison</p></aside>
-</section>
-<section id="about"><div class="section-head"><div><div class="eyebrow">01 / About</div><h2>Learning to read<br>the business behind the numbers.</h2></div><p>A finance-focused profile built around academic work, practical analysis and continued learning.</p></div><div class="about-grid"><article class="box"><h3>Professional introduction</h3><p>I am a finance student interested in equity research and financial analysis. My academic projects have given me opportunities to compare company performance, work with financial statements and organise findings into structured reports. I want to keep strengthening these skills through hands-on analysis and evidence-based research.</p></article><article class="box"><h3>What I’m working towards</h3><p>My current direction is to develop the analytical foundation required for equity research and financial analyst roles—understanding how revenue, margins, returns, leverage and cash flows tell the story of a business.</p></article></div></section>
-<section id="projects"><div class="section-head"><div><div class="eyebrow">02 / Selected work</div><h2>Projects & financial research</h2></div><p>Academic projects that demonstrate my approach to financial statement analysis and company comparison.</p></div><div class="project-grid">
-<article class="project"><div class="project-top"><div class="number">PROJECT 01 / COMPANY ANALYSIS</div><h3>Suzlon Energy</h3><p>Five-year financial analysis</p></div><div class="project-body"><div class="p-o"><div><strong>Purpose</strong><p>Study the company’s financial performance over a five-year period and understand how key financial indicators changed over time.</p></div><div><strong>Process</strong><p>Worked with annual financial data and Excel-based analysis to organise trends and examine financial performance. Specific calculations and conclusions should be confirmed against the final workbook.</p></div><div><strong>Outcome</strong><p>A structured financial analysis workbook. Detailed findings and the exact supporting calculations are to be verified before public release.</p></div></div></div><div class="project-foot"><a class="small-btn" href="https://github.com/sujalbansal0077-hub/Suzlon_Energy_5-Year_Financial_Analysis" target="_blank" rel="noopener">GitHub repository ↗</a><button class="small-btn" data-modal="suzlon">View case summary</button></div></article>
-<article class="project"><div class="project-top"><div class="number">PROJECT 02 / SECTOR COMPARISON</div><h3>FMCG: HUL, Britannia & Nestlé India</h3><p>Five-year financial report analysis</p></div><div class="project-body"><div class="p-o"><div><strong>Purpose</strong><p>Compare the financial performance of three listed FMCG businesses across a multi-year period.</p></div><div><strong>Process</strong><p>Reviewed company financial statements and compared measures such as scale, profitability, returns and cash-flow performance.</p></div><div><strong>Outcome</strong><p>A comparative report highlighting differences in business scale and financial performance. Figures and period definitions should be reconciled with the workbook before publishing numerical claims.</p></div></div></div><div class="project-foot"><a class="small-btn" href="https://github.com/sujalbansal0077-hub/FMCG-5-year-Financial-Report-Analysis" target="_blank" rel="noopener">GitHub repository ↗</a><button class="small-btn" data-modal="fmcg">View case summary</button></div></article>
-</div><p class="note">Evidence note: project links point to the existing repositories. Before public release, confirm that each repository contains the intended final files and that any figures shown on this page match those files.</p></section>
-<section id="skills"><div class="section-head"><div><div class="eyebrow">03 / Skills & tools</div><h2>Skills in progress</h2></div><p>Listed as working areas, not as claims of expert-level proficiency.</p></div><div class="skills-grid"><article class="box skill"><h3>Finance & analysis</h3><div class="skill-list"><span>Financial statement analysis</span><span>Ratio analysis</span><span>Company comparison</span><span>Fundamental analysis</span></div></article><article class="box skill"><h3>Tools</h3><div class="skill-list"><span>Microsoft Excel</span><span>PowerPoint</span><span>Word</span></div></article><article class="box skill"><h3>Professional focus</h3><div class="skill-list"><span>Research</span><span>Structured reporting</span><span>Evidence-based thinking</span></div></article></div><p class="note">Skills should be adjusted to match the tools and methods you can demonstrate in your project files.</p></section>
-<section id="education"><div class="section-head"><div><div class="eyebrow">04 / Education</div><h2>Academic background</h2></div></div><div class="box timeline"><div class="timeline-row"><div class="year">2026–2028</div><div><strong>PGDM — Financial Management</strong><span>Fortune Institute of International Business (FIIB), New Delhi · Pursuing</span></div></div><div class="timeline-row"><div class="year">2023–2026</div><div><strong>BBA — Finance</strong><span>Chandigarh Group of Colleges, Landran · CGPA 8.05/10</span></div></div><div class="timeline-row"><div class="year">2023</div><div><strong>Class XII — CBSE</strong><span>87.6%</span></div></div><div class="timeline-row"><div class="year">2021</div><div><strong>Class X — CBSE</strong><span>88.8%</span></div></div></div><p class="note">Certifications: To Be Added after issuer details and verification links are available.</p></section>
-<section id="contact"><div class="contact"><div><div class="eyebrow">05 / Contact</div><h2>Let’s connect.</h2><p>For finance, research and learning opportunities.</p></div><div class="contact-links"><a class="btn primary" href="mailto:sujalbansal0077@gmail.com">Email ↗</a><a class="btn" href="https://www.linkedin.com/in/sujal-bansal-544842328/" target="_blank" rel="noopener">LinkedIn ↗</a></div></div></section>
-<footer class="footer"><span>© Sujal Bansal · E-Portfolio prototype</span><span>Designed for review before publication · Draft content</span></footer>
+
+  <!-- HOMEPAGE -->
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow">
+        <i class="pulse"></i>
+        Finance · Research · Analysis
+      </div>
+
+      <h1>Sujal<br><span>Bansal.</span></h1>
+
+      <p class="lead">
+        PGDM Finance Management student building a practical
+        understanding of businesses through financial statements,
+        ratio analysis and sector research.
+      </p>
+
+      <div class="actions">
+        <a class="btn primary" href="#projects">Explore my work ↘</a>
+        <a class="btn" href="mailto:sujalbansal0077@gmail.com">Contact me ↗</a>
+        <a class="btn"
+           href="https://www.linkedin.com/in/sujal-bansal-544842328/"
+           target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+
+      <div class="meta">
+        <div><strong>02</strong>Featured projects</div>
+        <div><strong>Finance</strong>PGDM focus</div>
+        <div><strong>2026–28</strong>FIIB · New Delhi</div>
+      </div>
+    </div>
+
+    <div class="visual">
+      <div class="orbit o1"></div>
+      <div class="orbit o2"></div>
+      <div class="orbit o3"></div>
+
+      <div class="core">SB</div>
+
+      <div class="float f1">
+        <small>RESEARCH FOCUS</small>
+        <strong>Company fundamentals</strong>
+      </div>
+
+      <div class="float f2">
+        <small>ANALYSIS LENS</small>
+        <strong>Financial statements</strong>
+      </div>
+
+      <div class="float f3">
+        <small>CAREER DIRECTION</small>
+        <strong>Equity · Finance</strong>
+      </div>
+    </div>
+  </section>
+
 </main>
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-card"><div class="modal-head"><h3 id="modal-title">Project summary</h3><button id="close-modal" aria-label="Close">Close ✕</button></div><div id="modal-content"></div></div></div>
+
+<!-- MOVING FINANCE TEXT -->
+
+<div class="ticker">
+  <div class="track">
+    <span>Financial Statement Analysis</span>
+    <span>Fundamental Research</span>
+    <span>Company Comparison</span>
+    <span>Ratio Analysis</span>
+    <span>Financial Statement Analysis</span>
+    <span>Fundamental Research</span>
+    <span>Company Comparison</span>
+    <span>Ratio Analysis</span>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- ABOUT -->
+
+  <section id="about" class="content reveal">
+    <div class="head">
+      <div>
+        <div class="eyebrow">01 / About</div>
+        <h2>Learning to read<br>the business behind the numbers.</h2>
+      </div>
+
+      <p>
+        A finance-focused profile built around academic work,
+        practical analysis and continued learning.
+      </p>
+    </div>
+
+    <div class="grid2">
+      <article class="panel">
+        <h3>Professional introduction</h3>
+        <p>
+          I am a finance student interested in equity research and
+          financial analysis. My academic projects have given me
+          opportunities to compare company performance, work with
+          financial statements and organise findings into structured
+          reports. I want to keep strengthening these skills through
+          hands-on analysis and evidence-based research.
+        </p>
+      </article>
+
+      <article class="panel">
+        <h3>What I’m working towards</h3>
+
+        <div class="focus">
+          <span>Equity research & fundamental analysis</span>
+          <span>Financial performance & ratio analysis</span>
+          <span>Company and sector comparisons</span>
+          <span>Excel-based financial analysis</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects" class="content reveal">
+    <div class="head">
+      <div>
+        <div class="eyebrow">02 / Selected work</div>
+        <h2>Projects & financial research</h2>
+      </div>
+
+      <p>
+        Switch between Purpose, Process and Outcome to explore
+        each case study.
+      </p>
+    </div>
+
+    <div class="projects">
+
+      <!-- SUZLON PROJECT -->
+
+      <article class="project">
+
+        <div class="chart">
+          <label>COMPANY ANALYSIS / 01</label>
+
+          <div class="bar" style="height:30%;--d:.1s"></div>
+          <div class="bar" style="height:45%;--d:.2s"></div>
+          <div class="bar" style="height:39%;--d:.3s"></div>
+          <div class="bar" style="height:59%;--d:.4s"></div>
+          <div class="bar" style="height:72%;--d:.5s"></div>
+          <div class="bar" style="height:65%;--d:.6s"></div>
+          <div class="bar" style="height:83%;--d:.7s"></div>
+          <div class="bar" style="height:92%;--d:.8s"></div>
+        </div>
+
+        <div class="pbody">
+          <div class="kicker">Project 01 · Company analysis</div>
+          <h3>Suzlon Energy</h3>
+          <p class="desc">Five-year financial analysis</p>
+
+          <div class="tabs">
+            <button class="tab active" data-p="suzlon" data-t="purpose">Purpose</button>
+            <button class="tab" data-p="suzlon" data-t="process">Process</button>
+            <button class="tab" data-p="suzlon" data-t="outcome">Outcome</button>
+          </div>
+
+          <div class="case" id="suzlon-case" aria-live="polite">
+            Study the company’s financial performance over five years
+            and understand how key financial indicators changed over time.
+          </div>
+
+          <div class="pactions">
+            <a class="btn"
+               href="https://github.com/sujalbansal0077-hub/Suzlon_Energy_5-Year_Financial_Analysis"
+               target="_blank" rel="noopener">
+              Open repository ↗
+            </a>
+
+            <button class="btn" data-detail="suzlon">Details +</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- FMCG PROJECT -->
+
+      <article class="project">
+
+        <div class="chart fmcg">
+          <label>SECTOR COMPARISON / 02</label>
+
+          <div class="bar" style="height:65%;--d:.15s"></div>
+          <div class="bar" style="height:48%;--d:.25s"></div>
+          <div class="bar" style="height:72%;--d:.35s"></div>
+          <div class="bar" style="height:54%;--d:.45s"></div>
+          <div class="bar" style="height:87%;--d:.55s"></div>
+          <div class="bar" style="height:62%;--d:.65s"></div>
+          <div class="bar" style="height:77%;--d:.75s"></div>
+          <div class="bar" style="height:94%;--d:.85s"></div>
+        </div>
+
+        <div class="pbody">
+          <div class="kicker">Project 02 · Sector comparison</div>
+          <h3>FMCG: HUL, Britannia & Nestlé India</h3>
+          <p class="desc">Five-year financial report analysis</p>
+
+          <div class="tabs">
+            <button class="tab active" data-p="fmcg" data-t="purpose">Purpose</button>
+            <button class="tab" data-p="fmcg" data-t="process">Process</button>
+            <button class="tab" data-p="fmcg" data-t="outcome">Outcome</button>
+          </div>
+
+          <div class="case" id="fmcg-case" aria-live="polite">
+            Compare the financial performance of three listed FMCG
+            businesses across a multi-year period.
+          </div>
+
+          <div class="pactions">
+            <a class="btn"
+               href="https://github.com/sujalbansal0077-hub/FMCG-5-year-Financial-Report-Analysis"
+               target="_blank" rel="noopener">
+              Open repository ↗
+            </a>
+
+            <button class="btn" data-detail="fmcg">Details +</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="note">
+      Charts are decorative illustrations, not actual financial data.
+      Exact findings should be added only after reconciling the final
+      workbooks and reports.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills" class="content reveal">
+    <div class="head">
+      <div>
+        <div class="eyebrow">03 / Skills & tools</div>
+        <h2>Skills in progress.</h2>
+      </div>
+
+      <p>
+        Areas connected to academic projects—not claims of
+        expert-level proficiency.
+      </p>
+    </div>
+
+    <div class="skills">
+
+      <article class="skill">
+        <div class="symbol">⌁</div>
+        <h3>Finance & analysis</h3>
+
+        <div class="chips">
+          <span>Financial statements</span>
+          <span>Ratio analysis</span>
+          <span>Company comparison</span>
+          <span>Fundamental analysis</span>
+        </div>
+      </article>
+
+      <article class="skill">
+        <div class="symbol">▦</div>
+        <h3>Tools</h3>
+
+        <div class="chips">
+          <span>Microsoft Excel</span>
+          <span>PowerPoint</span>
+          <span>Word</span>
+        </div>
+      </article>
+
+      <article class="skill">
+        <div class="symbol">◎</div>
+        <h3>Professional focus</h3>
+
+        <div class="chips">
+          <span>Research</span>
+          <span>Structured reporting</span>
+          <span>Evidence-based thinking</span>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="note">
+      Review these lists before final submission and remove any
+      skill you cannot comfortably demonstrate.
+    </p>
+  </section>
+
+  <!-- EDUCATION -->
+
+  <section id="education" class="content reveal">
+    <div class="head">
+      <div>
+        <div class="eyebrow">04 / Education</div>
+        <h2>Academic background.</h2>
+      </div>
+
+      <p>
+        A snapshot of my academic journey in business and finance.
+      </p>
+    </div>
+
+    <div class="education">
+
+      <article class="edu">
+        <div class="year">2026–2028</div>
+        <div>
+          <h3>PGDM — Financial Management</h3>
+          <p>FIIB, New Delhi · Pursuing</p>
+        </div>
+      </article>
+
+      <article class="edu">
+        <div class="year">2023–2026</div>
+        <div>
+          <h3>BBA — Finance</h3>
+          <p>CGC Landran · CGPA 8.05/10</p>
+        </div>
+      </article>
+
+      <article class="edu">
+        <div class="year">2023</div>
+        <div>
+          <h3>Class XII — CBSE</h3>
+          <p>87.6%</p>
+        </div>
+      </article>
+
+      <article class="edu">
+        <div class="year">2021</div>
+        <div>
+          <h3>Class X — CBSE</h3>
+          <p>88.8%</p>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="note">
+      Certifications: To Be Added after issuer details and
+      verification links are available.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="content reveal">
+    <div class="contact">
+
+      <div>
+        <div class="eyebrow">05 / Contact</div>
+        <h2>Let’s connect.</h2>
+        <p>
+          Open to connecting around finance, research and
+          learning opportunities.
+        </p>
+      </div>
+
+      <div class="actions">
+        <a class="btn primary" href="mailto:sujalbansal0077@gmail.com">
+          Email me ↗
+        </a>
+
+        <a class="btn"
+           href="https://www.linkedin.com/in/sujal-bansal-544842328/"
+           target="_blank" rel="noopener">
+          LinkedIn ↗
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Sujal Bansal · Finance portfolio</span>
+    <span>Content subject to final evidence review</span>
+  </footer>
+
+</main>
+
+<!-- BACK TO TOP -->
+
+<button class="topbtn" id="topbtn" aria-label="Back to top">↑</button>
+
+<!-- PROJECT DETAILS MODAL -->
+
+<div class="modal" id="modal" role="dialog"
+     aria-modal="true" aria-labelledby="mt">
+
+  <div class="modalbox">
+    <div class="modalhead">
+      <h3 id="mt">Project details</h3>
+      <button id="close">Close ✕</button>
+    </div>
+
+    <div id="mb"></div>
+  </div>
+</div>
+
 <script>
-const details={
-suzlon:{title:"Suzlon Energy — case summary",body:"<p><b>Purpose:</b> Examine five-year financial performance and identify trends worth investigating.</p><p><b>Process:</b> Use the project workbook to verify year-by-year figures, formula logic, ratios and trend calculations. Add a short note on your individual contribution once confirmed.</p><p><b>Outcome:</b> The project workbook is the supporting artifact. Specific findings are intentionally not stated here until the final file is checked for accuracy.</p><p><b>Before presentation:</b> Verify that the repository opens publicly and contains the correct final workbook.</p>"},
-fmcg:{title:"FMCG comparison — case summary",body:"<p><b>Purpose:</b> Compare HUL, Britannia and Nestlé India over a multi-year period.</p><p><b>Process:</b> Review the underlying annual reports and workbook; compare financial statement trends, ratios and cash flows using consistent definitions and periods.</p><p><b>Outcome:</b> A comparative report. Reconcile report values with the workbook before adding exact metrics or a company ranking.</p><p><b>Before presentation:</b> Confirm the final reporting periods, formulas, sources and individual contribution.</p>"}
+/* PROJECT CONTENT */
+
+const copy = {
+  suzlon: {
+    purpose:
+      "Study the company’s financial performance over a five-year period and understand how key financial indicators changed over time.",
+
+    process:
+      "Use the project workbook to inspect annual financial data, formula logic, ratios and trends. Confirm which calculations you personally prepared and which source reports support each figure.",
+
+    outcome:
+      "A structured financial-analysis workbook. Specific conclusions are not stated here until the final workbook and calculations are verified."
+  },
+
+  fmcg: {
+    purpose:
+      "Compare HUL, Britannia and Nestlé India to understand similarities and differences in financial performance across a multi-year period.",
+
+    process:
+      "Review company financial statements and compare scale, profitability, returns and cash-flow performance. Keep reporting periods and ratio definitions consistent.",
+
+    outcome:
+      "A comparative report describing differences between the businesses. Numerical claims should be reconciled with the underlying workbook before publication."
+  }
 };
-document.querySelectorAll("[data-modal]").forEach(b=>b.addEventListener("click",()=>{const d=details[b.dataset.modal];document.getElementById("modal-title").textContent=d.title;document.getElementById("modal-content").innerHTML=d.body;document.getElementById("modal").classList.add("open")}));
-function closeModal(){document.getElementById("modal").classList.remove("open")}
-document.getElementById("close-modal").addEventListener("click",closeModal);
-document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+
+/* PURPOSE / PROCESS / OUTCOME TABS */
+
+document.querySelectorAll(".tab").forEach(button => {
+  button.addEventListener("click", () => {
+    const project = button.dataset.p;
+
+    document
+      .querySelectorAll('.tab[data-p="' + project + '"]')
+      .forEach(tab => tab.classList.remove("active"));
+
+    button.classList.add("active");
+
+    document.getElementById(project + "-case").textContent =
+      copy[project][button.dataset.t];
+  });
+});
+
+/* PROJECT DETAILS POP-UP */
+
+document.querySelectorAll("[data-detail]").forEach(button => {
+  button.addEventListener("click", () => {
+    const project = button.dataset.detail;
+
+    document.getElementById("mt").textContent =
+      project === "suzlon"
+        ? "Suzlon Energy — project details"
+        : "FMCG comparison — project details";
+
+    const repository =
+      project === "suzlon"
+        ? "https://github.com/sujalbansal0077-hub/Suzlon_Energy_5-Year_Financial_Analysis"
+        : "https://github.com/sujalbansal0077-hub/FMCG-5-year-Financial-Report-Analysis";
+
+    const content = copy[project];
+
+    document.getElementById("mb").innerHTML = `
+      <p><b>Purpose:</b> ${content.purpose}</p>
+      <p><b>Process:</b> ${content.process}</p>
+      <p><b>Outcome:</b> ${content.outcome}</p>
+      <p>
+        <a href="${repository}" target="_blank" rel="noopener">
+          Open project repository ↗
+        </a>
+      </p>
+      <p>
+        Before final submission, verify the years, calculations,
+        source reports and your individual contribution.
+      </p>
+    `;
+
+    document.getElementById("modal").classList.add("open");
+  });
+});
+
+/* CLOSE MODAL */
+
+function closeModal() {
+  document.getElementById("modal").classList.remove("open");
+}
+
+document.getElementById("close").addEventListener("click", closeModal);
+
+document.getElementById("modal").addEventListener("click", event => {
+  if (event.target.id === "modal") {
+    closeModal();
+  }
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    closeModal();
+  }
+});
+
+/* MOBILE NAVIGATION */
+
+const nav = document.getElementById("nav");
+
+document.getElementById("menu").addEventListener("click", () => {
+  nav.classList.toggle("open");
+});
+
+nav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+  });
+});
+
+/* SCROLL REVEAL ANIMATIONS */
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach(section => {
+  observer.observe(section);
+});
+
+/* SCROLL PROGRESS, ACTIVE NAV AND BACK TO TOP */
+
+const sections = [...document.querySelectorAll("main section[id]")];
+const links = [...nav.querySelectorAll("a")];
+const progress = document.getElementById("progress");
+const topbtn = document.getElementById("topbtn");
+
+function scrollUpdate() {
+  const max =
+    document.documentElement.scrollHeight - window.innerHeight;
+
+  progress.style.width =
+    (max ? window.scrollY / max * 100 : 0) + "%";
+
+  topbtn.classList.toggle("show", window.scrollY > 450);
+
+  let current = "";
+
+  sections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 130) {
+      current = section.id;
+    }
+  });
+
+  links.forEach(link => {
+    link.classList.toggle(
+      "active",
+      link.getAttribute("href") === "#" + current
+    );
+  });
+}
+
+window.addEventListener("scroll", scrollUpdate, {
+  passive: true
+});
+
+scrollUpdate();
+
+topbtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+/* AUTOMATIC FOOTER YEAR */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 </script>
+
 </body>
 </html>
