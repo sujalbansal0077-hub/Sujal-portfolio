@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#f5f7f5">
-<meta name="description" content="Sujal Bansal's financial research portfolio featuring company analysis, financial statement analysis, and sector comparisons.">
+<meta name="description" content="Sujal Bansal's financial research portfolio featuring financial statement analysis, company fundamentals and sector comparisons.">
 <title>Sujal Bansal | Financial Intelligence</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,9 +15,9 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
-:root{
+:root {
   --bg:#f5f7f5;
-  --surface:#ffffff;
+  --surface:#fff;
   --surface2:#edf1ed;
   --ink:#17251e;
   --muted:#718078;
@@ -26,12 +27,10 @@
   --accent-soft:#e0f0e8;
   --gold:#b58b48;
   --terminal:#101e19;
-  --terminal-card:#192b23;
-  --terminal-text:#edf7f0;
   --shadow:0 15px 45px rgba(26,53,39,.06);
   --radius:20px;
 }
-body.dark{
+body.dark {
   --bg:#101713;
   --surface:#17211b;
   --surface2:#202c24;
@@ -44,389 +43,294 @@ body.dark{
   --gold:#d7b476;
   --shadow:0 15px 45px rgba(0,0,0,.18);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:95px}
-body{
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth;scroll-padding-top:90px}
+body {
   font-family:"DM Sans",sans-serif;
   background:var(--bg);
   color:var(--ink);
   line-height:1.65;
   transition:background .25s,color .25s;
 }
-a{color:inherit;text-decoration:none}
-button,input{font:inherit}
-button{cursor:pointer}
-button:focus-visible,a:focus-visible,input:focus-visible{
+a {color:inherit;text-decoration:none}
+button,input,select {font:inherit}
+button {cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible {
   outline:3px solid var(--accent2);
-  outline-offset:4px;
+  outline-offset:3px;
 }
-::selection{background:var(--accent);color:white}
-.mono{font-family:"DM Mono",monospace}
-.container{width:min(1180px,calc(100% - 44px));margin:auto}
-.eyebrow{
+.container {width:min(1180px,calc(100% - 44px));margin:auto}
+.mono {font-family:"DM Mono",monospace}
+.eyebrow {
   display:flex;align-items:center;gap:9px;
   font:500 11px "DM Mono",monospace;
-  text-transform:uppercase;letter-spacing:1.7px;
-  color:var(--accent);
+  text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);
 }
-.eyebrow:before{
-  content:"";width:22px;height:1px;background:currentColor;
+.eyebrow:before {content:"";width:22px;height:1px;background:currentColor}
+.section {padding:90px 0}
+h1,h2,h3,h4 {font-family:"Manrope",sans-serif;letter-spacing:-.6px}
+h2 {font-size:clamp(30px,4vw,44px);line-height:1.2;margin-top:12px}
+.section-description {color:var(--muted);max-width:570px;margin-top:12px;font-size:14px}
+.section-head {
+  display:flex;justify-content:space-between;align-items:flex-end;
+  gap:25px;margin-bottom:35px;
 }
-.section{padding:95px 0}
-.section-head{
-  display:flex;justify-content:space-between;
-  align-items:flex-end;gap:25px;margin-bottom:35px;
+.small-label {
+  font:10px "DM Mono",monospace;
+  color:var(--muted);text-transform:uppercase;letter-spacing:1px;
 }
-h1,h2,h3,h4{font-family:"Manrope",sans-serif;letter-spacing:-.8px}
-h2{font-size:clamp(30px,4vw,44px);line-height:1.18;margin-top:12px}
-.section-description{color:var(--muted);max-width:540px;margin-top:12px;font-size:14px}
-.small-label{
-  font:11px "DM Mono",monospace;color:var(--muted);
-  text-transform:uppercase;letter-spacing:1px;
-}
-.tag{
+.tag {
   display:inline-flex;align-items:center;gap:7px;
   border:1px solid var(--line);padding:6px 10px;
-  border-radius:6px;font:10px "DM Mono",monospace;
-  color:var(--muted);white-space:nowrap;
+  border-radius:6px;font:10px "DM Mono",monospace;color:var(--muted);
 }
-.dot{width:7px;height:7px;border-radius:50%;background:var(--accent2);display:inline-block}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  padding:12px 17px;border-radius:8px;border:1px solid var(--line);
+.dot {width:7px;height:7px;border-radius:50%;background:var(--accent2);display:inline-block}
+.btn {
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:11px 15px;border-radius:8px;border:1px solid var(--line);
   background:var(--surface);color:var(--ink);
   font-size:12px;font-weight:700;transition:.2s;
 }
-.btn:hover{transform:translateY(-2px);border-color:var(--accent)}
-.btn-primary{background:var(--accent);color:white;border-color:var(--accent)}
-body.dark .btn-primary{color:#0e1c15}
-.btn-primary:hover{opacity:.9}
-.icon-btn{
+.btn:hover {transform:translateY(-2px);border-color:var(--accent)}
+.btn-primary {background:var(--accent);color:white;border-color:var(--accent)}
+body.dark .btn-primary {color:#102218}
+.icon-btn {
   width:39px;height:39px;display:grid;place-items:center;
   border:1px solid var(--line);border-radius:10px;
   background:var(--surface);color:var(--ink);
 }
-.icon-btn:hover{border-color:var(--accent)}
-nav{
+.icon-btn:hover {border-color:var(--accent)}
+nav {
   position:sticky;top:0;z-index:100;
-  background:color-mix(in srgb,var(--bg) 88%,transparent);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--line);
+  background:var(--bg);background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:blur(18px);border-bottom:1px solid var(--line);
 }
-.nav-inner{
-  height:75px;display:flex;align-items:center;
-  justify-content:space-between;gap:20px;
-}
-.brand{display:flex;align-items:center;gap:11px;min-width:180px}
-.brand-mark{
-  display:grid;place-items:center;width:39px;height:39px;
+.nav-inner {height:75px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand {display:flex;align-items:center;gap:11px;min-width:180px}
+.brand-mark {
+  display:grid;place-items:center;width:40px;height:40px;
   border-radius:11px;background:var(--terminal);
   color:#a7e4bf;font:600 13px "DM Mono",monospace;
 }
-.brand-name{font:700 13px "Manrope",sans-serif}
-.brand-sub{font:9px "DM Mono",monospace;color:var(--muted);letter-spacing:.6px}
-.nav-links{display:flex;align-items:center;gap:25px}
-.nav-links a{font-size:11px;font-weight:600;color:var(--muted);transition:.2s}
-.nav-links a:hover{color:var(--accent)}
-.nav-actions{display:flex;align-items:center;gap:9px}
-.menu-toggle{display:none}
-.hero{padding:65px 0 44px}
-.hero-grid{
-  display:grid;grid-template-columns:1.15fr .85fr;
-  gap:55px;align-items:center;
-}
-.hero h1{
-  font-size:clamp(43px,6vw,75px);
-  line-height:1.03;letter-spacing:-3.5px;
-  margin:22px 0;
-}
-.hero h1 span{color:var(--accent)}
-.hero-copy{max-width:560px;color:var(--muted);font-size:15px;line-height:1.9}
-.hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:27px}
-.hero-meta{
-  display:flex;flex-wrap:wrap;gap:20px;
-  margin-top:30px;color:var(--muted);font-size:11px;
-}
-.hero-meta span{display:flex;align-items:center;gap:7px}
-.hero-visual{
-  background:var(--terminal);color:var(--terminal-text);
-  border-radius:23px;padding:25px;position:relative;overflow:hidden;
+.brand-name {font:700 13px "Manrope",sans-serif}
+.brand-sub {font:9px "DM Mono",monospace;color:var(--muted);letter-spacing:.6px}
+.nav-links {display:flex;align-items:center;gap:24px}
+.nav-links a {font-size:11px;font-weight:600;color:var(--muted);transition:.2s}
+.nav-links a:hover {color:var(--accent)}
+.nav-actions {display:flex;align-items:center;gap:9px}
+.menu-toggle {display:none}
+.hero {padding:65px 0 42px}
+.hero-grid {display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+.hero h1 {font-size:clamp(43px,6vw,75px);line-height:1.04;letter-spacing:-3px;margin:22px 0}
+.hero h1 span {color:var(--accent)}
+.hero-copy {max-width:560px;color:var(--muted);font-size:15px;line-height:1.9}
+.hero-actions {display:flex;flex-wrap:wrap;gap:11px;margin-top:27px}
+.hero-meta {display:flex;flex-wrap:wrap;gap:19px;margin-top:28px;color:var(--muted);font-size:11px}
+.hero-meta span {display:flex;align-items:center;gap:7px}
+.hero-visual {
+  background:var(--terminal);color:#edf7f0;border-radius:23px;
+  padding:25px;position:relative;overflow:hidden;
   box-shadow:0 25px 65px rgba(14,35,24,.15);
 }
-.hero-visual:after{
-  content:"";position:absolute;right:-90px;top:-100px;
-  width:270px;height:270px;border-radius:50%;
-  background:radial-gradient(circle,rgba(57,156,107,.17),transparent 70%);
+.hero-visual:after {
+  content:"";position:absolute;right:-90px;top:-100px;width:270px;height:270px;
+  border-radius:50%;background:radial-gradient(circle,rgba(57,156,107,.17),transparent 70%);
   pointer-events:none;
 }
-.terminal-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.terminal-title{font:11px "DM Mono",monospace;color:#b4c9bb}
-.live-pill{
-  display:flex;align-items:center;gap:7px;
-  color:#9ce0b6;font:10px "DM Mono",monospace;
-  border:1px solid #345a43;padding:6px 9px;border-radius:5px;
+.terminal-top {display:flex;justify-content:space-between;align-items:center;gap:12px}
+.terminal-title {font:11px "DM Mono",monospace;color:#b4c9bb}
+.live-pill {
+  display:flex;align-items:center;gap:7px;color:#9ce0b6;
+  font:10px "DM Mono",monospace;border:1px solid #345a43;padding:6px 9px;border-radius:5px;
 }
-.live-pill .dot{animation:pulse 1.8s infinite}
-@keyframes pulse{50%{opacity:.3;transform:scale(.8)}}
-.terminal-heading{font:500 23px "Manrope",sans-serif;margin:29px 0 3px}
-.terminal-sub{color:#91a99a;font-size:11px}
-.terminal-chart{height:175px;margin:18px 0 12px}
-.terminal-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.terminal-stat{padding:13px 10px;background:#1a2b22;border:1px solid #2a4033;border-radius:9px}
-.terminal-stat .small-label{color:#94b2a0;font-size:9px}
-.terminal-stat strong{display:block;font:600 17px "Manrope",sans-serif;margin-top:5px}
-.terminal-stat p{font-size:9px;color:#a3c3ad;margin-top:3px}
-.terminal-note{margin-top:14px;font:9px "DM Mono",monospace;color:#819c8a;line-height:1.7}
-.quick-strip{padding:24px 0 38px}
-.strip-inner{
+.live-pill .dot {animation:pulse 1.8s infinite}
+@keyframes pulse {50%{opacity:.3;transform:scale(.8)}}
+.terminal-heading {font:500 23px "Manrope",sans-serif;margin:29px 0 3px}
+.terminal-sub {color:#91a99a;font-size:11px}
+.terminal-chart {height:175px;margin:18px 0 12px;position:relative}
+.terminal-bottom {display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.terminal-stat {padding:13px 10px;background:#1a2b22;border:1px solid #2a4033;border-radius:9px}
+.terminal-stat .small-label {color:#94b2a0;font-size:9px}
+.terminal-stat strong {display:block;font:600 15px "Manrope",sans-serif;margin-top:5px}
+.terminal-stat p {font-size:9px;color:#a3c3ad;margin-top:3px}
+.terminal-note {margin-top:14px;font:9px "DM Mono",monospace;color:#819c8a;line-height:1.7}
+.quick-strip {padding:24px 0 38px}
+.strip-inner {
   display:grid;grid-template-columns:repeat(4,1fr);
-  border:1px solid var(--line);border-radius:14px;overflow:hidden;
-  background:var(--surface);
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);
 }
-.strip-item{padding:20px 22px;border-right:1px solid var(--line)}
-.strip-item:last-child{border:0}
-.strip-item strong{display:block;font:700 16px "Manrope",sans-serif}
-.strip-item span{font-size:11px;color:var(--muted)}
-.dashboard-section{background:var(--surface2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.dashboard-layout{display:grid;grid-template-columns:1.3fr .7fr;gap:20px}
-.panel{
-  background:var(--surface);border:1px solid var(--line);
-  border-radius:var(--radius);padding:24px;min-width:0;
-}
-.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:20px}
-.panel h3{font-size:17px;letter-spacing:-.3px}
-.panel-sub{color:var(--muted);font-size:11px;margin-top:4px}
-.chart-wrap{position:relative;height:280px;width:100%}
-.select{
-  background:var(--surface);color:var(--ink);border:1px solid var(--line);
-  border-radius:7px;padding:9px 10px;font-size:11px;max-width:100%;
-}
-.chart-legend{display:flex;flex-wrap:wrap;gap:15px;margin-top:18px;font-size:10px;color:var(--muted)}
-.legend-item{display:flex;align-items:center;gap:7px}
-.legend-swatch{width:9px;height:9px;border-radius:3px;background:var(--accent)}
-.insight-list{display:grid;gap:10px}
-.insight{
-  padding:15px;border:1px solid var(--line);border-radius:12px;
-  background:var(--surface2);
-}
-.insight-top{display:flex;justify-content:space-between;gap:10px;align-items:center}
-.insight-number{font:10px "DM Mono",monospace;color:var(--accent)}
-.insight h4{font-size:13px;letter-spacing:-.2px;margin:9px 0 5px}
-.insight p{font-size:11px;color:var(--muted);line-height:1.8}
-.insight .tag{font-size:9px}
-.notice{
-  display:flex;align-items:flex-start;gap:10px;
-  padding:13px 15px;margin-top:16px;border-radius:9px;
-  background:var(--accent-soft);color:var(--ink);font-size:10px;line-height:1.8;
-}
-.notice strong{color:var(--accent)}
-.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.project-card{
-  background:var(--surface);border:1px solid var(--line);
-  border-radius:var(--radius);overflow:hidden;transition:.25s;
-}
-.project-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--accent)}
-.project-cover{
-  background:var(--terminal);color:#e9f5ed;padding:24px;
-  min-height:205px;position:relative;overflow:hidden;
-}
-.project-cover:before{
-  content:"";position:absolute;width:220px;height:220px;
-  border:1px solid #2a4938;border-radius:50%;right:-60px;top:-65px;
+.strip-item {padding:20px 22px;border-right:1px solid var(--line)}
+.strip-item:last-child {border:0}
+.strip-item strong {display:block;font:700 15px "Manrope",sans-serif}
+.strip-item span {font-size:11px;color:var(--muted)}
+.dashboard-section {background:var(--surface2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.dashboard-layout {display:grid;grid-template-columns:1.3fr .7fr;gap:20px}
+.panel {background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;min-width:0}
+.panel-head {display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:20px}
+.panel h3 {font-size:17px;letter-spacing:-.3px}
+.panel-sub {color:var(--muted);font-size:11px;margin-top:4px}
+.select {background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:9px 10px;font-size:11px;max-width:100%}
+.chart-wrap {position:relative;height:270px;width:100%}
+.chart-legend {display:flex;flex-wrap:wrap;gap:15px;margin-top:18px;font-size:10px;color:var(--muted)}
+.legend-item {display:flex;align-items:center;gap:7px}
+.legend-swatch {width:9px;height:9px;border-radius:3px;background:var(--accent)}
+.insight-list {display:grid;gap:10px}
+.insight {padding:15px;border:1px solid var(--line);border-radius:12px;background:var(--surface2)}
+.insight-top {display:flex;justify-content:space-between;gap:10px;align-items:center}
+.insight-number {font:10px "DM Mono",monospace;color:var(--accent)}
+.insight h4 {font-size:13px;margin:9px 0 5px}
+.insight p {font-size:11px;color:var(--muted);line-height:1.8}
+.notice {display:flex;gap:10px;padding:13px 15px;margin-top:16px;border-radius:9px;background:var(--accent-soft);font-size:10px;line-height:1.8}
+.notice strong {color:var(--accent)}
+.project-grid {display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.project-card {background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.25s}
+.project-card:hover {transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--accent)}
+.project-cover {background:var(--terminal);color:#e9f5ed;padding:24px;min-height:205px;position:relative;overflow:hidden}
+.project-cover:before {
+  content:"";position:absolute;width:220px;height:220px;border:1px solid #2a4938;
+  border-radius:50%;right:-60px;top:-65px;
   box-shadow:0 0 0 25px rgba(89,165,117,.035),0 0 0 50px rgba(89,165,117,.025);
 }
-.cover-top{display:flex;justify-content:space-between;gap:12px;align-items:center}
-.cover-index{font:11px "DM Mono",monospace;color:#9cc9ad}
-.cover-type{font:9px "DM Mono",monospace;color:#b0c9b8;border:1px solid #395445;padding:6px 8px;border-radius:5px}
-.project-cover h3{font-size:25px;line-height:1.25;max-width:330px;margin-top:29px;position:relative}
-.project-cover p{font-size:11px;color:#9bb3a3;margin-top:8px;position:relative}
-.project-cover .cover-visual{
-  position:absolute;right:25px;bottom:20px;display:flex;align-items:flex-end;gap:5px;height:60px;opacity:.8
+.cover-top {display:flex;justify-content:space-between;gap:12px;align-items:center}
+.cover-index {font:11px "DM Mono",monospace;color:#9cc9ad}
+.cover-type {font:9px "DM Mono",monospace;color:#b0c9b8;border:1px solid #395445;padding:6px 8px;border-radius:5px}
+.project-cover h3 {font-size:25px;line-height:1.25;max-width:330px;margin-top:29px;position:relative}
+.project-cover p {font-size:11px;color:#9bb3a3;margin-top:8px;position:relative}
+.cover-visual {position:absolute;right:25px;bottom:20px;display:flex;align-items:flex-end;gap:5px;height:60px;opacity:.8}
+.cover-visual i {display:block;width:8px;background:#4b9e73;border-radius:3px 3px 0 0}
+.project-body {padding:24px}
+.project-body>p {font-size:12px;color:var(--muted);line-height:1.9}
+.project-tags {display:flex;flex-wrap:wrap;gap:7px;margin:17px 0}
+.project-actions {display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.project-details {display:none;padding-top:17px;margin-top:17px;border-top:1px solid var(--line)}
+.project-details.open {display:block;animation:fadeUp .3s}
+.project-details h4 {font-size:12px;margin:12px 0 4px}
+.project-details p,.project-details li {font-size:11px;color:var(--muted);line-height:1.8}
+.project-details ul {padding-left:17px}
+@keyframes fadeUp {from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.company-controls {display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+.company-btn {border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:10px 14px;border-radius:8px;font-size:11px;font-weight:600;transition:.2s}
+.company-btn.active,.company-btn:hover {background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.company-layout {display:grid;grid-template-columns:.75fr 1.25fr;gap:20px}
+.company-list {display:grid;gap:10px}
+.company-item {border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:17px;cursor:pointer;transition:.2s}
+.company-item:hover,.company-item.active {border-color:var(--accent);background:var(--accent-soft)}
+.company-item strong {font:700 13px "Manrope",sans-serif;display:block}
+.company-item span {display:block;color:var(--muted);font-size:10px;margin-top:3px}
+.company-detail h3 {font-size:22px;margin-bottom:5px}
+.company-detail>p {font-size:12px;color:var(--muted);line-height:1.9}
+.metric-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}
+.metric-card {padding:15px;background:var(--surface2);border:1px solid var(--line);border-radius:10px}
+.metric-card strong {font:700 14px "Manrope",sans-serif;display:block}
+.metric-card span {font-size:10px;color:var(--muted);display:block;margin-top:4px}
+.company-callout {padding:16px;background:var(--surface2);border-radius:10px;font-size:11px;color:var(--muted);line-height:1.8}
+.company-callout strong {color:var(--ink)}
+.toolkit-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.tool-card {border:1px solid var(--line);border-radius:15px;background:var(--surface);padding:22px;transition:.2s}
+.tool-card:hover {border-color:var(--accent);transform:translateY(-3px)}
+.tool-icon {width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:var(--accent-soft);color:var(--accent);font:15px "DM Mono",monospace;margin-bottom:18px}
+.tool-card h3 {font-size:15px;margin-bottom:9px}
+.tool-card p {font-size:11px;color:var(--muted);line-height:1.9}
+.tool-formula {display:block;margin-top:14px;padding:10px;border-radius:7px;background:var(--surface2);font:10px "DM Mono",monospace;color:var(--accent);line-height:1.8;overflow-wrap:anywhere}
+.method-layout {display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:start}
+.method-intro {position:sticky;top:110px}
+.method-intro p {font-size:13px;color:var(--muted);line-height:1.9;margin:18px 0}
+.method-steps {display:grid}
+.method-step {display:grid;grid-template-columns:48px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.method-step:last-child {border-bottom:0}
+.step-num {width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--line);border-radius:11px;color:var(--accent);font:12px "DM Mono",monospace}
+.method-step h3 {font-size:14px;margin:2px 0 5px}
+.method-step p {font-size:11px;color:var(--muted);line-height:1.9}
+.profile-panel {background:var(--terminal);color:#edf7f0;border-radius:22px;padding:35px;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+.profile-panel .eyebrow {color:#92d5ad}
+.profile-panel h2 {font-size:36px;margin:17px 0}
+.profile-panel p {font-size:12px;color:#b1c6b8;line-height:2}
+.profile-facts {display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.profile-fact {border:1px solid #344a3b;background:#172920;border-radius:10px;padding:15px}
+.profile-fact span {font:9px "DM Mono",monospace;color:#91b19d;display:block}
+.profile-fact strong {font:600 12px "Manrope",sans-serif;display:block;margin-top:7px}
+.profile-actions {display:flex;flex-wrap:wrap;gap:10px;margin-top:23px}
+.profile-actions .btn {border-color:#45624f}
+.profile-actions .btn-primary {background:#a5e0b7;color:#102218;border-color:#a5e0b7}
+.contact-grid {display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.contact-card {display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--line);padding:20px;border-radius:14px;transition:.2s}
+.contact-card:hover {border-color:var(--accent);transform:translateY(-2px)}
+.contact-icon {width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);font-size:16px;flex-shrink:0}
+.contact-card small {display:block;font:9px "DM Mono",monospace;color:var(--muted)}
+.contact-card strong {display:block;font-size:12px;margin-top:3px;overflow-wrap:anywhere}
+footer {border-top:1px solid var(--line);padding:28px 0;margin-top:30px}
+.footer-inner {display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.footer-inner p {font-size:10px;color:var(--muted)}
+.footer-links {display:flex;gap:17px;font-size:10px;color:var(--muted)}
+.footer-links a:hover {color:var(--accent)}
+.reveal {opacity:0;transform:translateY(17px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible {opacity:1;transform:translateY(0)}
+.progress-line {position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent2);z-index:200}
+.back-top {position:fixed;bottom:24px;right:24px;z-index:80;opacity:0;pointer-events:none;transform:translateY(10px);transition:.2s;box-shadow:var(--shadow)}
+.back-top.show {opacity:1;pointer-events:auto;transform:translateY(0)}
+.toast {position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:300;padding:12px 17px;background:var(--terminal);color:white;border-radius:8px;font-size:11px;transition:.25s}
+.toast.show {opacity:1;transform:translate(-50%,0)}
+.search-overlay {display:none;position:fixed;inset:0;z-index:250;background:rgba(5,15,10,.65);backdrop-filter:blur(8px);padding:12vh 20px 20px;align-items:flex-start;justify-content:center}
+.search-overlay.open {display:flex}
+.search-box {width:min(550px,100%);background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.search-box input {width:100%;padding:14px;background:var(--surface2);border:1px solid var(--line);border-radius:9px;color:var(--ink);margin:12px 0}
+.search-results {display:grid;gap:7px;max-height:45vh;overflow:auto}
+.search-result {padding:11px;border-radius:7px;font-size:12px}
+.search-result:hover {background:var(--accent-soft);color:var(--accent)}
+.search-hint {font-size:10px;color:var(--muted);margin-top:10px}
+.no-results {padding:15px;color:var(--muted);font-size:12px}
+
+@media(max-width:900px) {
+  .nav-links {gap:13px}
+  .nav-links a {font-size:10px}
+  .hero-grid {gap:30px}
+  .dashboard-layout {grid-template-columns:1fr}
+  .company-layout {grid-template-columns:.7fr 1.3fr}
+  .toolkit-grid {grid-template-columns:repeat(2,1fr)}
 }
-.cover-visual i{display:block;width:8px;background:#4b9e73;border-radius:3px 3px 0 0}
-.project-body{padding:24px}
-.project-body>p{font-size:12px;color:var(--muted);line-height:1.9}
-.project-tags{display:flex;flex-wrap:wrap;gap:7px;margin:17px 0}
-.project-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
-.project-details{display:none;padding-top:17px;margin-top:17px;border-top:1px solid var(--line)}
-.project-details.open{display:block;animation:fadeUp .3s}
-.project-details h4{font-size:12px;margin:12px 0 4px}
-.project-details p,.project-details li{font-size:11px;color:var(--muted);line-height:1.8}
-.project-details ul{padding-left:17px}
-@keyframes fadeUp{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
-.company-controls{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
-.company-btn{
-  border:1px solid var(--line);background:var(--surface);
-  color:var(--muted);padding:10px 14px;border-radius:8px;
-  font-size:11px;font-weight:600;transition:.2s;
+@media(max-width:680px) {
+  .container {width:calc(100% - 30px)}
+  .section {padding:65px 0}
+  .nav-inner {height:67px}
+  .brand {min-width:0}
+  .brand-sub {display:none}
+  .menu-toggle {display:grid}
+  .nav-links {display:none;position:absolute;left:0;right:0;top:67px;padding:16px 22px 20px;background:var(--surface);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}
+  .nav-links.open {display:flex}
+  .nav-links a {padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}
+  .nav-links a:last-child {border:0}
+  .nav-actions .desktop-search {display:none}
+  .hero {padding-top:45px}
+  .hero-grid {grid-template-columns:1fr;gap:30px}
+  .hero h1 {letter-spacing:-2px;font-size:clamp(43px,12vw,63px)}
+  .hero-copy {font-size:13px}
+  .hero-visual {padding:20px}
+  .strip-inner {grid-template-columns:1fr 1fr}
+  .strip-item:nth-child(2) {border-right:0}
+  .strip-item:nth-child(-n+2) {border-bottom:1px solid var(--line)}
+  .section-head {align-items:flex-start;flex-direction:column}
+  .panel {padding:18px}
+  .chart-wrap {height:230px}
+  .project-grid {grid-template-columns:1fr}
+  .company-layout {grid-template-columns:1fr}
+  .company-list {grid-template-columns:repeat(3,1fr)}
+  .company-item {padding:12px 9px}
+  .company-item strong {font-size:11px}
+  .company-item span {font-size:9px}
+  .metric-grid {grid-template-columns:1fr 1fr 1fr}
+  .metric-card {padding:10px}
+  .metric-card strong {font-size:12px}
+  .toolkit-grid {grid-template-columns:1fr}
+  .method-layout {grid-template-columns:1fr;gap:25px}
+  .method-intro {position:static}
+  .profile-panel {grid-template-columns:1fr;padding:25px;gap:24px}
+  .profile-panel h2 {font-size:30px}
+  .contact-grid {grid-template-columns:1fr}
+  .back-top {bottom:15px;right:15px}
 }
-.company-btn.active,.company-btn:hover{
-  background:var(--accent-soft);border-color:var(--accent);color:var(--accent)
-}
-.company-layout{display:grid;grid-template-columns:.75fr 1.25fr;gap:20px}
-.company-list{display:grid;gap:10px}
-.company-item{
-  border:1px solid var(--line);background:var(--surface);
-  border-radius:12px;padding:17px;cursor:pointer;transition:.2s;
-}
-.company-item:hover,.company-item.active{border-color:var(--accent);background:var(--accent-soft)}
-.company-item strong{font:700 13px "Manrope",sans-serif;display:block}
-.company-item span{display:block;color:var(--muted);font-size:10px;margin-top:3px}
-.company-detail h3{font-size:22px;margin-bottom:5px}
-.company-detail>p{font-size:12px;color:var(--muted);max-width:560px;line-height:1.9}
-.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}
-.metric-card{padding:15px;background:var(--surface2);border:1px solid var(--line);border-radius:10px}
-.metric-card strong{font:700 14px "Manrope",sans-serif;display:block}
-.metric-card span{font-size:10px;color:var(--muted);display:block;margin-top:4px}
-.company-callout{padding:16px;background:var(--surface2);border-radius:10px;font-size:11px;color:var(--muted);line-height:1.8}
-.company-callout strong{color:var(--ink)}
-.toolkit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.tool-card{
-  border:1px solid var(--line);border-radius:15px;background:var(--surface);
-  padding:22px;transition:.2s;
-}
-.tool-card:hover{border-color:var(--accent);transform:translateY(-3px)}
-.tool-icon{
-  width:42px;height:42px;display:grid;place-items:center;
-  border-radius:12px;background:var(--accent-soft);color:var(--accent);
-  font:15px "DM Mono",monospace;margin-bottom:18px;
-}
-.tool-card h3{font-size:15px;margin-bottom:9px}
-.tool-card p{font-size:11px;color:var(--muted);line-height:1.9}
-.tool-formula{
-  display:block;margin-top:14px;padding:10px;
-  border-radius:7px;background:var(--surface2);
-  font:10px "DM Mono",monospace;color:var(--accent);line-height:1.8;
-}
-.method-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:start}
-.method-intro{position:sticky;top:110px}
-.method-intro p{font-size:13px;color:var(--muted);line-height:1.9;margin:18px 0}
-.method-steps{display:grid;gap:0}
-.method-step{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
-.method-step:last-child{border-bottom:0}
-.step-num{
-  width:38px;height:38px;display:grid;place-items:center;
-  border:1px solid var(--line);border-radius:11px;
-  color:var(--accent);font:12px "DM Mono",monospace;
-}
-.method-step h3{font-size:14px;margin:2px 0 5px}
-.method-step p{font-size:11px;color:var(--muted);line-height:1.9}
-.profile-panel{
-  background:var(--terminal);color:var(--terminal-text);
-  border-radius:22px;padding:35px;display:grid;
-  grid-template-columns:1.1fr .9fr;gap:35px;align-items:center;
-}
-.profile-panel .eyebrow{color:#92d5ad}
-.profile-panel h2{font-size:36px;margin:17px 0}
-.profile-panel p{font-size:12px;color:#b1c6b8;line-height:2;max-width:540px}
-.profile-facts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.profile-fact{border:1px solid #344a3b;background:#172920;border-radius:10px;padding:15px}
-.profile-fact span{font:9px "DM Mono",monospace;color:#91b19d;display:block}
-.profile-fact strong{font:600 12px "Manrope",sans-serif;display:block;margin-top:7px}
-.profile-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:23px}
-.profile-actions .btn{border-color:#45624f}
-.profile-actions .btn-primary{background:#a5e0b7;color:#102218;border-color:#a5e0b7}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.contact-card{
-  display:flex;align-items:center;gap:16px;
-  background:var(--surface);border:1px solid var(--line);
-  padding:20px;border-radius:14px;transition:.2s;
-}
-.contact-card:hover{border-color:var(--accent);transform:translateY(-2px)}
-.contact-icon{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);font-size:16px}
-.contact-card small{display:block;font:9px "DM Mono",monospace;color:var(--muted)}
-.contact-card strong{display:block;font-size:12px;margin-top:3px;overflow-wrap:anywhere}
-footer{border-top:1px solid var(--line);padding:28px 0;margin-top:30px}
-.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
-.footer-inner p{font-size:10px;color:var(--muted)}
-.footer-links{display:flex;gap:17px;font-size:10px;color:var(--muted)}
-.footer-links a:hover{color:var(--accent)}
-.reveal{opacity:0;transform:translateY(17px);transition:opacity .65s ease,transform .65s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.progress-line{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent2);z-index:200}
-.back-top{
-  position:fixed;bottom:24px;right:24px;z-index:80;
-  opacity:0;pointer-events:none;transform:translateY(10px);
-  transition:.2s;box-shadow:var(--shadow)
-}
-.back-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
-.toast{
-  position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);
-  opacity:0;pointer-events:none;z-index:300;
-  padding:12px 17px;background:var(--terminal);color:white;
-  border-radius:8px;font-size:11px;transition:.25s;max-width:90vw;
-}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-.search-overlay{
-  display:none;position:fixed;inset:0;z-index:250;
-  background:rgba(5,15,10,.65);backdrop-filter:blur(8px);
-  padding:12vh 20px 20px;align-items:flex-start;justify-content:center;
-}
-.search-overlay.open{display:flex}
-.search-box{width:min(550px,100%);background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
-.search-box input{width:100%;padding:14px;background:var(--surface2);border:1px solid var(--line);border-radius:9px;color:var(--ink);margin:12px 0}
-.search-results{display:grid;gap:7px;max-height:45vh;overflow:auto}
-.search-result{padding:11px;border-radius:7px;font-size:12px}
-.search-result:hover{background:var(--accent-soft);color:var(--accent)}
-.search-hint{font-size:10px;color:var(--muted);margin-top:10px}
-.no-results{padding:15px;color:var(--muted);font-size:12px}
-@media(max-width:900px){
-  .nav-links{gap:13px}
-  .nav-links a{font-size:10px}
-  .hero-grid{gap:30px}
-  .dashboard-layout{grid-template-columns:1fr}
-  .company-layout{grid-template-columns:.7fr 1.3fr}
-  .toolkit-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:680px){
-  .container{width:min(100% - 30px,1180px)}
-  .section{padding:66px 0}
-  .nav-inner{height:67px}
-  .brand{min-width:0}
-  .brand-sub{display:none}
-  .menu-toggle{display:grid}
-  .nav-links{
-    display:none;position:absolute;left:0;right:0;top:67px;
-    padding:16px 22px 20px;background:var(--surface);
-    border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;
-  }
-  .nav-links.open{display:flex}
-  .nav-links a{padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}
-  .nav-links a:last-child{border-bottom:0}
-  .nav-actions .desktop-search{display:none}
-  .hero{padding-top:45px}
-  .hero-grid{grid-template-columns:1fr;gap:30px}
-  .hero h1{letter-spacing:-2.2px;font-size:clamp(43px,12vw,63px)}
-  .hero-copy{font-size:13px}
-  .hero-visual{padding:20px}
-  .terminal-stat strong{font-size:14px}
-  .strip-inner{grid-template-columns:1fr 1fr}
-  .strip-item:nth-child(2){border-right:0}
-  .strip-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .section-head{align-items:flex-start;flex-direction:column}
-  .panel{padding:18px}
-  .chart-wrap{height:235px}
-  .project-grid{grid-template-columns:1fr}
-  .company-layout{grid-template-columns:1fr}
-  .company-list{grid-template-columns:repeat(3,1fr)}
-  .company-item{padding:12px 9px}
-  .company-item strong{font-size:11px}
-  .company-item span{font-size:9px}
-  .metric-grid{grid-template-columns:1fr 1fr 1fr}
-  .metric-card{padding:11px}
-  .metric-card strong{font-size:12px}
-  .toolkit-grid{grid-template-columns:1fr}
-  .tool-card{padding:20px}
-  .method-layout{grid-template-columns:1fr;gap:25px}
-  .method-intro{position:static}
-  .profile-panel{grid-template-columns:1fr;padding:25px;gap:24px}
-  .profile-panel h2{font-size:30px}
-  .contact-grid{grid-template-columns:1fr}
-  .back-top{bottom:15px;right:15px}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
-  .reveal{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce) {
+  *,*:before,*:after {scroll-behavior:auto!important;animation:none!important;transition:none!important}
+  .reveal {opacity:1;transform:none}
 }
 </style>
 </head>
@@ -455,7 +359,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;margin-top:30px}
 
     <div class="nav-actions">
       <button class="icon-btn desktop-search" id="openSearch" aria-label="Search portfolio" title="Search (/)">⌕</button>
-      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">◐</button>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">◐</button>
       <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
     </div>
   </div>
@@ -469,15 +373,13 @@ footer{border-top:1px solid var(--line);padding:28px 0;margin-top:30px}
       <h1>Numbers tell stories.<br><span>Analysis finds them.</span></h1>
       <p class="hero-copy">
         I explore how businesses perform beneath the surface—connecting financial
-        statements, profitability, cash flows and capital efficiency to build a
-        clearer understanding of business fundamentals.
+        statements, profitability, cash flows and capital efficiency to understand
+        business fundamentals.
       </p>
-
       <div class="hero-actions">
         <a class="btn btn-primary" href="#research">Explore my research ↗</a>
         <a class="btn" href="https://github.com/sujalbansal007-hub" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
       </div>
-
       <div class="hero-meta">
         <span><i class="dot"></i> Financial analysis</span>
         <span>◈ Fundamental research</span>
@@ -492,29 +394,15 @@ footer{border-top:1px solid var(--line);padding:28px 0;margin-top:30px}
       </div>
       <div class="terminal-heading">Financial intelligence</div>
       <p class="terminal-sub">A workspace for examining business performance.</p>
-
       <div class="terminal-chart">
         <canvas id="heroChart" aria-label="Illustrative financial trend chart"></canvas>
+        <p class="chart-fallback" hidden>Illustrative chart unavailable. The rest of the portfolio remains usable.</p>
       </div>
-
       <div class="terminal-bottom">
-        <div class="terminal-stat">
-          <span class="small-label">FOCUS</span>
-          <strong>Fundamentals</strong>
-          <p>Business quality</p>
-        </div>
-        <div class="terminal-stat">
-          <span class="small-label">METHOD</span>
-          <strong>5-year</strong>
-          <p>Trend analysis</p>
-        </div>
-        <div class="terminal-stat">
-          <span class="small-label">OUTPUT</span>
-          <strong>Insights</strong>
-          <p>Evidence-led</p>
-        </div>
+        <div class="terminal-stat"><span class="small-label">FOCUS</span><strong>Fundamentals</strong><p>Business quality</p></div>
+        <div class="terminal-stat"><span class="small-label">METHOD</span><strong>5-year</strong><p>Trend analysis</p></div>
+        <div class="terminal-stat"><span class="small-label">OUTPUT</span><strong>Insights</strong><p>Evidence-led</p></div>
       </div>
-
       <p class="terminal-note">DEMO VISUAL · NOT LIVE MARKET DATA OR REPORTED COMPANY PERFORMANCE</p>
     </div>
   </div>
@@ -537,8 +425,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;margin-top:30px}
         <h2>Look beyond the headline.</h2>
         <p class="section-description">
           Explore how financial analysis connects operating performance, cash generation
-          and capital allocation. The interactive charts below are illustrative demos,
-          not reported figures for the companies in my projects.
+          and capital allocation. The charts are illustrative demonstrations, not company results.
         </p>
       </div>
       <span class="tag"><i class="dot"></i> INTERACTIVE EXPLORATION</span>
@@ -547,35 +434,26 @@ footer{border-top:1px solid var(--line);padding:28px 0;margin-top:30px}
     <div class="dashboard-layout">
       <div class="panel reveal">
         <div class="panel-head">
-          <div>
-            <h3>Financial trend explorer</h3>
-            <p class="panel-sub">Illustrative indexed series · Base year = 100</p>
-          </div>
+          <div><h3>Financial trend explorer</h3><p class="panel-sub">Illustrative index · Base year = 100</p></div>
           <select class="select" id="trendMetric" aria-label="Select illustrative financial trend">
             <option value="growth">Revenue index</option>
             <option value="margin">Margin index</option>
             <option value="cash">Cash-flow index</option>
           </select>
         </div>
-        <div class="chart-wrap"><canvas id="trendChart" aria-label="Interactive illustrative financial trend"></canvas></div>
+        <div class="chart-wrap">
+          <canvas id="trendChart" aria-label="Interactive illustrative financial trend"></canvas>
+          <p class="chart-fallback" hidden>Chart unavailable. You can still explore the rest of the portfolio.</p>
+        </div>
         <div class="chart-legend">
           <span class="legend-item"><i class="legend-swatch"></i> Illustrative series A</span>
           <span class="legend-item"><i class="legend-swatch" style="background:#b58b48"></i> Illustrative series B</span>
         </div>
-        <div class="notice">
-          <span>ⓘ</span>
-          <span><strong>Data integrity:</strong> These sample series demonstrate the chart interaction only. They must not be interpreted as actual company results or investment evidence.</span>
-        </div>
+        <div class="notice"><span>ⓘ</span><span><strong>Data integrity:</strong> Sample series demonstrate interaction only. They are not actual company results or investment evidence.</span></div>
       </div>
 
       <div class="panel reveal">
-        <div class="panel-head">
-          <div>
-            <h3>Analyst's checklist</h3>
-            <p class="panel-sub">Questions that guide financial research</p>
-          </div>
-          <span class="tag">RESEARCH LOGIC</span>
-        </div>
+        <div class="panel-head"><div><h3>Analyst's checklist</h3><p class="panel-sub">Questions that guide financial research</p></div><span class="tag">RESEARCH LOGIC</span></div>
         <div class="insight-list">
           <article class="insight">
             <div class="insight-top"><span class="insight-number">01 / PROFITABILITY</span><span class="tag">EARNINGS</span></div>
@@ -604,10 +482,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;margin-top:30px}
       <div>
         <div class="eyebrow">02 / Research library</div>
         <h2>Research with a point of view.</h2>
-        <p class="section-description">
-          Selected academic financial analysis projects. Expand each case study to
-          explore its purpose, analytical process and the questions the research investigates.
-        </p>
+        <p class="section-description">Selected financial analysis projects. Expand each case study to explore its purpose, process and research questions.</p>
       </div>
       <a class="btn" href="https://github.com/sujalbansal007-hub" target="_blank" rel="noopener noreferrer">Browse repositories ↗</a>
     </div>
@@ -615,100 +490,60 @@ footer{border-top:1px solid var(--line);padding:28px 0;margin-top:30px}
     <div class="project-grid">
       <article class="project-card reveal">
         <div class="project-cover">
-          <div class="cover-top">
-            <span class="cover-index">RESEARCH NOTE / 001</span>
-            <span class="cover-type">INDIVIDUAL COMPANY</span>
-          </div>
+          <div class="cover-top"><span class="cover-index">RESEARCH NOTE / 001</span><span class="cover-type">INDIVIDUAL COMPANY</span></div>
           <h3>Suzlon Energy</h3>
           <p>Five-year financial statement analysis</p>
-          <div class="cover-visual" aria-hidden="true">
-            <i style="height:22px"></i><i style="height:34px"></i><i style="height:28px"></i>
-            <i style="height:47px"></i><i style="height:40px"></i><i style="height:57px"></i>
-          </div>
+          <div class="cover-visual" aria-hidden="true"><i style="height:22px"></i><i style="height:34px"></i><i style="height:28px"></i><i style="height:47px"></i><i style="height:40px"></i><i style="height:57px"></i></div>
         </div>
-
         <div class="project-body">
           <div class="eyebrow">Company fundamentals</div>
-          <p>
-            A structured review of Suzlon Energy's financial performance across a
-            five-year period, focusing on financial statement trends and the
-            relationship between profitability, capital structure and cash generation.
-          </p>
-          <div class="project-tags">
-            <span class="tag">Financial statements</span>
-            <span class="tag">Ratio analysis</span>
-            <span class="tag">Trend analysis</span>
-          </div>
-
+          <p>A structured review of Suzlon Energy's financial performance over five years, focusing on financial statement trends and the relationship between profitability, capital structure and cash generation.</p>
+          <div class="project-tags"><span class="tag">Financial statements</span><span class="tag">Ratio analysis</span><span class="tag">Trend analysis</span></div>
           <button class="btn toggle-project" aria-expanded="false">Explore case study +</button>
           <a class="btn" href="https://github.com/sujalbansal007-hub/Suzlon_Energy_5-Year_Financial_Analysis" target="_blank" rel="noopener noreferrer">Open GitHub ↗</a>
-
           <div class="project-details">
             <h4>Purpose</h4>
-            <p>Understand the company's financial trajectory by examining changes across multiple reporting periods rather than relying on a single year's results.</p>
-
+            <p>Understand the company's financial trajectory by examining changes across multiple reporting periods.</p>
             <h4>Analytical process</h4>
             <ul>
               <li>Review income statement, balance sheet and cash flow statement trends.</li>
               <li>Use financial ratios to investigate profitability, liquidity and leverage.</li>
-              <li>Compare changes across years and identify areas that merit further investigation.</li>
+              <li>Compare year-on-year changes and identify areas for further investigation.</li>
             </ul>
-
-            <h4>Outcome to communicate</h4>
-            <p>Present the evidence-supported findings, explain the financial implications and disclose limitations. Specific conclusions should match the verified figures and calculations in the repository.</p>
-
+            <h4>Outcome</h4>
+            <p>Present evidence-supported findings, explain financial implications and disclose limitations. Specific claims should match the verified figures and calculations in the repository.</p>
             <h4>Research limitation</h4>
-            <p>Historical financial performance does not establish future performance or determine an investment recommendation on its own.</p>
+            <p>Historical performance alone does not establish future performance or determine an investment recommendation.</p>
           </div>
         </div>
       </article>
 
       <article class="project-card reveal">
         <div class="project-cover">
-          <div class="cover-top">
-            <span class="cover-index">RESEARCH NOTE / 002</span>
-            <span class="cover-type">SECTOR COMPARISON</span>
-          </div>
+          <div class="cover-top"><span class="cover-index">RESEARCH NOTE / 002</span><span class="cover-type">SECTOR COMPARISON</span></div>
           <h3>FMCG financial comparison</h3>
           <p>HUL · Britannia · Nestlé India</p>
-          <div class="cover-visual" aria-hidden="true">
-            <i style="height:48px"></i><i style="height:29px"></i><i style="height:42px"></i>
-            <i style="height:34px"></i><i style="height:54px"></i><i style="height:38px"></i>
-          </div>
+          <div class="cover-visual" aria-hidden="true"><i style="height:48px"></i><i style="height:29px"></i><i style="height:42px"></i><i style="height:34px"></i><i style="height:54px"></i><i style="height:38px"></i></div>
         </div>
-
         <div class="project-body">
           <div class="eyebrow">Comparative financial analysis</div>
-          <p>
-            A comparative study of three major FMCG businesses, examining how
-            financial statement analysis and ratio comparisons can help reveal
-            differences in business performance and capital efficiency.
-          </p>
-          <div class="project-tags">
-            <span class="tag">Peer benchmarking</span>
-            <span class="tag">Profitability</span>
-            <span class="tag">Cash flow</span>
-          </div>
-
+          <p>A comparative study of three FMCG businesses, examining how financial statement analysis and ratio comparisons reveal differences in business performance and capital efficiency.</p>
+          <div class="project-tags"><span class="tag">Peer benchmarking</span><span class="tag">Profitability</span><span class="tag">Cash flow</span></div>
           <button class="btn toggle-project" aria-expanded="false">Explore case study +</button>
           <a class="btn" href="https://github.com/sujalbansal007-hub/FMCG-5-year-Financial-Report-Analysis" target="_blank" rel="noopener noreferrer">Open GitHub ↗</a>
-
           <div class="project-details">
             <h4>Purpose</h4>
             <p>Compare three businesses operating in the FMCG sector and investigate how their financial characteristics differ over time.</p>
-
             <h4>Analytical process</h4>
             <ul>
               <li>Compile comparable financial statement information for the selected period.</li>
               <li>Calculate and interpret profitability, liquidity, leverage and efficiency ratios.</li>
               <li>Compare trends while considering company size, business mix and reporting definitions.</li>
             </ul>
-
-            <h4>Outcome to communicate</h4>
-            <p>Identify meaningful differences between the companies and distinguish observed results from possible explanations. Final numerical claims must agree with the underlying workbook and source reports.</p>
-
+            <h4>Outcome</h4>
+            <p>Identify meaningful differences and distinguish observed results from possible explanations. Numerical claims must agree with the underlying workbook and source reports.</p>
             <h4>Research limitation</h4>
-            <p>Ratio comparisons can be misleading if periods, accounting definitions or calculations are inconsistent.</p>
+            <p>Ratio comparisons can mislead if periods, accounting definitions or calculations are inconsistent.</p>
           </div>
         </div>
       </article>
@@ -722,11 +557,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;margin-top:30px}
       <div>
         <div class="eyebrow">03 / Company comparison lab</div>
         <h2>One sector. Different businesses.</h2>
-        <p class="section-description">
-          Select a company to explore its research questions and relevant financial
-          indicators. This section is a research framework, not a ranking or a display
-          of verified historical performance.
-        </p>
+        <p class="section-description">Select a company to explore its research questions and relevant indicators. This is a research framework, not a ranking or display of verified historical performance.</p>
       </div>
       <span class="tag">SELECT A COMPANY</span>
     </div>
@@ -739,38 +570,23 @@ footer{border-top:1px solid var(--line);padding:28px 0;margin-top:30px}
 
     <div class="company-layout reveal">
       <div class="company-list">
-        <div class="company-item active" data-company="hul" tabindex="0" role="button">
-          <strong>HUL</strong><span>Consumer goods</span>
-        </div>
-        <div class="company-item" data-company="britannia" tabindex="0" role="button">
-          <strong>Britannia</strong><span>Food products</span>
-        </div>
-        <div class="company-item" data-company="nestle" tabindex="0" role="button">
-          <strong>Nestlé India</strong><span>Food & beverages</span>
-        </div>
+        <div class="company-item active" data-company="hul" tabindex="0" role="button"><strong>HUL</strong><span>Consumer goods</span></div>
+        <div class="company-item" data-company="britannia" tabindex="0" role="button"><strong>Britannia</strong><span>Food products</span></div>
+        <div class="company-item" data-company="nestle" tabindex="0" role="button"><strong>Nestlé India</strong><span>Food & beverages</span></div>
       </div>
 
       <div class="panel company-detail">
         <div class="small-label" id="companyEyebrow">COMPANY RESEARCH / HUL</div>
         <h3 id="companyTitle">Hindustan Unilever</h3>
-        <p id="companyDescription">
-          Investigate revenue growth, operating profitability, working capital and
-          cash conversion across the selected reporting periods.
-        </p>
-
+        <p id="companyDescription">Investigate revenue growth, operating profitability, working capital and cash conversion across the selected reporting periods.</p>
         <div class="metric-grid">
           <div class="metric-card"><strong id="metricOne">Revenue</strong><span id="metricOneSub">Growth & consistency</span></div>
           <div class="metric-card"><strong id="metricTwo">Margins</strong><span id="metricTwoSub">Operating performance</span></div>
           <div class="metric-card"><strong id="metricThree">Cash flow</strong><span id="metricThreeSub">Earnings conversion</span></div>
         </div>
-
-        <div class="company-callout">
-          <strong>Research question</strong><br>
-          <span id="companyQuestion">Does the company's operating performance translate into consistent cash generation, and what factors help explain the trend?</span>
-        </div>
-
+        <div class="company-callout"><strong>Research question</strong><br><span id="companyQuestion">Does the company's operating performance translate into consistent cash generation, and what factors help explain the trend?</span></div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
-          <a class="btn btn-primary" id="companyRepo" href="https://github.com/sujalbansal007-hub/FMCG-5-year-Financial-Report-Analysis" target="_blank" rel="noopener noreferrer">View project ↗</a>
+          <a class="btn btn-primary" href="https://github.com/sujalbansal007-hub/FMCG-5-year-Financial-Report-Analysis" target="_blank" rel="noopener noreferrer">View project ↗</a>
           <a class="btn" href="#methodology">Research methodology ↓</a>
         </div>
       </div>
@@ -781,58 +597,15 @@ footer{border-top:1px solid var(--line);padding:28px 0;margin-top:30px}
 <section class="section" id="toolkit">
   <div class="container">
     <div class="section-head reveal">
-      <div>
-        <div class="eyebrow">04 / Financial analysis toolkit</div>
-        <h2>Tools for asking better questions.</h2>
-        <p class="section-description">
-          A selection of analytical concepts relevant to fundamental research and
-          corporate financial analysis.
-        </p>
-      </div>
+      <div><div class="eyebrow">04 / Financial analysis toolkit</div><h2>Tools for asking better questions.</h2><p class="section-description">Analytical concepts relevant to fundamental research and corporate financial analysis.</p></div>
     </div>
-
     <div class="toolkit-grid">
-      <article class="tool-card reveal">
-        <div class="tool-icon">%</div>
-        <h3>Ratio analysis</h3>
-        <p>Use profitability, liquidity, leverage and efficiency ratios to examine financial performance and balance-sheet risk.</p>
-        <span class="tool-formula">ROE = Net income / Average equity</span>
-      </article>
-
-      <article class="tool-card reveal">
-        <div class="tool-icon">↗</div>
-        <h3>Growth & CAGR</h3>
-        <p>Separate long-term growth trends from short-term fluctuations and understand the effect of the selected period.</p>
-        <span class="tool-formula">CAGR = (Ending / Beginning)^(1/n) − 1</span>
-      </article>
-
-      <article class="tool-card reveal">
-        <div class="tool-icon">₹</div>
-        <h3>Cash-flow analysis</h3>
-        <p>Investigate operating cash flow, capital expenditure and the relationship between accounting earnings and cash.</p>
-        <span class="tool-formula">FCF ≈ Operating cash flow − CapEx</span>
-      </article>
-
-      <article class="tool-card reveal">
-        <div class="tool-icon">◎</div>
-        <h3>DuPont analysis</h3>
-        <p>Break down return on equity to understand the contribution of profitability, asset efficiency and financial leverage.</p>
-        <span class="tool-formula">ROE = Net margin × Asset turnover × Equity multiplier</span>
-      </article>
-
-      <article class="tool-card reveal">
-        <div class="tool-icon">≋</div>
-        <h3>Comparative analysis</h3>
-        <p>Benchmark companies using consistent definitions, reporting periods and comparable financial measures.</p>
-        <span class="tool-formula">Compare like with like</span>
-      </article>
-
-      <article class="tool-card reveal">
-        <div class="tool-icon">⌕</div>
-        <h3>Fundamental research</h3>
-        <p>Connect financial performance with business economics, industry conditions, capital allocation and valuation assumptions.</p>
-        <span class="tool-formula">Evidence → Interpretation → Conclusion</span>
-      </article>
+      <article class="tool-card reveal"><div class="tool-icon">%</div><h3>Ratio analysis</h3><p>Use profitability, liquidity, leverage and efficiency ratios to examine performance and balance-sheet risk.</p><span class="tool-formula">ROE = Net income / Average equity</span></article>
+      <article class="tool-card reveal"><div class="tool-icon">↗</div><h3>Growth & CAGR</h3><p>Separate long-term growth trends from short-term fluctuations and understand the effect of the selected period.</p><span class="tool-formula">CAGR = (Ending / Beginning)^(1/n) − 1</span></article>
+      <article class="tool-card reveal"><div class="tool-icon">₹</div><h3>Cash-flow analysis</h3><p>Investigate operating cash flow, capital expenditure and the relationship between accounting earnings and cash.</p><span class="tool-formula">FCF ≈ Operating cash flow − CapEx</span></article>
+      <article class="tool-card reveal"><div class="tool-icon">◎</div><h3>DuPont analysis</h3><p>Break down return on equity to understand profitability, asset efficiency and financial leverage.</p><span class="tool-formula">ROE = Net margin × Asset turnover × Equity multiplier</span></article>
+      <article class="tool-card reveal"><div class="tool-icon">≋</div><h3>Comparative analysis</h3><p>Benchmark companies using consistent definitions, reporting periods and comparable financial measures.</p><span class="tool-formula">Compare like with like</span></article>
+      <article class="tool-card reveal"><div class="tool-icon">⌕</div><h3>Fundamental research</h3><p>Connect financial performance with business economics, industry conditions, capital allocation and valuation assumptions.</p><span class="tool-formula">Evidence → Interpretation → Conclusion</span></article>
     </div>
   </div>
 </section>
@@ -843,35 +616,15 @@ footer{border-top:1px solid var(--line);padding:28px 0;margin-top:30px}
       <div class="method-intro reveal">
         <div class="eyebrow">05 / Research philosophy</div>
         <h2>From raw numbers to reasoned conclusions.</h2>
-        <p>
-          A financial conclusion is only as useful as the evidence behind it.
-          My approach is to work from reported information, check the calculations,
-          interpret the trends and remain clear about what the data cannot establish.
-        </p>
+        <p>A financial conclusion is only as useful as the evidence behind it. My approach is to work from reported information, check calculations, interpret trends and remain clear about what the data cannot establish.</p>
         <span class="tag">A REPEATABLE FRAMEWORK</span>
       </div>
-
       <div class="method-steps reveal">
-        <article class="method-step">
-          <div class="step-num">01</div>
-          <div><h3>Source the evidence</h3><p>Identify annual reports, financial statements and relevant supporting disclosures. Record the reporting period and source for each important figure.</p></div>
-        </article>
-        <article class="method-step">
-          <div class="step-num">02</div>
-          <div><h3>Standardise the data</h3><p>Check units, periods, consolidated versus standalone reporting, and calculation definitions before making comparisons.</p></div>
-        </article>
-        <article class="method-step">
-          <div class="step-num">03</div>
-          <div><h3>Analyse the financials</h3><p>Calculate trends and relevant ratios. Read the income statement, balance sheet and cash flow statement together rather than in isolation.</p></div>
-        </article>
-        <article class="method-step">
-          <div class="step-num">04</div>
-          <div><h3>Interpret the drivers</h3><p>Investigate what may explain the results. Separate documented facts from hypotheses that need more evidence.</p></div>
-        </article>
-        <article class="method-step">
-          <div class="step-num">05</div>
-          <div><h3>Communicate with context</h3><p>Summarise the findings clearly, explain limitations and make sure each conclusion can be traced back to its supporting evidence.</p></div>
-        </article>
+        <article class="method-step"><div class="step-num">01</div><div><h3>Source the evidence</h3><p>Identify annual reports, financial statements and relevant disclosures. Record the reporting period and source for important figures.</p></div></article>
+        <article class="method-step"><div class="step-num">02</div><div><h3>Standardise the data</h3><p>Check units, periods, consolidated versus standalone reporting, and calculation definitions before making comparisons.</p></div></article>
+        <article class="method-step"><div class="step-num">03</div><div><h3>Analyse the financials</h3><p>Calculate trends and ratios. Read the income statement, balance sheet and cash flow statement together.</p></div></article>
+        <article class="method-step"><div class="step-num">04</div><div><h3>Interpret the drivers</h3><p>Investigate possible explanations and separate documented facts from hypotheses that need more evidence.</p></div></article>
+        <article class="method-step"><div class="step-num">05</div><div><h3>Communicate with context</h3><p>Summarise findings clearly, explain limitations and trace conclusions back to their supporting evidence.</p></div></article>
       </div>
     </div>
   </div>
@@ -883,12 +636,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;margin-top:30px}
       <div>
         <div class="eyebrow">06 / Professional profile</div>
         <h2>Curiosity backed by financial discipline.</h2>
-        <p>
-          I am pursuing a PGDM in Financial Management at FIIB, building on my
-          undergraduate background in BBA Finance. My interests include fundamental
-          analysis, financial statement interpretation, company comparison and
-          evidence-led business research.
-        </p>
+        <p>I am pursuing a PGDM in Financial Management at FIIB, building on my undergraduate background in BBA Finance. My interests include fundamental analysis, financial statement interpretation, company comparison and evidence-led business research.</p>
         <div class="profile-actions">
           <a class="btn btn-primary" href="https://www.linkedin.com/in/sujal-bansal-544842328/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
           <a class="btn" href="https://github.com/sujalbansal007-hub" target="_blank" rel="noopener noreferrer">View GitHub ↗</a>
@@ -907,33 +655,13 @@ footer{border-top:1px solid var(--line);padding:28px 0;margin-top:30px}
 <section class="section" id="contact">
   <div class="container">
     <div class="section-head reveal">
-      <div>
-        <div class="eyebrow">07 / Contact & collaboration</div>
-        <h2>Let's talk numbers.</h2>
-        <p class="section-description">
-          Open to connecting with finance professionals, researchers and peers
-          interested in financial analysis and business fundamentals.
-        </p>
-      </div>
+      <div><div class="eyebrow">07 / Contact & collaboration</div><h2>Let's talk numbers.</h2><p class="section-description">Open to connecting with finance professionals, researchers and peers interested in financial analysis and business fundamentals.</p></div>
     </div>
-
     <div class="contact-grid reveal">
-      <a class="contact-card" href="mailto:sujalbansal0077@gmail.com">
-        <div class="contact-icon">✉</div>
-        <div><small>EMAIL</small><strong>sujalbansal0077@gmail.com</strong></div>
-      </a>
-      <a class="contact-card" href="https://www.linkedin.com/in/sujal-bansal-544842328/" target="_blank" rel="noopener noreferrer">
-        <div class="contact-icon">in</div>
-        <div><small>PROFESSIONAL NETWORK</small><strong>LinkedIn profile ↗</strong></div>
-      </a>
-      <a class="contact-card" href="https://github.com/sujalbansal007-hub" target="_blank" rel="noopener noreferrer">
-        <div class="contact-icon">⌘</div>
-        <div><small>CODE & PROJECTS</small><strong>GitHub repositories ↗</strong></div>
-      </a>
-      <a class="contact-card" href="https://github.com/sujalbansal007-hub/Sujal-portfolio" target="_blank" rel="noopener noreferrer">
-        <div class="contact-icon">↗</div>
-        <div><small>PORTFOLIO SOURCE</small><strong>Explore this website's repository</strong></div>
-      </a>
+      <a class="contact-card" href="mailto:sujalbansal0077@gmail.com"><div class="contact-icon">✉</div><div><small>EMAIL</small><strong>sujalbansal0077@gmail.com</strong></div></a>
+      <a class="contact-card" href="https://www.linkedin.com/in/sujal-bansal-544842328/" target="_blank" rel="noopener noreferrer"><div class="contact-icon">in</div><div><small>PROFESSIONAL NETWORK</small><strong>LinkedIn profile ↗</strong></div></a>
+      <a class="contact-card" href="https://github.com/sujalbansal007-hub" target="_blank" rel="noopener noreferrer"><div class="contact-icon">⌘</div><div><small>CODE & PROJECTS</small><strong>GitHub repositories ↗</strong></div></a>
+      <a class="contact-card" href="https://github.com/sujalbansal007-hub/Sujal-portfolio" target="_blank" rel="noopener noreferrer"><div class="contact-icon">↗</div><div><small>PORTFOLIO SOURCE</small><strong>Explore this website's repository</strong></div></a>
     </div>
   </div>
 </section>
@@ -942,151 +670,174 @@ footer{border-top:1px solid var(--line);padding:28px 0;margin-top:30px}
 <footer>
   <div class="container footer-inner">
     <p>© <span id="year"></span> Sujal Bansal · Financial Intelligence Portfolio</p>
-    <div class="footer-links">
-      <a href="#home">Back to top ↑</a>
-      <a href="https://github.com/sujalbansal007-hub" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-      <a href="https://www.linkedin.com/in/sujal-bansal-544842328/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-    </div>
+    <div class="footer-links"><a href="#home">Back to top ↑</a><a href="https://github.com/sujalbansal007-hub" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/sujal-bansal-544842328/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
   </div>
 </footer>
 
 <button class="icon-btn back-top" id="backTop" aria-label="Back to top">↑</button>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search portfolio">
   <div class="search-box">
-    <div style="display:flex;justify-content:space-between;align-items:center">
-      <strong style="font-family:Manrope,sans-serif">Search the portfolio</strong>
-      <button class="icon-btn" id="closeSearch" aria-label="Close search">✕</button>
-    </div>
-    <input type="search" id="searchInput" placeholder="Try “Suzlon”, “CAGR”, “cash flow”…" autocomplete="off">
+    <div style="display:flex;justify-content:space-between;align-items:center"><strong style="font-family:Manrope,sans-serif">Search the portfolio</strong><button class="icon-btn" id="closeSearch" aria-label="Close search">✕</button></div>
+    <input type="search" id="searchInput" placeholder="Try Suzlon, CAGR, cash flow..." autocomplete="off">
     <div class="search-results" id="searchResults"></div>
     <p class="search-hint">Tip: Press / to open search. Press Escape to close.</p>
   </div>
 </div>
 
 <script>
-/* =========================================================
-   SUJAL BANSAL — FINANCIAL INTELLIGENCE PORTFOLIO
-   All chart series below are illustrative demo values.
-   Replace them with verified figures before using them
-   to make claims about a real company.
-========================================================= */
+/* ========================================================
+   INITIALISATION FIX:
+   Chart variables are declared BEFORE applyTheme().
+   All optional features are guarded so a chart failure
+   does not prevent the rest of the website from working.
+======================================================== */
 
 const $ = (selector, root=document) => root.querySelector(selector);
 const $$ = (selector, root=document) => [...root.querySelectorAll(selector)];
+
+let heroChart = null;
+let trendChart = null;
+let toastTimer = null;
 
 $("#year").textContent = new Date().getFullYear();
 
 /* ---------- Theme ---------- */
 const themeToggle = $("#themeToggle");
-const savedTheme = localStorage.getItem("sujal-portfolio-theme");
 
-if (savedTheme === "dark") document.body.classList.add("dark");
+try {
+  if (localStorage.getItem("sujal-portfolio-theme") === "dark") {
+    document.body.classList.add("dark");
+  }
+} catch (error) {
+  console.warn("Theme preference could not be loaded.", error);
+}
 
-function applyTheme(){
-  const dark = document.body.classList.contains("dark");
+function isDark() {
+  return document.body.classList.contains("dark");
+}
+
+function axisColor() {
+  return isDark() ? "#9aafa1" : "#718078";
+}
+
+function gridColor() {
+  return isDark() ? "rgba(180,205,187,.09)" : "rgba(45,80,58,.09)";
+}
+
+function applyTheme() {
+  const dark = isDark();
   themeToggle.textContent = dark ? "☀" : "◐";
-  themeToggle.setAttribute("aria-label",dark ? "Switch to light mode" : "Switch to dark mode");
-  if(typeof Chart !== "undefined"){
-    updateChartTheme();
+  themeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+
+  try {
+    if (typeof Chart !== "undefined") {
+      createTrendChart($("#trendMetric")?.value || "growth");
+      if (heroChart) heroChart.update("none");
+    }
+  } catch (error) {
+    console.warn("Chart theme update failed.", error);
   }
 }
-themeToggle.addEventListener("click",()=>{
+
+/* Safe to call: heroChart and trendChart already exist. */
+applyTheme();
+
+themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  localStorage.setItem("sujal-portfolio-theme",document.body.classList.contains("dark")?"dark":"light");
+
+  try {
+    localStorage.setItem("sujal-portfolio-theme", isDark() ? "dark" : "light");
+  } catch (error) {
+    console.warn("Theme preference could not be saved.", error);
+  }
+
   applyTheme();
 });
-applyTheme();
 
 /* ---------- Navigation ---------- */
 const navLinks = $("#navLinks");
 const menuToggle = $("#menuToggle");
 
-menuToggle.addEventListener("click",()=>{
+menuToggle.addEventListener("click", () => {
   const open = navLinks.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded",String(open));
+  menuToggle.setAttribute("aria-expanded", String(open));
   menuToggle.textContent = open ? "✕" : "☰";
 });
 
-$$(".nav-links a").forEach(link=>{
-  link.addEventListener("click",()=>{
+$$(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
     navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded","false");
-    menuToggle.textContent="☰";
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
   });
 });
 
-/* ---------- Scroll progress and reveal ---------- */
+/* ---------- Scroll effects ---------- */
 const progressLine = $("#progressLine");
 const backTop = $("#backTop");
 
-function onScroll(){
+function onScroll() {
   const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = scrollable > 0 ? window.scrollY/scrollable*100 : 0;
-  progressLine.style.width = progress+"%";
-  backTop.classList.toggle("show",window.scrollY>500);
+  const progress = scrollable > 0 ? window.scrollY / scrollable * 100 : 0;
+  progressLine.style.width = progress + "%";
+  backTop.classList.toggle("show", window.scrollY > 500);
 }
-window.addEventListener("scroll",onScroll,{passive:true});
+
+window.addEventListener("scroll", onScroll, {passive:true});
 onScroll();
 
-const revealObserver = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("visible");
-      revealObserver.unobserve(entry.target);
-    }
-  });
-},{threshold:.09});
+backTop.addEventListener("click", () => {
+  window.scrollTo({top:0,behavior:"smooth"});
+});
 
-$$(".reveal").forEach(el=>revealObserver.observe(el));
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {threshold:.08});
 
-backTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
-
-/* ---------- Toast notifications ---------- */
-let toastTimer;
-function showToast(message){
-  const toast=$("#toast");
-  toast.textContent=message;
-  toast.classList.add("show");
-  clearTimeout(toastTimer);
-  toastTimer=setTimeout(()=>toast.classList.remove("show"),2600);
+  $$(".reveal").forEach(el => revealObserver.observe(el));
+} else {
+  $$(".reveal").forEach(el => el.classList.add("visible"));
 }
 
 /* ---------- Charts ---------- */
-let heroChart=null;
-let trendChart=null;
-
-const demoData={
-  growth:{
+const demoData = {
+  growth: {
     labels:["Year 1","Year 2","Year 3","Year 4","Year 5"],
     a:[100,108,117,125,139],
-    b:[100,105,111,120,126],
-    title:"Revenue index"
+    b:[100,105,111,120,126]
   },
-  margin:{
+  margin: {
     labels:["Year 1","Year 2","Year 3","Year 4","Year 5"],
     a:[100,102,99,108,114],
-    b:[100,97,103,105,109],
-    title:"Margin index"
+    b:[100,97,103,105,109]
   },
-  cash:{
+  cash: {
     labels:["Year 1","Year 2","Year 3","Year 4","Year 5"],
     a:[100,94,110,118,131],
-    b:[100,103,107,112,119],
-    title:"Cash-flow index"
+    b:[100,103,107,112,119]
   }
 };
 
-function isDark(){return document.body.classList.contains("dark")}
-function axisColor(){return isDark()?"#9aafa1":"#718078"}
-function gridColor(){return isDark()?"rgba(180,205,187,.09)":"rgba(45,80,58,.09)"}
+function showChartFallback(canvas) {
+  const parent = canvas?.parentElement;
+  if (!parent) return;
+  const fallback = $(".chart-fallback", parent);
+  if (fallback) fallback.hidden = false;
+  if (canvas) canvas.hidden = true;
+}
 
-function baseOptions(){
+function chartBaseOptions() {
   return {
     responsive:true,
     maintainAspectRatio:false,
-    animation:{duration:700},
+    animation:{duration:500},
     interaction:{mode:"index",intersect:false},
     plugins:{
       legend:{display:false},
@@ -1095,9 +846,8 @@ function baseOptions(){
         titleColor:"#d8eddf",
         bodyColor:"#ffffff",
         padding:12,
-        displayColors:true,
         callbacks:{
-          label:context=>context.dataset.label+": "+context.parsed.y+" (illustrative index)"
+          label: context => context.dataset.label + ": " + context.parsed.y + " (illustrative index)"
         }
       }
     },
@@ -1116,263 +866,259 @@ function baseOptions(){
   };
 }
 
-function createHeroChart(){
-  if(typeof Chart==="undefined")return;
-  const canvas=$("#heroChart");
-  if(!canvas)return;
+function createHeroChart() {
+  const canvas = $("#heroChart");
 
-  heroChart=new Chart(canvas,{
-    type:"line",
-    data:{
-      labels:["01","02","03","04","05","06","07","08"],
-      datasets:[{
-        data:[18,23,20,31,27,39,35,48],
-        borderColor:"#8bd5a7",
-        backgroundColor:context=>{
-          const chart=context.chart;
-          const {ctx,chartArea}=chart;
-          if(!chartArea)return "rgba(139,213,167,.12)";
-          const gradient=ctx.createLinearGradient(0,chartArea.top,0,chartArea.bottom);
-          gradient.addColorStop(0,"rgba(139,213,167,.25)");
-          gradient.addColorStop(1,"rgba(139,213,167,0)");
-          return gradient;
-        },
-        fill:true,tension:.38,borderWidth:2,
-        pointRadius:0,pointHoverRadius:4
-      }]
-    },
-    options:{
-      ...baseOptions(),
-      plugins:{legend:{display:false},tooltip:{enabled:false}},
-      scales:{
-        x:{display:false,grid:{display:false}},
-        y:{display:false,grid:{display:false}}
-      }
-    }
-  });
-}
-
-function createTrendChart(metric="growth"){
-  if(typeof Chart==="undefined")return;
-  const d=demoData[metric];
-  const ctx=$("#trendChart");
-  if(!ctx)return;
-
-  if(trendChart)trendChart.destroy();
-
-  trendChart=new Chart(ctx,{
-    type:"line",
-    data:{
-      labels:d.labels,
-      datasets:[
-        {
-          label:"Illustrative series A",
-          data:d.a,
-          borderColor:isDark()?"#77d2a3":"#176b50",
-          backgroundColor:isDark()?"rgba(119,210,163,.08)":"rgba(23,107,80,.08)",
-          fill:true,tension:.32,borderWidth:2,
-          pointRadius:3,pointHoverRadius:6,
-          pointBackgroundColor:isDark()?"#77d2a3":"#176b50"
-        },
-        {
-          label:"Illustrative series B",
-          data:d.b,
-          borderColor:"#b58b48",
-          backgroundColor:"transparent",
-          fill:false,tension:.32,borderWidth:2,
-          pointRadius:3,pointHoverRadius:6,
-          pointBackgroundColor:"#b58b48"
-        }
-      ]
-    },
-    options:baseOptions()
-  });
-}
-
-function updateChartTheme(){
-  if(typeof Chart==="undefined")return;
-  if(heroChart){
-    heroChart.options.scales.x.ticks.color=axisColor();
-    heroChart.options.scales.y.ticks.color=axisColor();
-    heroChart.update("none");
+  if (!canvas || typeof Chart === "undefined") {
+    showChartFallback(canvas);
+    return;
   }
-  createTrendChart($("#trendMetric")?.value||"growth");
+
+  try {
+    if (heroChart) heroChart.destroy();
+
+    heroChart = new Chart(canvas, {
+      type:"line",
+      data:{
+        labels:["01","02","03","04","05","06","07","08"],
+        datasets:[{
+          label:"Illustrative demo",
+          data:[18,23,20,31,27,39,35,48],
+          borderColor:"#8bd5a7",
+          backgroundColor:"rgba(139,213,167,.12)",
+          fill:true,
+          tension:.38,
+          borderWidth:2,
+          pointRadius:0,
+          pointHoverRadius:4
+        }]
+      },
+      options:{
+        responsive:true,
+        maintainAspectRatio:false,
+        animation:{duration:700},
+        plugins:{legend:{display:false},tooltip:{enabled:false}},
+        scales:{x:{display:false},y:{display:false}}
+      }
+    });
+  } catch (error) {
+    console.error("Hero chart failed to initialise.", error);
+    showChartFallback(canvas);
+  }
 }
 
-createHeroChart();
-createTrendChart("growth");
+function createTrendChart(metric="growth") {
+  const canvas = $("#trendChart");
 
-$("#trendMetric").addEventListener("change",event=>{
+  if (!canvas || typeof Chart === "undefined") {
+    showChartFallback(canvas);
+    return;
+  }
+
+  const data = demoData[metric] || demoData.growth;
+
+  try {
+    if (trendChart) trendChart.destroy();
+
+    trendChart = new Chart(canvas, {
+      type:"line",
+      data:{
+        labels:data.labels,
+        datasets:[
+          {
+            label:"Illustrative series A",
+            data:data.a,
+            borderColor:isDark() ? "#77d2a3" : "#176b50",
+            backgroundColor:isDark() ? "rgba(119,210,163,.08)" : "rgba(23,107,80,.08)",
+            fill:true,
+            tension:.32,
+            borderWidth:2,
+            pointRadius:3,
+            pointHoverRadius:6
+          },
+          {
+            label:"Illustrative series B",
+            data:data.b,
+            borderColor:"#b58b48",
+            backgroundColor:"transparent",
+            fill:false,
+            tension:.32,
+            borderWidth:2,
+            pointRadius:3,
+            pointHoverRadius:6
+          }
+        ]
+      },
+      options:chartBaseOptions()
+    });
+  } catch (error) {
+    console.error("Trend chart failed to initialise.", error);
+    showChartFallback(canvas);
+  }
+}
+
+/* Initialise charts only after the DOM elements exist. */
+if (typeof Chart !== "undefined") {
+  createHeroChart();
+  createTrendChart("growth");
+} else {
+  showChartFallback($("#heroChart"));
+  showChartFallback($("#trendChart"));
+}
+
+$("#trendMetric").addEventListener("change", event => {
   createTrendChart(event.target.value);
 });
 
-/* ---------- Expandable project case studies ---------- */
-$$(".toggle-project").forEach(button=>{
-  button.addEventListener("click",()=>{
-    const card=button.closest(".project-body");
-    const details=$(".project-details",card);
-    const open=details.classList.toggle("open");
-    button.setAttribute("aria-expanded",String(open));
-    button.textContent=open?"Close case study −":"Explore case study +";
+/* ---------- Project case studies ---------- */
+$$(".toggle-project").forEach(button => {
+  button.addEventListener("click", () => {
+    const card = button.closest(".project-body");
+    const details = $(".project-details", card);
+    const open = details.classList.toggle("open");
+
+    button.setAttribute("aria-expanded", String(open));
+    button.textContent = open ? "Close case study −" : "Explore case study +";
   });
 });
 
 /* ---------- Company selector ---------- */
-const companies={
+const companies = {
   hul:{
     short:"HUL",
     name:"Hindustan Unilever",
     description:"Investigate revenue growth, operating profitability, working capital and cash conversion across the selected reporting periods.",
-    metrics:[
-      ["Revenue","Growth & consistency"],
-      ["Margins","Operating performance"],
-      ["Cash flow","Earnings conversion"]
-    ],
+    metrics:[["Revenue","Growth & consistency"],["Margins","Operating performance"],["Cash flow","Earnings conversion"]],
     question:"Does the company's operating performance translate into consistent cash generation, and what factors help explain the trend?"
   },
   britannia:{
     short:"BRITANNIA",
     name:"Britannia Industries",
     description:"Examine operating performance, profitability, working capital and leverage while considering the economics of a branded food business.",
-    metrics:[
-      ["Revenue","Growth & mix"],
-      ["Margins","Cost performance"],
-      ["Leverage","Balance-sheet risk"]
-    ],
+    metrics:[["Revenue","Growth & mix"],["Margins","Cost performance"],["Leverage","Balance-sheet risk"]],
     question:"How do operating margins, working-capital requirements and capital structure influence the interpretation of the company's financial performance?"
   },
   nestle:{
     short:"NESTLÉ INDIA",
     name:"Nestlé India",
-    description:"Explore profitability, returns on capital and operating cash generation, using comparable reporting periods and consistent definitions.",
-    metrics:[
-      ["Profitability","Margin trends"],
-      ["Returns","Capital efficiency"],
-      ["Cash flow","Conversion analysis"]
-    ],
-    question:"How consistently does reported profitability convert into operating cash, and what does that reveal when examined alongside returns and reinvestment?"
+    description:"Explore profitability, returns on capital and operating cash generation using comparable reporting periods and consistent definitions.",
+    metrics:[["Profitability","Margin trends"],["Returns","Capital efficiency"],["Cash flow","Conversion analysis"]],
+    question:"How consistently does reported profitability convert into operating cash, and what does that reveal alongside returns and reinvestment?"
   }
 };
 
-function selectCompany(key){
-  const c=companies[key];
-  if(!c)return;
+function selectCompany(key) {
+  const company = companies[key];
+  if (!company) return;
 
-  $$(".company-btn").forEach(btn=>btn.classList.toggle("active",btn.dataset.company===key));
-  $$(".company-item").forEach(item=>item.classList.toggle("active",item.dataset.company===key));
+  $$(".company-btn").forEach(btn => btn.classList.toggle("active", btn.dataset.company === key));
+  $$(".company-item").forEach(item => item.classList.toggle("active", item.dataset.company === key));
 
-  $("#companyEyebrow").textContent="COMPANY RESEARCH / "+c.short;
-  $("#companyTitle").textContent=c.name;
-  $("#companyDescription").textContent=c.description;
-  $("#metricOne").textContent=c.metrics[0][0];
-  $("#metricOneSub").textContent=c.metrics[0][1];
-  $("#metricTwo").textContent=c.metrics[1][0];
-  $("#metricTwoSub").textContent=c.metrics[1][1];
-  $("#metricThree").textContent=c.metrics[2][0];
-  $("#metricThreeSub").textContent=c.metrics[2][1];
-  $("#companyQuestion").textContent=c.question;
+  $("#companyEyebrow").textContent = "COMPANY RESEARCH / " + company.short;
+  $("#companyTitle").textContent = company.name;
+  $("#companyDescription").textContent = company.description;
+  $("#metricOne").textContent = company.metrics[0][0];
+  $("#metricOneSub").textContent = company.metrics[0][1];
+  $("#metricTwo").textContent = company.metrics[1][0];
+  $("#metricTwoSub").textContent = company.metrics[1][1];
+  $("#metricThree").textContent = company.metrics[2][0];
+  $("#metricThreeSub").textContent = company.metrics[2][1];
+  $("#companyQuestion").textContent = company.question;
 }
 
-$$(".company-btn").forEach(button=>{
-  button.addEventListener("click",()=>selectCompany(button.dataset.company));
+$$(".company-btn").forEach(button => {
+  button.addEventListener("click", () => selectCompany(button.dataset.company));
 });
 
-$$(".company-item").forEach(item=>{
-  item.addEventListener("click",()=>selectCompany(item.dataset.company));
-  item.addEventListener("keydown",event=>{
-    if(event.key==="Enter"||event.key===" "){
+$$(".company-item").forEach(item => {
+  item.addEventListener("click", () => selectCompany(item.dataset.company));
+  item.addEventListener("keydown", event => {
+    if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
       selectCompany(item.dataset.company);
     }
   });
 });
 
-/* ---------- Search ---------- */
-const searchOverlay=$("#searchOverlay");
-const searchInput=$("#searchInput");
-const searchResults=$("#searchResults");
+/* ---------- Portfolio search ---------- */
+const searchOverlay = $("#searchOverlay");
+const searchInput = $("#searchInput");
+const searchResults = $("#searchResults");
 
-const searchableSections=[
-  {title:"Financial overview",description:"Dashboard, financial trends, analytical checklist",target:"#overview",keywords:"dashboard trends revenue cash flow margin"},
-  {title:"Suzlon Energy analysis",description:"Five-year financial statements, ratio and trend analysis",target:"#research",keywords:"suzlon company financial statements"},
-  {title:"FMCG comparison",description:"HUL, Britannia and Nestlé India",target:"#companies",keywords:"fmcg hul britannia nestle peer benchmarking"},
-  {title:"Financial analysis toolkit",description:"Ratios, CAGR, cash flow, DuPont analysis",target:"#toolkit",keywords:"ratios cagr dupont cash flow formula"},
+const searchableSections = [
+  {title:"Financial overview",description:"Dashboard, trends and analytical checklist",target:"#overview",keywords:"dashboard trends revenue cash flow margin"},
+  {title:"Suzlon Energy analysis",description:"Five-year financial statements and ratio analysis",target:"#research",keywords:"suzlon company financial statements"},
+  {title:"FMCG comparison",description:"HUL, Britannia and Nestlé India",target:"#companies",keywords:"fmcg hul britannia nestle benchmarking"},
+  {title:"Financial analysis toolkit",description:"Ratios, CAGR, cash flow and DuPont analysis",target:"#toolkit",keywords:"ratios cagr dupont cash flow formula"},
   {title:"Research methodology",description:"Sources, standardisation, analysis and interpretation",target:"#methodology",keywords:"methodology evidence process annual report"},
   {title:"Professional profile",description:"Education, finance interests and GitHub",target:"#profile",keywords:"profile education financial management"},
   {title:"Contact",description:"Email, LinkedIn and GitHub",target:"#contact",keywords:"contact email linkedin github"}
 ];
 
-function renderSearch(query=""){
-  const q=query.trim().toLowerCase();
-  const results=searchableSections.filter(item=>
-    (item.title+" "+item.description+" "+item.keywords).toLowerCase().includes(q)
+function renderSearch(query="") {
+  const q = query.trim().toLowerCase();
+  const matches = searchableSections.filter(item =>
+    (item.title + " " + item.description + " " + item.keywords).toLowerCase().includes(q)
   );
 
-  searchResults.innerHTML="";
+  searchResults.replaceChildren();
 
-  if(!results.length){
-    const empty=document.createElement("div");
-    empty.className="no-results";
-    empty.textContent="No matching section. Try a company name or financial concept.";
+  if (!matches.length) {
+    const empty = document.createElement("div");
+    empty.className = "no-results";
+    empty.textContent = "No matching section. Try a company name or financial concept.";
     searchResults.appendChild(empty);
     return;
   }
 
-  results.forEach(item=>{
-    const link=document.createElement("a");
-    link.className="search-result";
-    link.href=item.target;
+  matches.forEach(item => {
+    const link = document.createElement("a");
+    link.className = "search-result";
+    link.href = item.target;
 
-    const title=document.createElement("strong");
-    title.textContent=item.title;
+    const title = document.createElement("strong");
+    title.textContent = item.title;
 
-    const desc=document.createElement("div");
-    desc.style.cssText="font-size:10px;color:var(--muted);margin-top:3px";
-    desc.textContent=item.description;
+    const description = document.createElement("div");
+    description.style.cssText = "font-size:10px;color:var(--muted);margin-top:3px";
+    description.textContent = item.description;
 
-    link.append(title,desc);
-    link.addEventListener("click",closeSearch);
+    link.append(title, description);
+    link.addEventListener("click", closeSearch);
     searchResults.appendChild(link);
   });
 }
 
-function openSearch(){
+function openSearch() {
   searchOverlay.classList.add("open");
   renderSearch(searchInput.value);
-  setTimeout(()=>searchInput.focus(),30);
+  setTimeout(() => searchInput.focus(), 30);
 }
-function closeSearch(){
+
+function closeSearch() {
   searchOverlay.classList.remove("open");
 }
-$("#openSearch").addEventListener("click",openSearch);
-$("#closeSearch").addEventListener("click",closeSearch);
-searchInput.addEventListener("input",()=>renderSearch(searchInput.value));
 
-searchOverlay.addEventListener("click",event=>{
-  if(event.target===searchOverlay)closeSearch();
+$("#openSearch").addEventListener("click", openSearch);
+$("#closeSearch").addEventListener("click", closeSearch);
+searchInput.addEventListener("input", () => renderSearch(searchInput.value));
+
+searchOverlay.addEventListener("click", event => {
+  if (event.target === searchOverlay) closeSearch();
 });
 
-document.addEventListener("keydown",event=>{
-  if(event.key==="Escape")closeSearch();
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeSearch();
 
-  if(event.key==="/" &&
-     !["INPUT","TEXTAREA"].includes(document.activeElement.tagName)){
+  if (event.key === "/" &&
+      !["INPUT","TEXTAREA"].includes(document.activeElement.tagName)) {
     event.preventDefault();
     openSearch();
   }
 });
 
 renderSearch();
-
-/* ---------- Fallback if chart library is unavailable ---------- */
-if(typeof Chart==="undefined"){
-  $$(".chart-wrap,.terminal-chart").forEach(el=>{
-    const message=document.createElement("p");
-    message.style.cssText="font-size:12px;color:var(--muted);padding:20px 0";
-    message.textContent="Charts require an internet connection to load. The rest of the portfolio remains available.";
-    el.appendChild(message);
-  });
-}
 </script>
 </body>
 </html>
+```
