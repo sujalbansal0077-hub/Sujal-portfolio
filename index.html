@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080d19">
-<meta name="description" content="Sujal Bansal — Finance student focused on equity research, fundamental analysis and financial modelling.">
+<meta name="description" content="Sujal Bansal — Finance portfolio focused on financial analysis, equity research and fundamental analysis.">
 <title>Sujal Bansal | Finance Portfolio</title>
 
 <style>
@@ -13,354 +13,403 @@
 :root {
   --bg:#080d19;
   --surface:#101829;
-  --surface2:#141f32;
-  --border:rgba(161,181,220,.14);
-  --text:#f2f6ff;
+  --surface2:#172238;
+  --text:#f1f5ff;
   --muted:#98a8c2;
+  --border:rgba(161,181,220,.14);
   --accent:#62e5ff;
-  --accent2:#8b8cff;
+  --accent2:#9290ff;
   --green:#77f0bd;
-  --shadow:0 24px 70px rgba(0,0,0,.25);
+  --shadow:0 25px 70px rgba(0,0,0,.23);
 }
 
 body.light {
-  --bg:#f3f6fb;
-  --surface:#ffffff;
+  --bg:#f4f7fb;
+  --surface:#fff;
   --surface2:#eaf0fa;
+  --text:#111b2e;
+  --muted:#65748b;
   --border:rgba(26,48,84,.13);
-  --text:#101a2c;
-  --muted:#64738b;
   --accent:#087fbb;
   --accent2:#6658d8;
   --green:#16875d;
   --shadow:0 20px 55px rgba(26,48,84,.09);
 }
 
-* {box-sizing:border-box;margin:0;padding:0}
-html {scroll-behavior:smooth;scroll-padding-top:90px}
-body {
-  background:var(--bg);
-  color:var(--text);
-  font-family:"DM Sans",sans-serif;
-  line-height:1.6;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:"DM Sans",sans-serif;line-height:1.6;
   transition:background .25s,color .25s;
 }
-a {color:inherit;text-decoration:none}
-button,input {font:inherit}
-button {cursor:pointer}
-.container {width:min(1160px,91%);margin:auto}
-.mono {font-family:"DM Mono",monospace}
-.muted {color:var(--muted)}
-.accent {color:var(--accent)}
-.eyebrow {
-  color:var(--accent);
-  font:500 11px "DM Mono",monospace;
-  text-transform:uppercase;
-  letter-spacing:2px;
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{cursor:pointer}
+.container{width:min(1160px,91%);margin:auto}
+.mono{font-family:"DM Mono",monospace}
+.muted{color:var(--muted)}
+.eyebrow{
+  color:var(--accent);font:500 11px "DM Mono",monospace;
+  text-transform:uppercase;letter-spacing:2px
 }
-.section {padding:95px 0}
-.section-heading {
-  font:600 clamp(29px,4vw,43px)/1.15 "Space Grotesk",sans-serif;
-  letter-spacing:-1.5px;
-  margin:12px 0;
+.section{padding:88px 0}
+.section-heading{
+  font:600 clamp(30px,4vw,44px)/1.15 "Space Grotesk",sans-serif;
+  letter-spacing:-1.6px;margin:12px 0
 }
-.section-intro {color:var(--muted);max-width:650px;font-size:15px}
-.rule {height:1px;background:var(--border);margin:25px 0}
+.section-intro{color:var(--muted);max-width:650px;font-size:14px}
+.rule{height:1px;background:var(--border);margin:23px 0}
+.section-head{
+  display:flex;justify-content:space-between;align-items:end;
+  gap:25px;margin-bottom:32px
+}
+.section-index{font:10px "DM Mono",monospace;color:var(--muted)}
 
 /* NAVIGATION */
-.nav-wrap {
+.nav-wrap{
   position:sticky;top:0;z-index:100;
-  background:color-mix(in srgb,var(--bg) 88%,transparent);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--border);
+  background:color-mix(in srgb,var(--bg) 89%,transparent);
+  backdrop-filter:blur(18px);border-bottom:1px solid var(--border)
 }
-nav {
-  min-height:76px;
-  display:flex;align-items:center;justify-content:space-between;gap:20px;
+nav{
+  min-height:75px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px
 }
-.brand {display:flex;align-items:center;gap:12px}
-.brand-icon {
-  width:43px;height:43px;border-radius:13px;
-  display:grid;place-items:center;
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand-icon{
+  width:43px;height:43px;border-radius:13px;display:grid;place-items:center;
   background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#08101c;font-weight:700;font-size:15px;
+  color:#08101c;font-weight:700
 }
-.brand-name {font:700 15px "Space Grotesk",sans-serif}
-.brand-sub {font:10px "DM Mono",monospace;color:var(--muted);letter-spacing:1px}
-.nav-links {display:flex;gap:25px;align-items:center}
-.nav-links a {font-size:12px;color:var(--muted);transition:color .2s}
-.nav-links a:hover,.nav-links a.active {color:var(--accent)}
-.nav-actions {display:flex;gap:9px}
-.icon-btn {
-  width:39px;height:39px;border:1px solid var(--border);
-  border-radius:11px;background:var(--surface);color:var(--text);
+.brand-name{font:700 14px "Space Grotesk",sans-serif}
+.brand-sub{font:9px "DM Mono",monospace;color:var(--muted);letter-spacing:1px}
+.nav-links{display:flex;gap:21px;align-items:center}
+.nav-links a{font-size:11px;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.nav-actions{display:flex;gap:8px}
+.icon-btn{
+  width:38px;height:38px;border:1px solid var(--border);
+  border-radius:10px;background:var(--surface);color:var(--text)
 }
-.menu-btn {display:none}
-.progress-bar {
+.menu-btn{display:none}
+.progress-bar{
   position:absolute;bottom:-1px;left:0;height:2px;width:0;
-  background:var(--accent);transition:width .1s;
+  background:var(--accent)
 }
 
 /* BUTTONS */
-.btn {
-  display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  padding:12px 17px;border-radius:10px;border:1px solid var(--border);
-  font-size:12px;font-weight:700;transition:transform .2s,opacity .2s;
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 16px;border-radius:9px;border:1px solid var(--border);
+  font-size:12px;font-weight:700;transition:transform .2s,opacity .2s
 }
-.btn:hover {transform:translateY(-2px)}
-.btn-primary {background:var(--accent);color:#08101c;border-color:var(--accent)}
-.btn-secondary {background:var(--surface);color:var(--text)}
-.btn-small {padding:8px 11px;font-size:11px}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:#08101c;border-color:var(--accent)}
+.btn-secondary{background:var(--surface);color:var(--text)}
 
-/* HERO */
-.hero {padding:76px 0 62px;position:relative;overflow:hidden}
-.hero:before {
-  content:"";position:absolute;width:440px;height:440px;
-  right:-160px;top:-160px;border-radius:50%;
-  background:var(--accent2);opacity:.08;filter:blur(90px);
-  pointer-events:none;
+/* FIRST PAGE / HERO */
+.hero{
+  padding:76px 0 72px;position:relative;overflow:hidden;min-height:600px
 }
-.hero-grid {display:grid;grid-template-columns:1.08fr .92fr;gap:65px;align-items:center}
-.availability {
-  display:inline-flex;align-items:center;gap:9px;
-  color:var(--green);font:11px "DM Mono",monospace;
+.hero:before{
+  content:"";position:absolute;width:470px;height:470px;right:-120px;top:0;
+  border-radius:50%;background:var(--accent);opacity:.055;
+  filter:blur(100px);pointer-events:none
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;
+  gap:55px;align-items:center
+}
+.hero-intro{max-width:590px}
+.hero-kicker{
+  display:flex;align-items:center;gap:11px;
+  font:500 11px "DM Mono",monospace;letter-spacing:2px;
+  color:var(--accent);text-transform:uppercase;margin-bottom:25px
+}
+.hero-kicker:before{content:"";width:25px;height:1px;background:var(--accent)}
+.hero h1{
+  font:600 clamp(46px,5.6vw,72px)/1.04 "Space Grotesk",sans-serif;
+  letter-spacing:-3.7px;margin-bottom:23px
+}
+.hero h1 .headline-accent{
+  display:block;color:var(--accent);background:none;
+  -webkit-text-fill-color:initial
+}
+.hero-description{
+  max-width:530px;color:var(--muted);font-size:14px;line-height:1.95
+}
+.hero-identity{
+  display:flex;flex-wrap:wrap;gap:9px 18px;
+  margin-top:22px;color:var(--muted);font-size:11px
+}
+.hero-identity span{display:inline-flex;align-items:center;gap:7px}
+.hero-identity span:before{
+  content:"";width:5px;height:5px;border-radius:50%;background:var(--green)
+}
+.hero-buttons{display:flex;gap:11px;flex-wrap:wrap;margin-top:27px}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:23px}
+.tag{
   border:1px solid var(--border);background:var(--surface);
-  padding:7px 11px;border-radius:30px;margin-bottom:25px;
+  padding:6px 10px;border-radius:7px;font-size:10px;color:var(--muted)
 }
-.pulse {
-  width:7px;height:7px;border-radius:50%;background:var(--green);
-  box-shadow:0 0 0 5px color-mix(in srgb,var(--green) 14%,transparent);
-}
-.hero h1 {
-  font:600 clamp(43px,6vw,75px)/1.02 "Space Grotesk",sans-serif;
-  letter-spacing:-4px;margin-bottom:20px;
-}
-.hero h1 span {
-  display:block;
-  background:linear-gradient(100deg,var(--accent),var(--accent2));
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-}
-.hero-description {max-width:550px;color:var(--muted);font-size:15px;line-height:1.9}
-.hero-buttons {display:flex;gap:11px;flex-wrap:wrap;margin-top:27px}
-.hero-tags {display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}
-.tag {
-  border:1px solid var(--border);background:var(--surface);
-  padding:6px 10px;border-radius:7px;font-size:10px;color:var(--muted);
-}
-.hero-card {
+
+/* DASHBOARD CARD */
+.hero-card{
   position:relative;overflow:hidden;
-  background:linear-gradient(145deg,#121e32,#0c1321);
-  border:1px solid rgba(126,168,230,.22);
-  border-radius:22px;padding:23px;color:#f1f6ff;
-  box-shadow:var(--shadow);
+  background:linear-gradient(145deg,#112038,#09121f);
+  border:1px solid rgba(98,229,255,.19);border-radius:20px;
+  padding:24px;color:#f2f6ff;box-shadow:var(--shadow)
 }
-body.light .hero-card {background:linear-gradient(145deg,#13263d,#0c1829)}
-.card-top {display:flex;justify-content:space-between;align-items:center;gap:12px}
-.terminal-label {font:10px "DM Mono",monospace;color:#a3b8d5}
-.live-pill {font:10px "DM Mono",monospace;color:#7df2c1}
-.hero-card h3 {font:500 21px "Space Grotesk",sans-serif;margin-top:25px}
-.hero-card p {font-size:12px;color:#a7b8ce;margin-top:5px}
-.chart-box {height:180px;margin-top:18px;position:relative}
-#heroChart {width:100%;height:100%;display:block}
-.chart-labels {display:flex;justify-content:space-between;font:9px "DM Mono",monospace;color:#8ea1bb}
-.card-stats {display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:16px}
-.card-stat {background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);padding:12px;border-radius:10px}
-.card-stat small {display:block;font:9px "DM Mono",monospace;color:#9aacc4;text-transform:uppercase}
-.card-stat strong {display:block;font-size:12px;margin-top:6px}
-.card-stat span {display:block;font-size:10px;color:#9aacc4;margin-top:2px}
-.demo-note {font:9px "DM Mono",monospace;color:#8297b3;margin-top:16px}
+body.light .hero-card{background:linear-gradient(145deg,#14263e,#091525)}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.terminal-label{font:10px "DM Mono",monospace;color:#a3b8d5}
+.live-pill{
+  font:10px "DM Mono",monospace;color:#77f0bd;
+  border:1px solid rgba(119,240,189,.2);
+  background:rgba(119,240,189,.055);padding:7px 9px;border-radius:6px
+}
+.hero-card h3{font:500 23px "Space Grotesk",sans-serif;margin-top:26px}
+.hero-card>p{font-size:12px;color:#a7b8ce;margin-top:5px}
+.chart-box{height:175px;margin-top:17px;position:relative}
+#heroChart{width:100%;height:100%;display:block}
+.chart-labels{
+  display:flex;justify-content:space-between;gap:6px;
+  font:9px "DM Mono",monospace;color:#8297b3
+}
+.card-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:18px}
+.card-stat{
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.09);
+  padding:12px 10px;border-radius:9px
+}
+.card-stat small{display:block;font:9px "DM Mono",monospace;color:#9aacc4}
+.card-stat strong{display:block;font-size:12px;margin-top:7px}
+.card-stat span{display:block;font-size:10px;color:#9aacc4;margin-top:3px}
+.demo-note{font:9px "DM Mono",monospace;color:#8297b3;margin-top:16px}
 
-/* QUICK PROFILE */
-.quick-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
-.quick-card {
+/* SNAPSHOT */
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.quick-card{
   padding:20px;border:1px solid var(--border);
-  background:var(--surface);border-radius:14px;
+  background:var(--surface);border-radius:14px
 }
-.quick-card small {display:block;color:var(--muted);font:10px "DM Mono",monospace;text-transform:uppercase}
-.quick-card strong {display:block;font:600 21px "Space Grotesk",sans-serif;margin:10px 0 3px}
-.quick-card span {font-size:11px;color:var(--muted)}
-
-/* SECTION HEADER */
-.section-head {display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:32px}
-.section-index {font:11px "DM Mono",monospace;color:var(--muted)}
+.quick-card small{
+  display:block;color:var(--muted);font:10px "DM Mono",monospace;
+  text-transform:uppercase
+}
+.quick-card strong{display:block;font:600 20px "Space Grotesk",sans-serif;margin:10px 0 3px}
+.quick-card span{font-size:11px;color:var(--muted)}
 
 /* PROJECTS */
-.project-grid {display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.project-card {
-  border:1px solid var(--border);border-radius:17px;
-  background:var(--surface);padding:25px;transition:transform .2s,border-color .2s;
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project-card{
+  border:1px solid var(--border);border-radius:16px;
+  background:var(--surface);padding:25px;
+  transition:transform .2s,border-color .2s
 }
-.project-card:hover {transform:translateY(-4px);border-color:var(--accent)}
-.project-top {display:flex;justify-content:space-between;gap:12px;align-items:start}
-.project-number {font:11px "DM Mono",monospace;color:var(--accent)}
-.project-type {font:9px "DM Mono",monospace;border:1px solid var(--border);padding:5px 8px;border-radius:6px;color:var(--muted)}
-.project-card h3 {font:600 23px "Space Grotesk",sans-serif;margin:20px 0 10px}
-.project-card>p {font-size:13px;color:var(--muted);min-height:62px}
-.project-tags {display:flex;gap:7px;flex-wrap:wrap;margin:17px 0}
-.project-tags span {font-size:10px;padding:5px 8px;background:var(--surface2);border-radius:6px;color:var(--muted)}
-.project-details {display:none;border-top:1px solid var(--border);margin-top:20px;padding-top:18px}
-.project-details.open {display:block;animation:fadeIn .25s ease}
-.project-details h4 {font-size:12px;color:var(--accent);margin:13px 0 4px}
-.project-details p {font-size:12px;color:var(--muted)}
-.project-footer {display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:22px;flex-wrap:wrap}
-.project-footer a {font-size:11px;color:var(--accent)}
-.expand-btn {border:0;background:none;color:var(--text);font-size:11px}
+.project-card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.project-top{display:flex;justify-content:space-between;gap:12px;align-items:start}
+.project-number{font:11px "DM Mono",monospace;color:var(--accent)}
+.project-type{
+  font:9px "DM Mono",monospace;border:1px solid var(--border);
+  padding:5px 8px;border-radius:6px;color:var(--muted)
+}
+.project-card h3{font:600 23px "Space Grotesk",sans-serif;margin:20px 0 10px}
+.project-card>p{font-size:13px;color:var(--muted)}
+.project-tags{display:flex;gap:7px;flex-wrap:wrap;margin:17px 0}
+.project-tags span{
+  font-size:10px;padding:5px 8px;background:var(--surface2);
+  border-radius:6px;color:var(--muted)
+}
+.expand-btn{border:0;background:none;color:var(--text);font-size:11px}
+.project-details{display:none;border-top:1px solid var(--border);margin-top:20px;padding-top:18px}
+.project-details.open{display:block;animation:fadeIn .25s ease}
+.project-details h4{font-size:11px;color:var(--accent);margin:13px 0 4px}
+.project-details p{font-size:12px;color:var(--muted)}
+.project-footer{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:10px;margin-top:22px;flex-wrap:wrap
+}
+.project-footer a{font-size:11px;color:var(--accent)}
 
 /* COMPANIES */
-.company-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
-.company-card {
+.company-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.company-card{
   border:1px solid var(--border);background:var(--surface);
-  border-radius:14px;padding:21px;transition:transform .2s;
+  border-radius:14px;padding:21px;transition:transform .2s
 }
-.company-card:hover {transform:translateY(-3px)}
-.company-symbol {
+.company-card:hover{transform:translateY(-3px)}
+.company-symbol{
   width:42px;height:42px;display:grid;place-items:center;
   border-radius:11px;background:var(--surface2);color:var(--accent);
-  font:700 12px "Space Grotesk",sans-serif;margin-bottom:15px;
+  font:700 12px "Space Grotesk",sans-serif;margin-bottom:15px
 }
-.company-card h3 {font:600 17px "Space Grotesk",sans-serif}
-.company-card p {font-size:12px;color:var(--muted);margin-top:7px}
-.company-card .focus {font:10px "DM Mono",monospace;color:var(--accent);margin-top:15px}
+.company-card h3{font:600 17px "Space Grotesk",sans-serif}
+.company-card p{font-size:12px;color:var(--muted);margin-top:7px}
+.company-card .focus{font:10px "DM Mono",monospace;color:var(--accent);margin-top:15px}
 
-/* INTERACTIVE ANALYSIS */
-.analysis-layout {display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}
-.analysis-menu {display:flex;flex-direction:column;gap:9px}
-.analysis-tab {
+/* ANALYSIS TABS */
+.analysis-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}
+.analysis-menu{display:flex;flex-direction:column;gap:9px}
+.analysis-tab{
   text-align:left;padding:17px;border-radius:12px;
-  border:1px solid var(--border);background:var(--surface);color:var(--text);
+  border:1px solid var(--border);background:var(--surface);color:var(--text)
 }
-.analysis-tab.active {border-color:var(--accent);background:var(--surface2)}
-.analysis-tab strong {display:block;font-size:13px}
-.analysis-tab span {font-size:11px;color:var(--muted)}
-.analysis-panel {
+.analysis-tab.active{border-color:var(--accent);background:var(--surface2)}
+.analysis-tab strong{display:block;font-size:13px}
+.analysis-tab span{font-size:11px;color:var(--muted)}
+.analysis-panel{
   background:var(--surface);border:1px solid var(--border);
-  border-radius:16px;padding:25px;min-height:280px;
+  border-radius:16px;padding:25px;min-height:280px
 }
-.analysis-panel h3 {font:600 22px "Space Grotesk",sans-serif;margin:10px 0}
-.analysis-panel p {color:var(--muted);font-size:13px}
-.analysis-points {margin-top:20px;display:grid;gap:11px}
-.analysis-point {display:flex;gap:10px;font-size:12px}
-.check {color:var(--green);font-weight:700}
+.analysis-panel h3{font:600 22px "Space Grotesk",sans-serif;margin:10px 0}
+.analysis-panel p{color:var(--muted);font-size:13px}
+.analysis-points{margin-top:20px;display:grid;gap:11px}
+.analysis-point{display:flex;gap:10px;font-size:12px}
+.check{color:var(--green);font-weight:700}
 
 /* SKILLS */
-.skills-layout {display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.skill-box {padding:24px;border:1px solid var(--border);background:var(--surface);border-radius:15px}
-.skill-box h3 {font:600 17px "Space Grotesk",sans-serif;margin-bottom:20px}
-.skill-row {margin-top:17px}
-.skill-row-top {display:flex;justify-content:space-between;font-size:12px;margin-bottom:7px}
-.skill-row-top span:last-child {font:10px "DM Mono",monospace;color:var(--muted)}
-.skill-track {height:5px;border-radius:10px;background:var(--surface2);overflow:hidden}
-.skill-fill {height:100%;width:0;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1.2s ease}
-.tool-grid {display:flex;flex-wrap:wrap;gap:9px}
-.tool-chip {border:1px solid var(--border);background:var(--surface2);padding:10px 12px;border-radius:8px;font-size:11px}
+.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.skill-box{
+  padding:24px;border:1px solid var(--border);
+  background:var(--surface);border-radius:15px
+}
+.skill-box h3{font:600 17px "Space Grotesk",sans-serif;margin-bottom:20px}
+.skill-row{margin-top:17px}
+.skill-row-top{display:flex;justify-content:space-between;gap:10px;font-size:12px;margin-bottom:7px}
+.skill-row-top span:last-child{font:9px "DM Mono",monospace;color:var(--muted)}
+.skill-track{height:5px;border-radius:10px;background:var(--surface2);overflow:hidden}
+.skill-fill{
+  height:100%;width:0;border-radius:10px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  transition:width 1.2s ease
+}
+.tool-grid{display:flex;flex-wrap:wrap;gap:9px}
+.tool-chip{
+  border:1px solid var(--border);background:var(--surface2);
+  padding:10px 12px;border-radius:8px;font-size:11px
+}
 
-/* METHOD */
-.method-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.method-card {border:1px solid var(--border);background:var(--surface);padding:20px;border-radius:13px}
-.method-card .num {font:11px "DM Mono",monospace;color:var(--accent)}
-.method-card h3 {font:600 16px "Space Grotesk",sans-serif;margin:17px 0 8px}
-.method-card p {font-size:11px;color:var(--muted)}
+/* METHODOLOGY */
+.method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.method-card{border:1px solid var(--border);background:var(--surface);padding:20px;border-radius:13px}
+.method-card .num{font:11px "DM Mono",monospace;color:var(--accent)}
+.method-card h3{font:600 16px "Space Grotesk",sans-serif;margin:17px 0 8px}
+.method-card p{font-size:11px;color:var(--muted)}
 
 /* EDUCATION */
-.timeline {border-left:1px solid var(--border);margin-left:8px;padding-left:24px;display:grid;gap:23px}
-.timeline-item {position:relative}
-.timeline-item:before {
+.timeline{border-left:1px solid var(--border);margin-left:8px;padding-left:24px;display:grid;gap:23px}
+.timeline-item{position:relative}
+.timeline-item:before{
   content:"";position:absolute;left:-30px;top:7px;width:10px;height:10px;
-  background:var(--accent);border-radius:50%;box-shadow:0 0 0 5px var(--bg);
+  background:var(--accent);border-radius:50%;box-shadow:0 0 0 5px var(--bg)
 }
-.timeline-item h3 {font:600 17px "Space Grotesk",sans-serif}
-.timeline-item p {font-size:12px;color:var(--muted);margin-top:5px}
+.timeline-item h3{font:600 17px "Space Grotesk",sans-serif}
+.timeline-item p{font-size:12px;color:var(--muted);margin-top:5px}
 
 /* CONTACT */
-.contact-card {
+.contact-card{
   padding:clamp(25px,5vw,50px);border-radius:22px;
   background:linear-gradient(120deg,#142842,#151d3a);
   border:1px solid rgba(126,168,230,.22);
-  color:#f3f7ff;position:relative;overflow:hidden;
+  color:#f3f7ff;position:relative;overflow:hidden
 }
-.contact-card:after {
-  content:"";position:absolute;width:270px;height:270px;
-  right:-70px;bottom:-150px;border-radius:50%;
-  background:#62e5ff;opacity:.13;filter:blur(60px);
+.contact-card h2{font:600 clamp(30px,4vw,46px)/1.12 "Space Grotesk",sans-serif;margin:15px 0}
+.contact-card p{font-size:13px;color:#afc0d6;max-width:570px}
+.contact-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px;position:relative;z-index:1}
+.contact-links .btn-secondary{
+  background:rgba(255,255,255,.07);
+  border-color:rgba(255,255,255,.15);color:white
 }
-.contact-card h2 {font:600 clamp(30px,4vw,46px)/1.12 "Space Grotesk",sans-serif;margin:15px 0}
-.contact-card p {font-size:13px;color:#afc0d6;max-width:570px}
-.contact-links {display:flex;gap:10px;flex-wrap:wrap;margin-top:25px;position:relative;z-index:1}
-.contact-links .btn-secondary {background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.15);color:white}
 
 /* FOOTER */
-footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
-.footer-inner {display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:11px;color:var(--muted)}
-.back-top {color:var(--accent)}
+footer{padding:25px 0;border-top:1px solid var(--border);margin-top:65px}
+.footer-inner{
+  display:flex;justify-content:space-between;gap:15px;
+  flex-wrap:wrap;font-size:11px;color:var(--muted)
+}
+.back-top{color:var(--accent)}
 
 /* SEARCH */
-.search-overlay {
+.search-overlay{
   position:fixed;inset:0;background:rgba(2,6,15,.78);
   backdrop-filter:blur(8px);z-index:200;display:none;
-  align-items:flex-start;justify-content:center;padding:15vh 20px 20px;
+  align-items:flex-start;justify-content:center;padding:15vh 20px 20px
 }
-.search-overlay.open {display:flex}
-.search-box {
+.search-overlay.open{display:flex}
+.search-box{
   width:min(550px,100%);padding:22px;border:1px solid var(--border);
-  border-radius:16px;background:var(--surface);box-shadow:var(--shadow);
+  border-radius:16px;background:var(--surface);box-shadow:var(--shadow)
 }
-.search-box input {
+.search-box input{
   width:100%;margin:15px 0;padding:13px;border:1px solid var(--border);
-  border-radius:9px;background:var(--bg);color:var(--text);outline:none;
+  border-radius:9px;background:var(--bg);color:var(--text);outline:none
 }
-.search-results {display:grid;gap:6px}
-.search-results a {padding:10px;border-radius:7px;font-size:12px}
-.search-results a:hover {background:var(--surface2);color:var(--accent)}
-.toast {
+.search-results{display:grid;gap:6px}
+.search-results a{padding:10px;border-radius:7px;font-size:12px}
+.search-results a:hover{background:var(--surface2);color:var(--accent)}
+.toast{
   position:fixed;bottom:25px;left:50%;transform:translate(-50%,20px);
   padding:12px 17px;border-radius:10px;background:var(--accent);
   color:#08101c;font-size:12px;opacity:0;pointer-events:none;
-  transition:.25s;z-index:300;
+  transition:.25s;z-index:300
 }
-.toast.show {opacity:1;transform:translate(-50%,0)}
-.reveal {opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}
-.reveal.visible {opacity:1;transform:translateY(0)}
-@keyframes fadeIn {from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 
-@media(max-width:900px) {
-  .hero-grid {grid-template-columns:1fr;gap:35px}
-  .hero-card {max-width:650px}
-  .nav-links {gap:13px}
-  .nav-links a {font-size:11px}
-  .method-grid {grid-template-columns:repeat(2,1fr)}
-  .quick-grid {grid-template-columns:repeat(2,1fr)}
+@media(max-width:1000px){
+  .nav-links{gap:12px}
+  .nav-links a{font-size:10px}
+  .hero-grid{gap:30px}
+  .hero h1{font-size:clamp(44px,5.4vw,65px)}
 }
-@media(max-width:680px) {
-  .section {padding:65px 0}
-  nav {min-height:68px}
-  .menu-btn {display:block}
-  .nav-links {
+@media(max-width:850px){
+  .hero{padding-top:55px}
+  .hero-grid{grid-template-columns:1fr;gap:35px}
+  .hero-intro{max-width:680px}
+  .hero-card{width:100%;max-width:650px}
+  .quick-grid{grid-template-columns:repeat(2,1fr)}
+  .method-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:680px){
+  .section{padding:62px 0}
+  nav{min-height:68px}
+  .menu-btn{display:block}
+  .nav-links{
     display:none;position:absolute;left:0;right:0;top:68px;
-    padding:20px 5%;background:var(--surface);
-    border-bottom:1px solid var(--border);flex-direction:column;align-items:stretch;
+    padding:18px 5%;background:var(--surface);
+    border-bottom:1px solid var(--border);
+    flex-direction:column;align-items:stretch
   }
-  .nav-links.open {display:flex}
-  .nav-links a {padding:8px;font-size:13px}
-  .hero {padding-top:52px}
-  .hero h1 {letter-spacing:-2.5px}
-  .project-grid,.company-grid,.analysis-layout,.skills-layout {grid-template-columns:1fr}
-  .section-head {align-items:start;flex-direction:column}
-  .card-stats {grid-template-columns:1fr}
-  .card-stat {display:flex;justify-content:space-between;align-items:center;gap:10px}
-  .card-stat span {margin:0}
-  .hero-card {padding:18px}
-  .method-grid {grid-template-columns:repeat(2,1fr)}
-  .quick-card {padding:15px}
-  .quick-card strong {font-size:18px}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:8px;font-size:13px}
+  .hero{padding:45px 0 55px;min-height:auto}
+  .hero h1{font-size:clamp(42px,12vw,59px);letter-spacing:-2.5px}
+  .hero-card{padding:17px}
+  .hero-card h3{font-size:20px}
+  .card-stats{grid-template-columns:1fr}
+  .card-stat{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:5px}
+  .card-stat small{grid-column:1/-1}
+  .card-stat span{margin:0;text-align:right}
+  .project-grid,.company-grid,.analysis-layout,.skills-layout{grid-template-columns:1fr}
+  .section-head{align-items:start;flex-direction:column}
+  .method-grid{grid-template-columns:repeat(2,1fr)}
+  .quick-card{padding:15px}
+  .quick-card strong{font-size:18px}
 }
-@media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after {scroll-behavior:auto!important;animation:none!important;transition:none!important}
-  .reveal {opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
 
 <body>
+
+<!-- NAVIGATION -->
 <div class="nav-wrap">
   <nav class="container">
     <a class="brand" href="#home" aria-label="Sujal Bansal home">
@@ -375,15 +424,15 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
       <a href="#home">Overview</a>
       <a href="#research">Research</a>
       <a href="#companies">Companies</a>
+      <a href="#analysis">Analysis</a>
       <a href="#skills">Toolkit</a>
-      <a href="#method">Methodology</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </div>
 
     <div class="nav-actions">
       <button class="icon-btn" id="searchBtn" aria-label="Search portfolio" title="Search">⌕</button>
-      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle light/dark theme">◐</button>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">◐</button>
       <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
     </div>
   </nav>
@@ -391,23 +440,32 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
 </div>
 
 <main>
-<!-- HERO -->
+
+<!-- FIRST PAGE -->
 <section class="hero" id="home">
   <div class="container hero-grid">
-    <div>
-      <div class="availability"><span class="pulse"></span> FINANCE STUDENT · OPEN TO LEARNING OPPORTUNITIES</div>
-      <div class="eyebrow">WELCOME TO MY FINANCE PORTFOLIO</div>
 
-      <h1 style="margin-top:18px">
-        Sujal<br>Bansal<span>Finance. Analysed.</span>
+    <div class="hero-intro">
+      <div class="hero-kicker">FINANCE · RESEARCH · ANALYSIS</div>
+
+      <h1>
+        Sujal Bansal.
+        <span class="headline-accent">Finance meets</span>
+        <span class="headline-accent">insight.</span>
       </h1>
 
       <p class="hero-description">
-        PGDM student in Financial Management at FIIB, with an academic background
-        in BBA Finance. I am building my expertise in fundamental analysis,
-        financial statement interpretation and understanding the businesses
-        behind the numbers.
+        I am a PGDM Financial Management student at FIIB with a BBA Finance
+        background. My interest lies in understanding businesses through
+        financial statements, profitability, cash flows and fundamental
+        analysis—not just looking at the numbers, but understanding the
+        business story behind them.
       </p>
+
+      <div class="hero-identity">
+        <span>PGDM Financial Management · FIIB</span>
+        <span>BBA Finance · CGPA 8.05</span>
+      </div>
 
       <div class="hero-buttons">
         <a class="btn btn-primary" href="#research">Explore my research ↗</a>
@@ -418,53 +476,52 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
         <span class="tag">Equity Research</span>
         <span class="tag">Fundamental Analysis</span>
         <span class="tag">Financial Analysis</span>
-        <span class="tag">Corporate Finance</span>
       </div>
     </div>
 
     <div class="hero-card">
       <div class="card-top">
-        <span class="terminal-label">FINANCE_LAB / PROFILE_01</span>
+        <span class="terminal-label">SUJAL_BANSAL / FINANCE_LAB</span>
         <span class="live-pill">● PORTFOLIO ACTIVE</span>
       </div>
 
-      <h3>Analysing business fundamentals</h3>
-      <p>From financial statements to business insights.</p>
+      <h3>Financial intelligence</h3>
+      <p>A workspace for examining business performance.</p>
 
       <div class="chart-box">
-        <canvas id="heroChart" aria-label="Illustrative financial trend chart"></canvas>
+        <canvas id="heroChart" aria-label="Illustrative financial trend graphic"></canvas>
       </div>
+
       <div class="chart-labels">
-        <span>RESEARCH</span>
-        <span>UNDERSTAND</span>
-        <span>INTERPRET</span>
-        <span>CONCLUDE</span>
+        <span>RESEARCH</span><span>ANALYSIS</span><span>INSIGHT</span><span>DECISION</span>
       </div>
 
       <div class="card-stats">
         <div class="card-stat">
-          <small>Education</small>
+          <small>EDUCATION</small>
           <strong>PGDM Finance</strong>
           <span>FIIB</span>
         </div>
         <div class="card-stat">
-          <small>Research focus</small>
+          <small>RESEARCH</small>
           <strong>Fundamentals</strong>
           <span>Business quality</span>
         </div>
         <div class="card-stat">
-          <small>Approach</small>
-          <strong>Evidence-led</strong>
-          <span>Financial analysis</span>
+          <small>PROJECTS</small>
+          <strong>Financial analysis</strong>
+          <span>Suzlon & FMCG</span>
         </div>
       </div>
-      <div class="demo-note">ILLUSTRATIVE VISUAL · NOT LIVE MARKET DATA</div>
+
+      <div class="demo-note">PORTFOLIO VISUAL · NOT LIVE MARKET DATA</div>
     </div>
+
   </div>
 </section>
 
 <!-- PROFILE SNAPSHOT -->
-<section class="container" style="padding:15px 0 55px">
+<section class="container" style="padding:12px 0 55px">
   <div class="quick-grid reveal">
     <div class="quick-card">
       <small>Current programme</small>
@@ -489,42 +546,35 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
   </div>
 </section>
 
-<!-- RESEARCH -->
+<!-- RESEARCH PROJECTS -->
 <section class="section" id="research">
   <div class="container">
     <div class="section-head reveal">
       <div>
         <div class="eyebrow">01 / SELECTED WORK</div>
         <h2 class="section-heading">Research & analysis.</h2>
-        <p class="section-intro">
-          Academic projects focused on interpreting financial statements,
-          examining performance over time and comparing businesses.
-        </p>
+        <p class="section-intro">Academic projects focused on financial statements, company performance and comparative analysis.</p>
       </div>
       <div class="section-index">PROJECT ARCHIVE · 02</div>
     </div>
 
     <div class="project-grid">
+
       <article class="project-card reveal">
         <div class="project-top">
           <span class="project-number">PROJECT_001</span>
           <span class="project-type">EQUITY RESEARCH</span>
         </div>
+
         <h3>Suzlon Energy</h3>
-        <p>
-          Five-year financial analysis examining company performance through
-          financial statements, profitability, liquidity and key financial ratios.
-        </p>
+        <p>Five-year financial analysis examining company performance through financial statements, profitability, liquidity and key financial ratios.</p>
+
         <div class="project-tags">
-          <span>5-year analysis</span>
-          <span>Financial ratios</span>
-          <span>Trend analysis</span>
-          <span>Renewable energy</span>
+          <span>5-year analysis</span><span>Financial ratios</span>
+          <span>Trend analysis</span><span>Renewable energy</span>
         </div>
 
-        <button class="expand-btn" data-expand="suzlonDetails" aria-expanded="false">
-          + Explore project details
-        </button>
+        <button class="expand-btn" data-expand="suzlonDetails" aria-expanded="false">+ Explore project details</button>
 
         <div class="project-details" id="suzlonDetails">
           <h4>OBJECTIVE</h4>
@@ -532,7 +582,7 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
           <h4>APPROACH</h4>
           <p>Organise financial statement data, review year-on-year trends and examine selected financial ratios.</p>
           <h4>ANALYTICAL FOCUS</h4>
-          <p>Profitability, financial position, cash flow and changes in financial performance. Conclusions should be read alongside the underlying project workbook and reports.</p>
+          <p>Profitability, financial position, cash flow and changes in financial performance.</p>
         </div>
 
         <div class="project-footer">
@@ -546,21 +596,15 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
           <span class="project-number">PROJECT_002</span>
           <span class="project-type">SECTOR COMPARISON</span>
         </div>
+
         <h3>FMCG Financial Analysis</h3>
-        <p>
-          A comparative financial study of Hindustan Unilever, Britannia
-          Industries and Nestlé India across a five-year period.
-        </p>
+        <p>A comparative financial study of Hindustan Unilever, Britannia Industries and Nestlé India across a five-year period.</p>
+
         <div class="project-tags">
-          <span>HUL</span>
-          <span>Britannia</span>
-          <span>Nestlé India</span>
-          <span>Ratio analysis</span>
+          <span>HUL</span><span>Britannia</span><span>Nestlé India</span><span>Ratio analysis</span>
         </div>
 
-        <button class="expand-btn" data-expand="fmcgDetails" aria-expanded="false">
-          + Explore project details
-        </button>
+        <button class="expand-btn" data-expand="fmcgDetails" aria-expanded="false">+ Explore project details</button>
 
         <div class="project-details" id="fmcgDetails">
           <h4>OBJECTIVE</h4>
@@ -568,7 +612,7 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
           <h4>APPROACH</h4>
           <p>Review income statements, balance sheets, cash flow statements and selected financial ratios over five years.</p>
           <h4>ANALYTICAL FOCUS</h4>
-          <p>Compare profitability, liquidity, financial efficiency and trends across companies. The underlying workbook contains the detailed calculations.</p>
+          <p>Compare profitability, liquidity, financial efficiency and trends across companies.</p>
         </div>
 
         <div class="project-footer">
@@ -576,6 +620,7 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
           <span class="muted mono" style="font-size:10px">COMPANY COMPARISON</span>
         </div>
       </article>
+
     </div>
   </div>
 </section>
@@ -587,10 +632,7 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
       <div>
         <div class="eyebrow">02 / COMPANY COVERAGE</div>
         <h2 class="section-heading">Businesses under the lens.</h2>
-        <p class="section-intro">
-          The companies below are part of my academic financial-analysis work.
-          This section does not represent investment recommendations.
-        </p>
+        <p class="section-intro">Companies included in my academic financial-analysis work. This is not investment advice.</p>
       </div>
       <div class="section-index">COMPANY UNIVERSE</div>
     </div>
@@ -624,14 +666,14 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
         <div class="focus">FOCUS → COMPARABILITY</div>
       </article>
 
-      <article class="company-card reveal" style="border-style:dashed">
+      <article class="company-card reveal">
         <div class="company-symbol">+</div>
-        <h3>Next coverage</h3>
-        <p>Future research can expand into additional listed companies and sectors as new projects are completed.</p>
+        <h3>Future research</h3>
+        <p>Additional listed companies and sectors as new projects are completed.</p>
         <div class="focus">STATUS → PLANNED</div>
       </article>
 
-      <article class="company-card reveal" style="display:flex;flex-direction:column;justify-content:center">
+      <article class="company-card reveal">
         <div class="eyebrow">RESEARCH PRINCIPLE</div>
         <h3 style="margin-top:14px">Numbers need context.</h3>
         <p>Financial ratios are most useful when interpreted alongside business conditions and historical trends.</p>
@@ -647,7 +689,7 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
       <div>
         <div class="eyebrow">03 / ANALYTICAL FRAMEWORK</div>
         <h2 class="section-heading">Explore how I analyse.</h2>
-        <p class="section-intro">Select a lens to see the questions that guide my financial analysis.</p>
+        <p class="section-intro">Select a lens to explore the questions that guide financial analysis.</p>
       </div>
       <div class="section-index">INTERACTIVE WORKSPACE</div>
     </div>
@@ -655,20 +697,16 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
     <div class="analysis-layout reveal">
       <div class="analysis-menu" role="tablist" aria-label="Analysis topics">
         <button class="analysis-tab active" data-analysis="profitability" role="tab" aria-selected="true">
-          <strong>01 / Profitability</strong>
-          <span>How effectively does the business earn?</span>
+          <strong>01 / Profitability</strong><span>How effectively does the business earn?</span>
         </button>
         <button class="analysis-tab" data-analysis="liquidity" role="tab" aria-selected="false">
-          <strong>02 / Liquidity</strong>
-          <span>Can the business meet short-term obligations?</span>
+          <strong>02 / Liquidity</strong><span>Can it meet short-term obligations?</span>
         </button>
         <button class="analysis-tab" data-analysis="cashflow" role="tab" aria-selected="false">
-          <strong>03 / Cash flow</strong>
-          <span>How do earnings translate into cash?</span>
+          <strong>03 / Cash flow</strong><span>How do earnings translate into cash?</span>
         </button>
         <button class="analysis-tab" data-analysis="efficiency" role="tab" aria-selected="false">
-          <strong>04 / Efficiency</strong>
-          <span>How well are resources being used?</span>
+          <strong>04 / Efficiency</strong><span>How well are resources used?</span>
         </button>
       </div>
 
@@ -679,8 +717,8 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
         <div class="analysis-points">
           <div class="analysis-point"><span class="check">↗</span><span>Examine gross, operating and net profit margins.</span></div>
           <div class="analysis-point"><span class="check">↗</span><span>Compare return ratios across years and companies.</span></div>
-          <div class="analysis-point"><span class="check">↗</span><span>Investigate whether changes are consistent with revenue and cost trends.</span></div>
-          <div class="analysis-point"><span class="check">↗</span><span>Use the evidence to develop questions, not jump to conclusions.</span></div>
+          <div class="analysis-point"><span class="check">↗</span><span>Investigate changes alongside revenue and cost trends.</span></div>
+          <div class="analysis-point"><span class="check">↗</span><span>Use evidence to develop questions, not jump to conclusions.</span></div>
         </div>
       </div>
     </div>
@@ -694,7 +732,7 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
       <div>
         <div class="eyebrow">04 / CAPABILITIES</div>
         <h2 class="section-heading">My analytical toolkit.</h2>
-        <p class="section-intro">The areas I am developing through finance coursework and project-based learning.</p>
+        <p class="section-intro">Finance concepts and tools developed through coursework and project-based learning.</p>
       </div>
       <div class="section-index">SKILLS & TOOLS</div>
     </div>
@@ -730,9 +768,8 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
 
       <div class="skill-box reveal">
         <h3>Tools & methods</h3>
-        <p class="muted" style="font-size:12px;margin-bottom:18px">
-          Methods and tools relevant to my project work and ongoing learning.
-        </p>
+        <p class="muted" style="font-size:12px;margin-bottom:18px">Methods relevant to my project work and ongoing learning.</p>
+
         <div class="tool-grid">
           <span class="tool-chip">Microsoft Excel</span>
           <span class="tool-chip">Financial Statements</span>
@@ -743,6 +780,7 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
           <span class="tool-chip">Data Interpretation</span>
           <span class="tool-chip">Business Research</span>
         </div>
+
         <div class="rule"></div>
         <h3>Currently building</h3>
         <div class="tool-grid">
@@ -769,23 +807,19 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
 
     <div class="method-grid">
       <article class="method-card reveal">
-        <div class="num">STEP_01</div>
-        <h3>Collect</h3>
+        <div class="num">STEP_01</div><h3>Collect</h3>
         <p>Identify relevant financial statements and supporting disclosures from company reports.</p>
       </article>
       <article class="method-card reveal">
-        <div class="num">STEP_02</div>
-        <h3>Organise</h3>
-        <p>Structure the information consistently and check the figures before analysis.</p>
+        <div class="num">STEP_02</div><h3>Organise</h3>
+        <p>Structure the information consistently and check figures before analysis.</p>
       </article>
       <article class="method-card reveal">
-        <div class="num">STEP_03</div>
-        <h3>Compare</h3>
+        <div class="num">STEP_03</div><h3>Compare</h3>
         <p>Examine historical trends, selected ratios and differences between businesses.</p>
       </article>
       <article class="method-card reveal">
-        <div class="num">STEP_04</div>
-        <h3>Interpret</h3>
+        <div class="num">STEP_04</div><h3>Interpret</h3>
         <p>Explain what the evidence may indicate, note limitations and identify further questions.</p>
       </article>
     </div>
@@ -852,6 +886,7 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
     </div>
   </div>
 </section>
+
 </main>
 
 <footer>
@@ -862,7 +897,7 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
   </div>
 </footer>
 
-<!-- SEARCH -->
+<!-- SEARCH DIALOG -->
 <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search portfolio">
   <div class="search-box">
     <div style="display:flex;justify-content:space-between;align-items:center">
@@ -878,8 +913,8 @@ footer {padding:25px 0;border-top:1px solid var(--border);margin-top:75px}
 <div class="toast" id="toast" role="status"></div>
 
 <script>
-/* All DOM elements and chart functions are initialised before use.
-   This avoids the earlier "Cannot access 'heroChart' before initialization" error. */
+/* Initialise the chart before calling applyTheme.
+   This prevents the earlier heroChart initialisation error. */
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -891,17 +926,14 @@ const chartContext = chartCanvas ? chartCanvas.getContext("2d") : null;
 
 $("#year").textContent = new Date().getFullYear();
 
-/* THEME */
+/* Theme */
 function applyTheme(theme) {
   body.classList.toggle("light", theme === "light");
   themeBtn.textContent = theme === "light" ? "☼" : "◐";
-  themeBtn.setAttribute("aria-label", theme === "light" ? "Switch to dark theme" : "Switch to light theme");
 
   try {
     localStorage.setItem("sujal-portfolio-theme", theme);
-  } catch (error) {
-    // The website remains usable if browser storage is unavailable.
-  }
+  } catch (error) {}
 
   drawHeroChart();
 }
@@ -915,7 +947,7 @@ themeBtn.addEventListener("click", () => {
   applyTheme(body.classList.contains("light") ? "dark" : "light");
 });
 
-/* ILLUSTRATIVE HERO CHART — NOT MARKET DATA */
+/* Illustrative chart — no stock prices or live market data */
 function drawHeroChart() {
   if (!chartCanvas || !chartContext) return;
 
@@ -934,160 +966,154 @@ function drawHeroChart() {
   ctx.clearRect(0, 0, width, height);
 
   const points = [
-    [0, .79], [.12, .68], [.24, .74], [.36, .42],
-    [.49, .55], [.63, .26], [.76, .39], [.88, .22], [1, .04]
+    [0,.79],[.12,.68],[.24,.74],[.36,.42],
+    [.49,.55],[.63,.26],[.76,.39],[.88,.22],[1,.04]
   ];
 
   const coords = points.map(([x,y]) => ({
-    x: x * width,
-    y: 12 + y * (height - 25)
+    x:x*width,
+    y:12+y*(height-25)
   }));
 
   ctx.strokeStyle = "rgba(148,169,204,.13)";
   ctx.lineWidth = 1;
 
-  for (let i = 1; i <= 3; i++) {
-    const y = height * i / 4;
+  for (let i=1;i<=3;i++) {
+    const y=height*i/4;
     ctx.beginPath();
-    ctx.moveTo(0, y);
-    ctx.lineTo(width, y);
+    ctx.moveTo(0,y);
+    ctx.lineTo(width,y);
     ctx.stroke();
   }
 
-  const gradient = ctx.createLinearGradient(0, 0, 0, height);
-  gradient.addColorStop(0, "rgba(98,229,255,.22)");
-  gradient.addColorStop(1, "rgba(98,229,255,0)");
+  const gradient = ctx.createLinearGradient(0,0,0,height);
+  gradient.addColorStop(0,"rgba(98,229,255,.22)");
+  gradient.addColorStop(1,"rgba(98,229,255,0)");
 
   ctx.beginPath();
-  ctx.moveTo(coords[0].x, height);
+  ctx.moveTo(coords[0].x,height);
 
-  coords.forEach((p, i) => {
-    if (i === 0) {
-      ctx.lineTo(p.x, p.y);
+  coords.forEach((p,i) => {
+    if (i===0) {
+      ctx.lineTo(p.x,p.y);
     } else {
-      const prev = coords[i - 1];
-      const mid = (prev.x + p.x) / 2;
-      ctx.bezierCurveTo(mid, prev.y, mid, p.y, p.x, p.y);
+      const prev=coords[i-1];
+      const mid=(prev.x+p.x)/2;
+      ctx.bezierCurveTo(mid,prev.y,mid,p.y,p.x,p.y);
     }
   });
 
-  ctx.lineTo(width, height);
+  ctx.lineTo(width,height);
   ctx.closePath();
-  ctx.fillStyle = gradient;
+  ctx.fillStyle=gradient;
   ctx.fill();
 
   ctx.beginPath();
-  coords.forEach((p, i) => {
-    if (i === 0) ctx.moveTo(p.x, p.y);
+  coords.forEach((p,i) => {
+    if (i===0) ctx.moveTo(p.x,p.y);
     else {
-      const prev = coords[i - 1];
-      const mid = (prev.x + p.x) / 2;
-      ctx.bezierCurveTo(mid, prev.y, mid, p.y, p.x, p.y);
+      const prev=coords[i-1];
+      const mid=(prev.x+p.x)/2;
+      ctx.bezierCurveTo(mid,prev.y,mid,p.y,p.x,p.y);
     }
   });
 
-  ctx.strokeStyle = "#62e5ff";
-  ctx.lineWidth = 2.2;
+  ctx.strokeStyle="#62e5ff";
+  ctx.lineWidth=2.2;
   ctx.stroke();
 
-  const last = coords[coords.length - 1];
+  const last=coords[coords.length-1];
   ctx.beginPath();
-  ctx.arc(last.x, last.y, 3.5, 0, Math.PI * 2);
-  ctx.fillStyle = "#77f0bd";
+  ctx.arc(last.x,last.y,3.5,0,Math.PI*2);
+  ctx.fillStyle="#77f0bd";
   ctx.fill();
 }
 
-/* Set the theme only after chart variables and functions exist. */
 applyTheme(savedTheme);
 
-/* Re-render chart on resize. */
 let resizeTimer;
-window.addEventListener("resize", () => {
+window.addEventListener("resize",() => {
   clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(drawHeroChart, 100);
+  resizeTimer=setTimeout(drawHeroChart,100);
 });
 
-/* MOBILE NAV */
-const navLinks = $("#navLinks");
-$("#menuBtn").addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-});
+/* Mobile navigation */
+const navLinks=$("#navLinks");
+$("#menuBtn").addEventListener("click",() => navLinks.classList.toggle("open"));
 
 $$("#navLinks a").forEach(link => {
-  link.addEventListener("click", () => navLinks.classList.remove("open"));
+  link.addEventListener("click",() => navLinks.classList.remove("open"));
 });
 
-/* SCROLL PROGRESS */
+/* Reading progress */
 function updateProgress() {
-  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = scrollable > 0 ? window.scrollY / scrollable * 100 : 0;
-  $("#progressBar").style.width = progress + "%";
+  const scrollable=document.documentElement.scrollHeight-window.innerHeight;
+  const progress=scrollable>0 ? window.scrollY/scrollable*100 : 0;
+  $("#progressBar").style.width=progress+"%";
 }
-window.addEventListener("scroll", updateProgress, { passive:true });
+window.addEventListener("scroll",updateProgress,{passive:true});
 updateProgress();
 
-/* ACTIVE NAV ITEM */
-const sections = $$("main section[id]");
-const navAnchors = $$("#navLinks a");
-
+/* Active navigation */
 if ("IntersectionObserver" in window) {
-  const sectionObserver = new IntersectionObserver(entries => {
+  const sectionObserver=new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      navAnchors.forEach(link => {
-        link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id);
+      $$("#navLinks a").forEach(link => {
+        link.classList.toggle(
+          "active",
+          link.getAttribute("href")==="#"+entry.target.id
+        );
       });
     });
-  }, { rootMargin:"-25% 0px -60% 0px" });
+  },{rootMargin:"-25% 0px -60% 0px"});
 
-  sections.forEach(section => sectionObserver.observe(section));
+  $$("main section[id]").forEach(section => sectionObserver.observe(section));
 }
 
-/* REVEAL ANIMATIONS */
+/* Scroll reveal */
 if ("IntersectionObserver" in window) {
-  const revealObserver = new IntersectionObserver(entries => {
+  const revealObserver=new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold:.08 });
+  },{threshold:.08});
 
   $$(".reveal").forEach(el => revealObserver.observe(el));
-} else {
-  $$(".reveal").forEach(el => el.classList.add("visible"));
-}
 
-/* ANIMATED SKILL BARS */
-if ("IntersectionObserver" in window) {
-  const skillObserver = new IntersectionObserver(entries => {
+  const skillObserver=new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.style.width = entry.target.dataset.width || "0%";
+        entry.target.style.width=entry.target.dataset.width || "0%";
         skillObserver.unobserve(entry.target);
       }
     });
-  }, { threshold:.3 });
+  },{threshold:.3});
 
   $$(".skill-fill").forEach(el => skillObserver.observe(el));
+} else {
+  $$(".reveal").forEach(el => el.classList.add("visible"));
+  $$(".skill-fill").forEach(el => el.style.width=el.dataset.width || "0%");
 }
 
-/* PROJECT EXPANDERS */
+/* Expandable project details */
 $$("[data-expand]").forEach(button => {
-  button.addEventListener("click", () => {
-    const panel = document.getElementById(button.dataset.expand);
+  button.addEventListener("click",() => {
+    const panel=document.getElementById(button.dataset.expand);
     if (!panel) return;
 
-    const open = panel.classList.toggle("open");
-    button.setAttribute("aria-expanded", String(open));
-    button.textContent = open ? "− Hide project details" : "+ Explore project details";
+    const open=panel.classList.toggle("open");
+    button.setAttribute("aria-expanded",String(open));
+    button.textContent=open ? "− Hide project details" : "+ Explore project details";
   });
 });
 
-/* ANALYSIS TABS */
+/* Interactive financial analysis tabs */
 const analysisContent = {
-  profitability: {
+  profitability:{
     number:"01",
     title:"Profitability",
     intro:"Understand earnings in relation to revenue, assets and shareholders' funds.",
@@ -1095,10 +1121,10 @@ const analysisContent = {
       "Examine gross, operating and net profit margins.",
       "Compare return ratios across years and companies.",
       "Investigate changes alongside revenue and cost trends.",
-      "Use the evidence to develop questions, not jump to conclusions."
+      "Use evidence to develop questions, not jump to conclusions."
     ]
   },
-  liquidity: {
+  liquidity:{
     number:"02",
     title:"Liquidity",
     intro:"Examine the relationship between short-term assets and short-term obligations.",
@@ -1109,10 +1135,10 @@ const analysisContent = {
       "Interpret ratios in the context of the company's business model."
     ]
   },
-  cashflow: {
+  cashflow:{
     number:"03",
     title:"Cash flow",
-    intro:"Study how cash moves through operating, investing and financing activities.",
+    intro:"Study cash movements through operating, investing and financing activities.",
     points:[
       "Examine operating cash flow across periods.",
       "Compare operating cash flow with reported earnings.",
@@ -1120,7 +1146,7 @@ const analysisContent = {
       "Investigate material differences between profit and cash generation."
     ]
   },
-  efficiency: {
+  efficiency:{
     number:"04",
     title:"Efficiency",
     intro:"Consider how effectively the company uses its assets and working capital.",
@@ -1134,22 +1160,22 @@ const analysisContent = {
 };
 
 $$("[data-analysis]").forEach(button => {
-  button.addEventListener("click", () => {
-    const data = analysisContent[button.dataset.analysis];
+  button.addEventListener("click",() => {
+    const data=analysisContent[button.dataset.analysis];
     if (!data) return;
 
     $$("[data-analysis]").forEach(tab => {
-      const active = tab === button;
-      tab.classList.toggle("active", active);
-      tab.setAttribute("aria-selected", String(active));
+      const active=tab===button;
+      tab.classList.toggle("active",active);
+      tab.setAttribute("aria-selected",String(active));
     });
 
-    $("#analysisPanel").innerHTML = `
+    $("#analysisPanel").innerHTML=`
       <div class="eyebrow">ANALYSIS_LENS / ${data.number}</div>
       <h3>${data.title}</h3>
       <p>${data.intro}</p>
       <div class="analysis-points">
-        ${data.points.map(point => `
+        ${data.points.map(point=>`
           <div class="analysis-point">
             <span class="check">↗</span><span>${point}</span>
           </div>
@@ -1159,38 +1185,37 @@ $$("[data-analysis]").forEach(button => {
   });
 });
 
-/* PORTFOLIO SEARCH */
-const searchOverlay = $("#searchOverlay");
-const searchInput = $("#searchInput");
-const searchResults = $("#searchResults");
+/* Portfolio search */
+const searchOverlay=$("#searchOverlay");
+const searchInput=$("#searchInput");
+const searchResults=$("#searchResults");
 
-const searchableSections = [
-  { title:"Overview — Sujal Bansal", url:"#home", words:"profile finance introduction" },
-  { title:"Suzlon Energy financial analysis", url:"#research", words:"suzlon equity research ratios five year" },
-  { title:"FMCG financial analysis", url:"#research", words:"hul britannia nestle comparison" },
-  { title:"Company coverage", url:"#companies", words:"companies renewable energy consumer goods" },
-  { title:"Financial analysis framework", url:"#analysis", words:"profitability liquidity cash flow efficiency" },
-  { title:"Skills and tools", url:"#skills", words:"excel financial modelling research" },
-  { title:"Research methodology", url:"#method", words:"collect organise compare interpret" },
-  { title:"Education", url:"#education", words:"fiib pgdm bba cgpa academics" },
-  { title:"Contact and LinkedIn", url:"#contact", words:"email linkedin github contact" }
+const searchableSections=[
+  {title:"Overview — Sujal Bansal",url:"#home",words:"profile finance introduction"},
+  {title:"Suzlon Energy financial analysis",url:"#research",words:"suzlon equity research ratios five year"},
+  {title:"FMCG financial analysis",url:"#research",words:"hul britannia nestle comparison"},
+  {title:"Company coverage",url:"#companies",words:"companies renewable energy consumer goods"},
+  {title:"Financial analysis framework",url:"#analysis",words:"profitability liquidity cash flow efficiency"},
+  {title:"Skills and tools",url:"#skills",words:"excel financial modelling research"},
+  {title:"Research methodology",url:"#method",words:"collect organise compare interpret"},
+  {title:"Education",url:"#education",words:"fiib pgdm bba cgpa academics"},
+  {title:"Contact and LinkedIn",url:"#contact",words:"email linkedin github contact"}
 ];
 
-function renderSearch(query = "") {
-  const q = query.trim().toLowerCase();
-
-  const matches = searchableSections.filter(item =>
-    (item.title + " " + item.words).toLowerCase().includes(q)
+function renderSearch(query="") {
+  const q=query.trim().toLowerCase();
+  const matches=searchableSections.filter(item =>
+    (item.title+" "+item.words).toLowerCase().includes(q)
   );
 
-  searchResults.innerHTML = matches.length
-    ? matches.map(item => `<a href="${item.url}">${item.title} ↗</a>`).join("")
+  searchResults.innerHTML=matches.length
+    ? matches.map(item=>`<a href="${item.url}">${item.title} ↗</a>`).join("")
     : `<p class="muted" style="font-size:12px;padding:10px">No matching section found.</p>`;
 
   $$("#searchResults a").forEach(link => {
-    link.addEventListener("click", () => {
+    link.addEventListener("click",() => {
       searchOverlay.classList.remove("open");
-      searchInput.value = "";
+      searchInput.value="";
     });
   });
 }
@@ -1198,32 +1223,25 @@ function renderSearch(query = "") {
 function openSearch() {
   searchOverlay.classList.add("open");
   renderSearch("");
-  setTimeout(() => searchInput.focus(), 50);
+  setTimeout(()=>searchInput.focus(),50);
 }
 
-$("#searchBtn").addEventListener("click", openSearch);
-$("#closeSearch").addEventListener("click", () => searchOverlay.classList.remove("open"));
-searchInput.addEventListener("input", () => renderSearch(searchInput.value));
+$("#searchBtn").addEventListener("click",openSearch);
+$("#closeSearch").addEventListener("click",()=>searchOverlay.classList.remove("open"));
+searchInput.addEventListener("input",()=>renderSearch(searchInput.value));
 
-searchOverlay.addEventListener("click", event => {
-  if (event.target === searchOverlay) searchOverlay.classList.remove("open");
+searchOverlay.addEventListener("click",event => {
+  if (event.target===searchOverlay) searchOverlay.classList.remove("open");
 });
 
-document.addEventListener("keydown", event => {
-  if (event.key === "Escape") searchOverlay.classList.remove("open");
-  if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
+document.addEventListener("keydown",event => {
+  if (event.key==="Escape") searchOverlay.classList.remove("open");
+  if ((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==="k") {
     event.preventDefault();
     openSearch();
   }
 });
-
-/* FRIENDLY FEEDBACK FOR COPY ACTIONS IF ADDED LATER */
-function showToast(message) {
-  const toast = $("#toast");
-  toast.textContent = message;
-  toast.classList.add("show");
-  setTimeout(() => toast.classList.remove("show"), 2200);
-}
 </script>
+
 </body>
 </html>
