@@ -2,1852 +2,1471 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#101512">
-<meta name="description" content="Sujal Bansal — Finance, Fundamental Analysis and Financial Research Portfolio">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b100e">
 <title>Sujal Bansal | Finance Portfolio</title>
 
 <style>
 :root {
-  --bg:#101512;
-  --surface:#171e19;
-  --card:#1c261f;
-  --text:#f3f2e9;
-  --muted:#a4afa5;
-  --line:#303b32;
-  --accent:#65d6a0;
-  --accent-soft:#c5f2d8;
-  --gold:#d7bb7c;
-  --nav:rgba(16,21,18,.92);
-  --shadow:0 20px 60px rgba(0,0,0,.2);
+  --bg: #0b100e;
+  --panel: #142019;
+  --panel2: #1c2b20;
+  --txt: #f4f2e9;
+  --muted: #aab7ac;
+  --green: #a4d3ae;
+  --gold: #e2bb69;
+  --line: #304034;
 }
 
-body.light {
-  --bg:#f3f2eb;
-  --surface:#e9eee7;
-  --card:#ffffff;
-  --text:#18231c;
-  --muted:#68766d;
-  --line:#dce4dc;
-  --accent:#14774f;
-  --accent-soft:#d9f4e5;
-  --gold:#9b7934;
-  --nav:rgba(243,242,235,.93);
-  --shadow:0 20px 60px rgba(24,47,31,.08);
+* {
+  box-sizing: border-box;
 }
-
-* { box-sizing:border-box; }
 
 html {
-  scroll-behavior:smooth;
-  scroll-padding-top:90px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Inter,Arial,Helvetica,sans-serif;
-  line-height:1.65;
-  transition:background .3s,color .3s;
+  margin: 0;
+  background: var(--bg);
+  color: var(--txt);
+  font: 15px/1.6 Inter, system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
-a { color:inherit;text-decoration:none; }
-button,input { font:inherit; }
-button { cursor:pointer; }
-::selection { background:var(--accent);color:#102117; }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.15;
+  background-image:
+    linear-gradient(#78927c12 1px, transparent 1px),
+    linear-gradient(90deg, #78927c12 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 .wrap {
-  width:min(1160px,calc(100% - 44px));
-  margin:auto;
-}
-
-.progress {
-  height:3px;
-  width:0;
-  position:fixed;
-  top:0;
-  left:0;
-  z-index:999;
-  background:var(--accent);
+  width: min(1120px, 91%);
+  margin: auto;
 }
 
 /* NAVIGATION */
 
-header {
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:var(--nav);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--line);
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  background: #0b100ee8;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #ffffff14;
 }
 
 .nav {
-  height:78px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
 }
 
 .brand {
-  display:flex;
-  align-items:center;
-  gap:12px;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
 }
 
-.logo {
-  width:44px;
-  height:44px;
-  display:grid;
-  place-items:center;
-  border-radius:14px;
-  background:var(--accent);
-  color:#102117;
-  font-weight:900;
-  font-size:16px;
+.brand b {
+  color: var(--gold);
 }
 
-.brand-name {
-  font-size:13px;
-  font-weight:850;
-  letter-spacing:.05em;
-  line-height:1.4;
+nav {
+  display: flex;
+  gap: 22px;
+  font-size: 12px;
+  color: var(--muted);
 }
 
-.brand-sub {
-  display:block;
-  color:var(--muted);
-  font-size:10px;
-  letter-spacing:.14em;
-  font-family:monospace;
+nav a:hover,
+nav a.active {
+  color: var(--gold);
 }
 
-.nav-links {
-  display:flex;
-  align-items:center;
-  gap:20px;
+button {
+  font: inherit;
+  cursor: pointer;
 }
 
-.nav-links a {
-  color:var(--muted);
-  font-size:12px;
-  font-weight:650;
-  transition:color .2s;
+.menu {
+  display: none;
+  background: none;
+  color: var(--txt);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 7px;
 }
-
-.nav-links a:hover,
-.nav-links a.active {
-  color:var(--accent);
-}
-
-.nav-actions {
-  display:flex;
-  gap:8px;
-}
-
-.icon-btn {
-  width:42px;
-  height:42px;
-  display:grid;
-  place-items:center;
-  border:1px solid var(--line);
-  border-radius:13px;
-  background:var(--surface);
-  color:var(--text);
-  font-size:17px;
-}
-
-.menu-btn { display:none; }
 
 /* HERO */
 
 .hero {
-  min-height:670px;
-  padding:80px 0;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:55px;
-}
-
-.eyebrow,
-.kicker {
-  color:var(--accent);
-  font-family:monospace;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.16em;
-  text-transform:uppercase;
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 45px;
+  padding: 65px 0;
 }
 
 .eyebrow {
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:22px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 850;
 }
 
-.eyebrow:before {
-  content:"";
-  width:25px;
-  height:2px;
-  background:var(--accent);
+.pulse {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-right: 8px;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 0 3px #e2bb6944;
+  }
 }
 
 h1 {
-  margin:0 0 24px;
-  font-size:clamp(48px,6.3vw,79px);
-  line-height:.99;
-  letter-spacing:-.065em;
-  font-weight:850;
+  font-size: clamp(56px, 8vw, 98px);
+  line-height: 0.92;
+  letter-spacing: -0.075em;
+  margin: 22px 0;
 }
 
-.accent { color:var(--accent); }
-
-.hero-copy {
-  max-width:570px;
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.9;
+h1 span {
+  color: var(--gold);
+  font: italic 500 1em Georgia, serif;
 }
 
-.hero-copy strong { color:var(--text); }
-
-.pills {
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px;
-  margin:24px 0;
+.lead {
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 17px;
 }
 
-.pill {
-  padding:7px 11px;
-  border:1px solid var(--line);
-  border-radius:30px;
-  background:var(--surface);
-  color:var(--muted);
-  font-size:11px;
-}
-
-.pill b { color:var(--accent); }
-
-.btn-row {
-  display:flex;
-  flex-wrap:wrap;
-  gap:11px;
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
 }
 
 .btn {
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  gap:8px;
-  padding:12px 17px;
-  border:1px solid var(--line);
-  border-radius:12px;
-  font-size:12px;
-  font-weight:800;
-  transition:transform .2s,background .2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  padding: 11px 15px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 800;
+  transition: 0.2s;
 }
 
-.btn:hover { transform:translateY(-3px); }
-
-.btn-primary {
-  background:var(--accent);
-  border-color:var(--accent);
-  color:#102117;
+.btn:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
 }
 
-.btn-secondary {
-  background:var(--surface);
-  color:var(--text);
+.primary {
+  background: var(--gold);
+  color: #171b14;
+  border-color: var(--gold);
 }
 
-.hero-note {
-  margin-top:22px;
-  font:10px monospace;
-  color:var(--muted);
-  letter-spacing:.04em;
+.meta {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  color: var(--muted);
+  font-size: 11px;
 }
 
-.hero-note span { color:var(--accent); }
-
-/* INTERACTIVE DASHBOARD */
-
-.dashboard {
-  position:relative;
-  overflow:hidden;
-  padding:25px;
-  border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line));
-  border-radius:26px;
-  background:linear-gradient(145deg,var(--card),var(--surface));
-  box-shadow:var(--shadow);
+.meta strong {
+  display: block;
+  color: var(--txt);
+  font-size: 14px;
 }
 
-.dashboard:before {
-  content:"";
-  position:absolute;
-  width:220px;
-  height:220px;
-  top:-130px;
-  right:-80px;
-  border-radius:50%;
-  background:var(--accent);
-  opacity:.09;
-  filter:blur(30px);
-  pointer-events:none;
+/* ANIMATED HERO GRAPHIC */
+
+.visual {
+  height: 440px;
+  display: grid;
+  place-items: center;
+  position: relative;
 }
 
-.dash-top {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  color:var(--muted);
-  font:10px monospace;
+.orbit {
+  position: absolute;
+  border: 1px solid #526a5540;
+  border-radius: 50%;
+  animation: spin 32s linear infinite;
 }
 
-.status {
-  color:var(--accent);
-  border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
-  border-radius:8px;
-  padding:6px 9px;
-  white-space:nowrap;
+.o1 {
+  width: 350px;
+  height: 350px;
 }
 
-.status:before {
-  content:"";
-  display:inline-block;
-  width:6px;
-  height:6px;
-  margin-right:6px;
-  border-radius:50%;
-  background:var(--accent);
+.o2 {
+  width: 270px;
+  height: 270px;
+  animation-direction: reverse;
+  animation-duration: 24s;
 }
 
-.dashboard h2 {
-  margin:27px 0 2px;
-  font-size:24px;
-  letter-spacing:-.04em;
+.o3 {
+  width: 185px;
+  height: 185px;
 }
 
-.dash-caption {
-  margin:0;
-  color:var(--muted);
-  font-size:12px;
+.orbit::after {
+  content: "";
+  position: absolute;
+  top: 14%;
+  left: 15%;
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 18px #e2bb6977;
 }
 
-.chart-wrap {
-  height:210px;
-  margin:20px 0 12px;
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-#heroChart {
-  display:block;
-  width:100%;
-  height:100%;
+.core {
+  width: 145px;
+  height: 145px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #e7c77f, #927034);
+  color: #151a13;
+  font-size: 42px;
+  font-weight: 950;
+  box-shadow: 0 0 80px #d8b46b20;
 }
 
-.chart-labels {
-  display:flex;
-  justify-content:space-between;
-  color:var(--muted);
-  font:9px monospace;
+.float {
+  position: absolute;
+  background: #16221bee;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 12px 14px;
+  box-shadow: 0 20px 60px #0005;
+  animation: float 5s ease-in-out infinite;
 }
 
-.dash-stats {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:9px;
-  margin-top:18px;
+.float small {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 0.12em;
 }
 
-.stat {
-  padding:12px;
-  min-width:0;
-  border:1px solid var(--line);
-  border-radius:12px;
-  background:var(--surface);
+.float strong {
+  font-size: 12px;
 }
 
-.stat small {
-  display:block;
-  color:var(--muted);
-  font:9px monospace;
-  text-transform:uppercase;
+.f1 {
+  top: 10%;
+  right: 0;
 }
 
-.stat strong {
-  display:block;
-  margin:6px 0 3px;
-  font-size:13px;
-  line-height:1.35;
+.f2 {
+  top: 47%;
+  left: 0;
+  animation-delay: -1.4s;
 }
 
-.stat span {
-  color:var(--muted);
-  font-size:10px;
+.f3 {
+  bottom: 8%;
+  right: 0;
+  animation-delay: -2.5s;
 }
 
-.dash-foot {
-  margin-top:15px;
-  color:var(--muted);
-  font:9px monospace;
+@keyframes float {
+  50% {
+    transform: translateY(-9px);
+  }
 }
 
-/* GENERAL SECTIONS */
+/* MOVING TEXT STRIP */
 
-.section {
-  padding:78px 0;
-  border-top:1px solid var(--line);
+.ticker {
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  padding: 12px 0;
 }
 
-.section-head {
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:25px;
-  margin-bottom:30px;
+.track {
+  display: flex;
+  width: max-content;
+  gap: 30px;
+  color: #809584;
+  font-size: 10px;
+  letter-spacing: 0.17em;
+  font-weight: 850;
+  animation: marquee 32s linear infinite;
 }
 
-.section-title {
-  margin:8px 0 0;
-  font-size:clamp(31px,4vw,46px);
-  line-height:1.08;
-  letter-spacing:-.055em;
+.track span::after {
+  content: "✳";
+  color: var(--gold);
+  margin-left: 30px;
 }
 
-.section-desc {
-  max-width:430px;
-  margin:0;
-  color:var(--muted);
-  font-size:13px;
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-.grid-3 {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
+/* SECTIONS */
+
+section.content {
+  padding: 82px 0;
+  border-bottom: 1px solid #ffffff0c;
 }
 
-.card {
-  padding:23px;
-  border:1px solid var(--line);
-  border-radius:21px;
-  background:var(--card);
-  transition:transform .25s,border-color .25s,box-shadow .25s;
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.7s;
 }
 
-.card:hover {
-  transform:translateY(-5px);
-  border-color:var(--accent);
-  box-shadow:var(--shadow);
+.reveal.visible {
+  opacity: 1;
+  transform: none;
 }
 
-.card-tag {
-  color:var(--accent);
-  font:10px monospace;
-  letter-spacing:.1em;
-  text-transform:uppercase;
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 25px;
+  margin-bottom: 30px;
 }
 
-.card h3 {
-  margin:13px 0 9px;
-  font-size:19px;
-  letter-spacing:-.035em;
+.head h2 {
+  font-size: clamp(32px, 5vw, 52px);
+  letter-spacing: -0.06em;
+  line-height: 1.05;
+  margin: 9px 0 0;
 }
 
-.card p {
-  margin:0;
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.9;
+.head > p {
+  max-width: 420px;
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
 }
 
-.card-bottom {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-top:20px;
-  padding-top:14px;
-  border-top:1px solid var(--line);
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
-.text-link {
-  color:var(--accent);
-  font-size:11px;
-  font-weight:800;
+.panel,
+.project,
+.skill,
+.edu {
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, #17231b, #101713);
+  border-radius: 12px;
+  padding: 23px;
 }
 
-/* PROJECTS */
+.panel h3,
+.skill h3,
+.edu h3 {
+  margin: 0 0 10px;
+  font-size: 17px;
+}
+
+.panel p,
+.edu p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+.focus {
+  display: grid;
+  gap: 11px;
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.focus span::before {
+  content: "↗";
+  color: var(--gold);
+  margin-right: 10px;
+}
+
+/* PROJECT CARDS */
 
 .projects {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:17px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
 }
 
 .project {
-  overflow:hidden;
-  border:1px solid var(--line);
-  border-radius:22px;
-  background:var(--card);
-  transition:transform .25s,border-color .25s;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, border-color 0.25s;
+  background: var(--panel);
 }
 
 .project:hover {
-  transform:translateY(-4px);
-  border-color:var(--accent);
+  transform: translateY(-5px);
+  border-color: #759477;
 }
 
-.project-visual {
-  min-height:135px;
-  padding:22px;
-  display:flex;
-  align-items:start;
-  justify-content:space-between;
-  gap:15px;
-  border-bottom:1px solid var(--line);
-  background:linear-gradient(135deg,var(--surface),var(--card));
+.chart {
+  height: 170px;
+  position: relative;
+  display: flex;
+  align-items: end;
+  gap: 9px;
+  padding: 24px 25px 0;
+  background:
+    radial-gradient(circle at 75% 20%, #35553b, transparent 42%),
+    linear-gradient(135deg, #1c2c20, #101713);
 }
 
-.project-symbol {
-  width:52px;
-  height:52px;
-  display:grid;
-  place-items:center;
-  border-radius:16px;
-  border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
-  background:color-mix(in srgb,var(--accent) 13%,transparent);
-  color:var(--accent);
-  font-size:22px;
-  font-weight:900;
+.chart.fmcg {
+  background:
+    radial-gradient(circle at 70% 25%, #735b30, transparent 40%),
+    linear-gradient(135deg, #25291d, #101713);
 }
 
-.mini-bars {
-  height:42px;
-  display:flex;
-  align-items:end;
-  gap:6px;
-  margin-top:12px;
+.chart label {
+  position: absolute;
+  top: 15px;
+  left: 22px;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: #d6e4d5;
+  font-weight: 850;
 }
 
-.mini-bars i {
-  display:block;
-  width:13px;
-  border-radius:4px 4px 0 0;
-  background:var(--accent);
-  opacity:.75;
-  transform-origin:bottom;
-  animation:rise .8s both;
+.bar {
+  flex: 1;
+  max-width: 35px;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(#a4d3ae, #47744e);
+  border: 1px solid #a4d3ae55;
+  transform-origin: bottom;
+  animation: grow 1.3s both;
+  animation-delay: var(--d);
 }
 
-.mini-bars i:nth-child(even) { opacity:.35; }
-
-@keyframes rise {
-  from { transform:scaleY(.05); }
-  to { transform:scaleY(1); }
+.fmcg .bar {
+  background: linear-gradient(#e2bb69, #856634);
 }
 
-.project-body { padding:22px; }
+@keyframes grow {
+  from {
+    transform: scaleY(0.05);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
 
-.project-meta {
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  color:var(--muted);
-  font:9px monospace;
-  text-transform:uppercase;
+.pbody {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.kicker {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .project h3 {
-  margin:12px 0 8px;
-  font-size:22px;
-  letter-spacing:-.04em;
+  font-size: 22px;
+  line-height: 1.25;
+  margin: 7px 0;
 }
 
-.project-body>p {
-  margin:0;
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.9;
+.desc {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 15px;
 }
 
-.project-tabs {
-  display:flex;
-  gap:5px;
-  margin-top:18px;
-  padding-bottom:8px;
-  border-bottom:1px solid var(--line);
+/* INTERACTIVE PURPOSE / PROCESS / OUTCOME */
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--line);
+  gap: 4px;
 }
 
-.project-tabs button {
-  padding:7px 10px;
-  border:0;
-  border-radius:7px;
-  background:transparent;
-  color:var(--muted);
-  font-size:10px;
+.tab {
+  background: none;
+  border: 0;
+  color: #819285;
+  padding: 9px 8px;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  border-bottom: 2px solid transparent;
 }
 
-.project-tabs button.active {
-  background:color-mix(in srgb,var(--accent) 14%,transparent);
-  color:var(--accent);
+.tab.active {
+  color: var(--gold);
+  border-color: var(--gold);
 }
 
-.project-detail {
-  min-height:78px;
-  padding:12px 0;
-  color:var(--muted);
-  font-size:11px;
-  line-height:1.9;
+.case {
+  color: var(--muted);
+  font-size: 12px;
+  min-height: 78px;
+  padding: 13px 0;
 }
 
-.project-links { margin-top:8px; }
-
-/* DARK TERMINAL */
-
-.terminal {
-  padding:24px;
-  border:1px solid rgba(101,214,160,.22);
-  border-radius:22px;
-  background:#0b100d;
-  color:#e8f2e9;
-  box-shadow:var(--shadow);
-  font:12px/1.8 monospace;
+.pactions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: auto;
 }
 
-.terminal-top {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-bottom:20px;
-  padding-bottom:15px;
-  border-bottom:1px solid rgba(255,255,255,.12);
+.pactions .btn {
+  font-size: 10px;
+  padding: 9px;
 }
 
-.terminal-dots { display:flex;gap:6px; }
-
-.terminal-dots i {
-  width:8px;height:8px;border-radius:50%;background:#43534a;
+.note {
+  color: #849386;
+  font-size: 11px;
+  margin-top: 18px;
 }
 
-.terminal-dots i:first-child { background:#65d6a0; }
+/* SKILLS */
 
-.terminal-label { color:#80dcb0;font-size:10px; }
-
-.terminal-line {
-  display:flex;
-  gap:12px;
-  margin:12px 0;
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
 }
 
-.prompt { color:#65d6a0;flex-shrink:0; }
-.terminal-value { color:#f1d9a0; }
-.terminal-muted { color:#9ba99e; }
-
-.cursor {
-  display:inline-block;
-  width:7px;
-  height:13px;
-  margin-left:5px;
-  background:#65d6a0;
-  vertical-align:-2px;
-  animation:blink 1s steps(2,start) infinite;
+.skill .symbol {
+  font-size: 21px;
+  color: var(--gold);
 }
 
-@keyframes blink { to { visibility:hidden; } }
-
-/* TOOLKIT */
-
-.toolkit {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
 }
 
-.tool-group {
-  padding:23px;
-  border:1px solid var(--line);
-  border-radius:20px;
-  background:var(--card);
-}
-
-.tool-group h3 { margin:0 0 18px;font-size:17px; }
-
-.skill { margin:17px 0; }
-
-.skill-top {
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:8px;
-  font-size:11px;
-}
-
-.skill-top span:last-child {
-  color:var(--muted);
-  font:10px monospace;
-}
-
-.skill-track {
-  height:6px;
-  overflow:hidden;
-  border-radius:99px;
-  background:var(--surface);
-}
-
-.skill-fill {
-  width:0;
-  height:100%;
-  border-radius:99px;
-  background:var(--accent);
-  transition:width 1.2s ease;
-}
-
-.skill-note {
-  color:var(--muted);
-  font-size:10px;
-  margin-top:15px;
+.chips span {
+  font-size: 10px;
+  color: var(--muted);
+  border: 1px solid #344538;
+  border-radius: 5px;
+  padding: 6px 8px;
 }
 
 /* EDUCATION */
 
 .education {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
 }
 
-.edu-card {
-  padding:23px;
-  border:1px solid var(--line);
-  border-radius:20px;
-  background:var(--card);
+.edu {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 12px;
 }
 
-.edu-date {
-  color:var(--accent);
-  font:10px monospace;
+.year {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 850;
 }
 
-.edu-card h3 { margin:11px 0 5px;font-size:18px; }
-
-.edu-card p { margin:0;color:var(--muted);font-size:12px; }
-
-.edu-score {
-  display:inline-flex;
-  margin-top:16px;
-  padding:7px 10px;
-  border:1px solid var(--line);
-  border-radius:8px;
-  color:var(--accent);
-  font:10px monospace;
+.edu h3 {
+  font-size: 14px;
+  margin-bottom: 4px;
 }
 
 /* CONTACT */
 
-.contact-box {
-  display:grid;
-  grid-template-columns:1fr auto;
-  align-items:center;
-  gap:30px;
-  padding:clamp(25px,5vw,50px);
-  border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line));
-  border-radius:26px;
-  background:var(--card);
+.contact {
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 90% 10%, #2b4933, transparent 42%),
+    var(--panel);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
 }
 
-.contact-box h2 {
-  margin:10px 0 12px;
-  font-size:clamp(31px,4.5vw,48px);
-  line-height:1.08;
-  letter-spacing:-.05em;
+.contact h2 {
+  font-size: clamp(32px, 5vw, 48px);
+  letter-spacing: -0.06em;
+  margin: 8px 0;
 }
 
-.contact-box p {
-  max-width:530px;
-  margin:0;
-  color:var(--muted);
-  font-size:13px;
+.contact p {
+  font-size: 13px;
+  color: var(--muted);
 }
 
-.contact-actions {
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  min-width:180px;
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 24px 0;
+  color: #7d8d80;
+  font-size: 10px;
 }
 
-footer {
-  padding:25px 0 35px;
-  color:var(--muted);
-  font-size:10px;
+/* SCROLL PROGRESS AND TOP BUTTON */
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--gold);
+  width: 0;
+  z-index: 30;
 }
 
-.footer-row {
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:15px;
-  padding-top:20px;
-  border-top:1px solid var(--line);
+.topbtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--panel2);
+  border: 1px solid var(--line);
+  color: var(--gold);
+  z-index: 8;
 }
 
-/* ANIMATIONS */
-
-.reveal {
-  opacity:0;
-  transform:translateY(18px);
-  transition:opacity .65s ease,transform .65s ease;
+.topbtn.show {
+  display: grid;
 }
 
-.reveal.visible {
-  opacity:1;
-  transform:translateY(0);
+/* PROJECT DETAILS POP-UP */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: #000b;
+  display: none;
+  place-items: center;
+  padding: 18px;
+  z-index: 40;
 }
 
-/* SEARCH */
-
-.search-overlay {
-  position:fixed;
-  inset:0;
-  z-index:200;
-  display:none;
-  justify-content:center;
-  align-items:flex-start;
-  padding:15vh 20px 20px;
-  background:rgba(0,0,0,.7);
+.modal.open {
+  display: grid;
 }
 
-.search-overlay.open { display:flex; }
-
-.search-box {
-  width:min(550px,100%);
-  padding:18px;
-  border:1px solid var(--line);
-  border-radius:20px;
-  background:var(--card);
-  box-shadow:var(--shadow);
+.modalbox {
+  max-width: 570px;
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 24px;
 }
 
-.search-box input {
-  width:100%;
-  padding:14px;
-  border:1px solid var(--line);
-  border-radius:12px;
-  outline:none;
-  background:var(--bg);
-  color:var(--text);
+.modalhead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
 }
 
-.search-results {
-  display:grid;
-  gap:5px;
-  margin-top:12px;
+.modalhead button {
+  background: none;
+  color: var(--txt);
+  border: 1px solid var(--line);
+  padding: 7px 10px;
+  border-radius: 6px;
 }
 
-.search-results a {
-  padding:10px;
-  border-radius:8px;
-  color:var(--muted);
-  font-size:12px;
+.modalbox p {
+  font-size: 13px;
+  color: var(--muted);
 }
 
-.search-results a:hover {
-  background:var(--surface);
-  color:var(--accent);
+.modalbox a {
+  color: var(--green);
+  text-decoration: underline;
 }
 
-@media(max-width:950px) {
-  .nav-links { gap:12px; }
-  .nav-links a { font-size:11px; }
-  .hero { gap:28px; }
-  .dash-stats { grid-template-columns:1fr; }
-}
+/* RESPONSIVE DESIGN */
 
-@media(max-width:720px) {
-  .wrap { width:calc(100% - 30px); }
-  .nav { height:68px; }
-  .logo { width:39px;height:39px; }
-  .menu-btn { display:grid; }
-
-  .nav-links {
-    display:none;
-    position:absolute;
-    top:68px;
-    left:0;
-    right:0;
-    padding:15px 22px 20px;
-    border-bottom:1px solid var(--line);
-    background:var(--bg);
-    flex-direction:column;
-    align-items:stretch;
-    gap:0;
-  }
-
-  .nav-links.open { display:flex; }
-
-  .nav-links a {
-    padding:12px 4px;
-    border-bottom:1px solid var(--line);
-    font-size:13px;
-  }
-
+@media (max-width: 780px) {
   .hero {
-    grid-template-columns:1fr;
-    gap:35px;
-    padding:55px 0;
-    min-height:auto;
+    grid-template-columns: 1fr;
+    padding: 50px 0;
   }
 
-  h1 { font-size:clamp(48px,12vw,70px); }
-
-  .hero-copy { font-size:14px; }
-
-  .dashboard { padding:19px; }
-  .chart-wrap { height:175px; }
-  .dash-stats { grid-template-columns:repeat(3,1fr); }
-  .stat { padding:10px; }
-  .stat strong { font-size:11px; }
-
-  .section { padding:58px 0; }
-
-  .section-head {
-    display:block;
+  .visual {
+    height: 390px;
   }
 
-  .section-desc { margin-top:13px; }
-
-  .grid-3,.projects,.toolkit,.education {
-    grid-template-columns:1fr;
+  .grid2,
+  .projects,
+  .education {
+    grid-template-columns: 1fr;
   }
 
-  .contact-box { grid-template-columns:1fr; }
+  .skills {
+    grid-template-columns: 1fr 1fr;
+  }
 
-  .contact-actions {
-    min-width:0;
-    flex-direction:row;
-    flex-wrap:wrap;
+  .head {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .contact {
+    align-items: start;
+    flex-direction: column;
   }
 }
 
-@media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after {
-    animation-duration:.01ms!important;
-    transition-duration:.01ms!important;
-    scroll-behavior:auto!important;
+@media (max-width: 560px) {
+  .menu {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    padding: 18px 5%;
+    background: #0b100e;
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .visual {
+    height: 340px;
+  }
+
+  .o1 {
+    width: 285px;
+    height: 285px;
+  }
+
+  .o2 {
+    width: 220px;
+    height: 220px;
+  }
+
+  .o3 {
+    width: 155px;
+    height: 155px;
+  }
+
+  .core {
+    width: 115px;
+    height: 115px;
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+  }
+
+  section.content {
+    padding: 62px 0;
+  }
+
+  .contact {
+    padding: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }
 </style>
 </head>
 
 <body>
-<div class="progress" id="scrollProgress"></div>
 
-<header>
+<div class="progress" id="progress"></div>
+
+<header class="top">
   <div class="wrap nav">
+    <a class="brand" href="#home">SB<b>.</b> / FINANCE</a>
 
-    <a class="brand" href="#overview">
-      <span class="logo">SB.</span>
-      <span class="brand-name">
-        SUJAL BANSAL
-        <span class="brand-sub">FINANCE PORTFOLIO</span>
-      </span>
-    </a>
+    <button class="menu" id="menu">☰ Menu</button>
 
-    <nav class="nav-links" id="navLinks">
-      <a href="#overview" class="active">Overview</a>
-      <a href="#research">Research</a>
-      <a href="#companies">Companies</a>
-      <a href="#analysis">Analysis</a>
-      <a href="#toolkit">Toolkit</a>
+    <nav id="nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </nav>
-
-    <div class="nav-actions">
-      <button class="icon-btn" id="searchOpen" aria-label="Search">⌕</button>
-      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">◐</button>
-      <button class="icon-btn menu-btn" id="menuToggle" aria-label="Open menu">☰</button>
-    </div>
-
   </div>
 </header>
 
-<main>
+<main id="home" class="wrap">
 
-<!-- INTRODUCTION -->
-<section class="wrap hero" id="overview">
+  <!-- HOMEPAGE -->
 
-  <div>
-    <div class="eyebrow">Finance · Research · Analysis</div>
+  <section class="hero">
+    <div>
+      <div class="eyebrow">
+        <i class="pulse"></i>
+        Finance · Research · Analysis
+      </div>
 
-    <h1>
-      Sujal Bansal.<br>
-      <span class="accent">Finance meets<br>insight.</span>
-    </h1>
+      <h1>Sujal<br><span>Bansal.</span></h1>
 
-    <p class="hero-copy">
-      I’m a <strong>PGDM Financial Management student at FIIB</strong>
-      with a BBA Finance background. My interest lies in understanding
-      businesses through financial statements, profitability, cash flows
-      and fundamental analysis—not just looking at the numbers, but
-      understanding the business story behind them.
-    </p>
+      <p class="lead">
+        PGDM Finance Management student building a practical
+        understanding of businesses through financial statements,
+        ratio analysis and sector research.
+      </p>
 
-    <div class="pills">
-      <span class="pill"><b>PGDM FM</b> · FIIB</span>
-      <span class="pill">BBA Finance · CGPA 8.05</span>
-      <span class="pill">Fundamental Analysis</span>
+      <div class="actions">
+        <a class="btn primary" href="#projects">Explore my work ↘</a>
+        <a class="btn" href="mailto:sujalbansal0077@gmail.com">Contact me ↗</a>
+        <a class="btn"
+           href="https://www.linkedin.com/in/sujal-bansal-544842328/"
+           target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+
+      <div class="meta">
+        <div><strong>02</strong>Featured projects</div>
+        <div><strong>Finance</strong>PGDM focus</div>
+        <div><strong>2026–28</strong>FIIB · New Delhi</div>
+      </div>
     </div>
 
-    <div class="btn-row">
-      <a href="#research" class="btn btn-primary">Explore my research ↗</a>
-      <a href="https://github.com/sujalbansal0077-hub"
-         target="_blank" rel="noopener" class="btn btn-secondary">
-         GitHub profile ↗
-      </a>
-    </div>
+    <div class="visual">
+      <div class="orbit o1"></div>
+      <div class="orbit o2"></div>
+      <div class="orbit o3"></div>
 
-    <div class="hero-note">
-      <span>●</span> FINANCIAL RESEARCH PORTFOLIO / PROJECTS & LEARNING
+      <div class="core">SB</div>
+
+      <div class="float f1">
+        <small>RESEARCH FOCUS</small>
+        <strong>Company fundamentals</strong>
+      </div>
+
+      <div class="float f2">
+        <small>ANALYSIS LENS</small>
+        <strong>Financial statements</strong>
+      </div>
+
+      <div class="float f3">
+        <small>CAREER DIRECTION</small>
+        <strong>Equity · Finance</strong>
+      </div>
     </div>
+  </section>
+
+</main>
+
+<!-- MOVING FINANCE TEXT -->
+
+<div class="ticker">
+  <div class="track">
+    <span>Financial Statement Analysis</span>
+    <span>Fundamental Research</span>
+    <span>Company Comparison</span>
+    <span>Ratio Analysis</span>
+    <span>Financial Statement Analysis</span>
+    <span>Fundamental Research</span>
+    <span>Company Comparison</span>
+    <span>Ratio Analysis</span>
   </div>
+</div>
 
-  <!-- Interactive dashboard -->
-  <aside class="dashboard">
-    <div class="dash-top">
-      <span>SUJAL_BANSAL / FINANCE_LAB</span>
-      <span class="status">PORTFOLIO ACTIVE</span>
-    </div>
+<main class="wrap">
 
-    <h2 id="chartHeading">Financial intelligence</h2>
-    <p class="dash-caption" id="chartCaption">
-      A workspace for examining business performance.
-    </p>
+  <!-- ABOUT -->
 
-    <div class="chart-wrap">
-      <canvas id="heroChart" aria-label="Illustrative chart"></canvas>
-    </div>
-
-    <div class="chart-labels">
-      <span>RESEARCH</span>
-      <span>ANALYSIS</span>
-      <span>INSIGHT</span>
-      <span>DECISION</span>
-    </div>
-
-    <div class="dash-stats">
-      <div class="stat">
-        <small>Education</small>
-        <strong>PGDM Finance</strong>
-        <span>FIIB</span>
-      </div>
-
-      <div class="stat">
-        <small>Research</small>
-        <strong>Fundamentals</strong>
-        <span>Business quality</span>
-      </div>
-
-      <div class="stat">
-        <small>Projects</small>
-        <strong>Financial analysis</strong>
-        <span>Suzlon & FMCG</span>
-      </div>
-    </div>
-
-    <div class="dash-foot">
-      ILLUSTRATIVE VISUAL · NOT LIVE MARKET DATA
-    </div>
-  </aside>
-</section>
-
-<!-- RESEARCH -->
-<section class="section" id="research">
-  <div class="wrap">
-
-    <div class="section-head reveal">
+  <section id="about" class="content reveal">
+    <div class="head">
       <div>
-        <div class="kicker">01 / Research focus</div>
-        <h2 class="section-title">Questions behind<br>the numbers.</h2>
+        <div class="eyebrow">01 / About</div>
+        <h2>Learning to read<br>the business behind the numbers.</h2>
       </div>
 
-      <p class="section-desc">
-        I use financial statements as a starting point to investigate
-        business performance, financial strength and the quality of growth.
+      <p>
+        A finance-focused profile built around academic work,
+        practical analysis and continued learning.
       </p>
     </div>
 
-    <div class="grid-3">
-
-      <article class="card reveal">
-        <div class="card-tag">01 · Fundamentals</div>
-        <h3>Business quality</h3>
+    <div class="grid2">
+      <article class="panel">
+        <h3>Professional introduction</h3>
         <p>
-          Understanding revenue drivers, operating margins, profitability
-          and how a company converts business activity into financial results.
+          I am a finance student interested in equity research and
+          financial analysis. My academic projects have given me
+          opportunities to compare company performance, work with
+          financial statements and organise findings into structured
+          reports. I want to keep strengthening these skills through
+          hands-on analysis and evidence-based research.
         </p>
-        <div class="card-bottom">
-          <span class="text-link">Financial statements</span>
-          <span class="accent">↗</span>
-        </div>
       </article>
 
-      <article class="card reveal">
-        <div class="card-tag">02 · Financial health</div>
-        <h3>Cash flow & capital</h3>
-        <p>
-          Looking beyond reported profit to cash generation, working capital,
-          debt levels and the way capital is deployed.
-        </p>
-        <div class="card-bottom">
-          <span class="text-link">Cash flow analysis</span>
-          <span class="accent">↗</span>
+      <article class="panel">
+        <h3>What I’m working towards</h3>
+
+        <div class="focus">
+          <span>Equity research & fundamental analysis</span>
+          <span>Financial performance & ratio analysis</span>
+          <span>Company and sector comparisons</span>
+          <span>Excel-based financial analysis</span>
         </div>
       </article>
-
-      <article class="card reveal">
-        <div class="card-tag">03 · Decision support</div>
-        <h3>Evidence-led insight</h3>
-        <p>
-          Comparing trends over time, documenting assumptions and connecting
-          quantitative findings with business context.
-        </p>
-        <div class="card-bottom">
-          <span class="text-link">Research process</span>
-          <span class="accent">↗</span>
-        </div>
-      </article>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- COMPANY PROJECTS -->
-<section class="section" id="companies">
-  <div class="wrap">
+  <!-- PROJECTS -->
 
-    <div class="section-head reveal">
+  <section id="projects" class="content reveal">
+    <div class="head">
       <div>
-        <div class="kicker">02 / Company studies</div>
-        <h2 class="section-title">Research in practice.</h2>
+        <div class="eyebrow">02 / Selected work</div>
+        <h2>Projects & financial research</h2>
       </div>
-      <p class="section-desc">
-        Academic projects focused on multi-year financial analysis and
-        comparing performance across businesses.
+
+      <p>
+        Switch between Purpose, Process and Outcome to explore
+        each case study.
       </p>
     </div>
 
     <div class="projects">
 
-      <!-- SUZLON -->
-      <article class="project reveal">
-        <div class="project-visual">
-          <div>
-            <div class="card-tag">Company study · Energy</div>
-            <div class="mini-bars">
-              <i style="height:24%"></i>
-              <i style="height:39%"></i>
-              <i style="height:32%"></i>
-              <i style="height:55%"></i>
-              <i style="height:72%"></i>
-              <i style="height:62%"></i>
-              <i style="height:86%"></i>
-            </div>
-          </div>
-          <div class="project-symbol">S</div>
+      <!-- SUZLON PROJECT -->
+
+      <article class="project">
+
+        <div class="chart">
+          <label>COMPANY ANALYSIS / 01</label>
+
+          <div class="bar" style="height:30%;--d:.1s"></div>
+          <div class="bar" style="height:45%;--d:.2s"></div>
+          <div class="bar" style="height:39%;--d:.3s"></div>
+          <div class="bar" style="height:59%;--d:.4s"></div>
+          <div class="bar" style="height:72%;--d:.5s"></div>
+          <div class="bar" style="height:65%;--d:.6s"></div>
+          <div class="bar" style="height:83%;--d:.7s"></div>
+          <div class="bar" style="height:92%;--d:.8s"></div>
         </div>
 
-        <div class="project-body">
-          <div class="project-meta">5-YEAR REVIEW · FINANCIAL STATEMENTS</div>
+        <div class="pbody">
+          <div class="kicker">Project 01 · Company analysis</div>
           <h3>Suzlon Energy</h3>
-          <p>
-            A multi-year financial analysis project examining company
-            performance through reported financial statements and key indicators.
-          </p>
+          <p class="desc">Five-year financial analysis</p>
 
-          <div class="project-tabs">
-            <button class="active" data-project="suzlon" data-view="purpose">Purpose</button>
-            <button data-project="suzlon" data-view="process">Process</button>
-            <button data-project="suzlon" data-view="outcome">Output</button>
+          <div class="tabs">
+            <button class="tab active" data-p="suzlon" data-t="purpose">Purpose</button>
+            <button class="tab" data-p="suzlon" data-t="process">Process</button>
+            <button class="tab" data-p="suzlon" data-t="outcome">Outcome</button>
           </div>
 
-          <div class="project-detail" id="detail-suzlon">
-            Review reported financial statements over five years to understand
-            the company’s financial trajectory.
+          <div class="case" id="suzlon-case" aria-live="polite">
+            Study the company’s financial performance over five years
+            and understand how key financial indicators changed over time.
           </div>
 
-          <div class="project-links">
-            <a class="text-link"
+          <div class="pactions">
+            <a class="btn"
                href="https://github.com/sujalbansal0077-hub/Suzlon_Energy_5-Year_Financial_Analysis"
                target="_blank" rel="noopener">
-               View project repository ↗
+              Open repository ↗
             </a>
+
+            <button class="btn" data-detail="suzlon">Details +</button>
           </div>
         </div>
       </article>
 
-      <!-- FMCG -->
-      <article class="project reveal">
-        <div class="project-visual">
-          <div>
-            <div class="card-tag">Sector comparison · FMCG</div>
-            <div class="mini-bars">
-              <i style="height:66%"></i>
-              <i style="height:47%"></i>
-              <i style="height:78%"></i>
-              <i style="height:57%"></i>
-              <i style="height:86%"></i>
-              <i style="height:63%"></i>
-              <i style="height:74%"></i>
-            </div>
-          </div>
-          <div class="project-symbol">F</div>
+      <!-- FMCG PROJECT -->
+
+      <article class="project">
+
+        <div class="chart fmcg">
+          <label>SECTOR COMPARISON / 02</label>
+
+          <div class="bar" style="height:65%;--d:.15s"></div>
+          <div class="bar" style="height:48%;--d:.25s"></div>
+          <div class="bar" style="height:72%;--d:.35s"></div>
+          <div class="bar" style="height:54%;--d:.45s"></div>
+          <div class="bar" style="height:87%;--d:.55s"></div>
+          <div class="bar" style="height:62%;--d:.65s"></div>
+          <div class="bar" style="height:77%;--d:.75s"></div>
+          <div class="bar" style="height:94%;--d:.85s"></div>
         </div>
 
-        <div class="project-body">
-          <div class="project-meta">5-YEAR REVIEW · PEER COMPARISON</div>
+        <div class="pbody">
+          <div class="kicker">Project 02 · Sector comparison</div>
           <h3>FMCG: HUL, Britannia & Nestlé India</h3>
-          <p>
-            A comparative project built around five-year financial information
-            for three listed FMCG businesses.
-          </p>
+          <p class="desc">Five-year financial report analysis</p>
 
-          <div class="project-tabs">
-            <button class="active" data-project="fmcg" data-view="purpose">Purpose</button>
-            <button data-project="fmcg" data-view="process">Process</button>
-            <button data-project="fmcg" data-view="outcome">Output</button>
+          <div class="tabs">
+            <button class="tab active" data-p="fmcg" data-t="purpose">Purpose</button>
+            <button class="tab" data-p="fmcg" data-t="process">Process</button>
+            <button class="tab" data-p="fmcg" data-t="outcome">Outcome</button>
           </div>
 
-          <div class="project-detail" id="detail-fmcg">
-            Compare companies in the same broad sector to explore differences
-            in financial performance and structure.
+          <div class="case" id="fmcg-case" aria-live="polite">
+            Compare the financial performance of three listed FMCG
+            businesses across a multi-year period.
           </div>
 
-          <div class="project-links">
-            <a class="text-link"
+          <div class="pactions">
+            <a class="btn"
                href="https://github.com/sujalbansal0077-hub/FMCG-5-year-Financial-Report-Analysis"
                target="_blank" rel="noopener">
-               View project repository ↗
+              Open repository ↗
             </a>
+
+            <button class="btn" data-detail="fmcg">Details +</button>
           </div>
         </div>
       </article>
 
     </div>
-  </div>
-</section>
 
-<!-- ANALYSIS PROCESS -->
-<section class="section" id="analysis">
-  <div class="wrap">
-
-    <div class="section-head reveal">
-      <div>
-        <div class="kicker">03 / Analytical workflow</div>
-        <h2 class="section-title">From raw data<br>to a clear view.</h2>
-      </div>
-      <p class="section-desc">
-        A repeatable approach for keeping analysis structured, transparent
-        and easy to follow.
-      </p>
-    </div>
-
-    <div class="terminal reveal">
-      <div class="terminal-top">
-        <div class="terminal-dots"><i></i><i></i><i></i></div>
-        <span class="terminal-label">FINANCE_TERMINAL / WORKFLOW.LOG</span>
-        <span style="color:#84958a;font-size:10px">SESSION 001</span>
-      </div>
-
-      <div class="terminal-line">
-        <span class="prompt">01 &gt;</span>
-        <span>Collect annual reports and identify the relevant reporting period.</span>
-      </div>
-
-      <div class="terminal-line">
-        <span class="prompt">02 &gt;</span>
-        <span>Organise the income statement, balance sheet and cash flow statement.</span>
-      </div>
-
-      <div class="terminal-line">
-        <span class="prompt">03 &gt;</span>
-        <span>Calculate and review selected financial ratios and multi-year trends.</span>
-      </div>
-
-      <div class="terminal-line">
-        <span class="prompt">04 &gt;</span>
-        <span>Compare results, investigate unusual movements and record limitations.</span>
-      </div>
-
-      <div class="terminal-line">
-        <span class="prompt">05 &gt;</span>
-        <span class="terminal-value">
-          Communicate findings with evidence, context and clear caveats.
-        </span>
-      </div>
-
-      <div class="terminal-line">
-        <span class="prompt">$</span>
-        <span class="terminal-muted">ready_for_next_question<span class="cursor"></span></span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section class="section" id="toolkit">
-  <div class="wrap">
-
-    <div class="section-head reveal">
-      <div>
-        <div class="kicker">04 / Toolkit</div>
-        <h2 class="section-title">Tools I’m building<br>my edge with.</h2>
-      </div>
-      <p class="section-desc">
-        A developing toolkit for financial research and analysis.
-        The bars are visual indicators, not formal proficiency test scores.
-      </p>
-    </div>
-
-    <div class="toolkit">
-
-      <div class="tool-group reveal">
-        <h3>Financial analysis</h3>
-
-        <div class="skill">
-          <div class="skill-top">
-            <span>Financial statement analysis</span>
-            <span>Developing</span>
-          </div>
-          <div class="skill-track">
-            <div class="skill-fill" data-width="72%"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <div class="skill-top">
-            <span>Ratio analysis</span>
-            <span>Developing</span>
-          </div>
-          <div class="skill-track">
-            <div class="skill-fill" data-width="70%"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <div class="skill-top">
-            <span>Fundamental research</span>
-            <span>Learning</span>
-          </div>
-          <div class="skill-track">
-            <div class="skill-fill" data-width="62%"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tool-group reveal">
-        <h3>Data & communication</h3>
-
-        <div class="skill">
-          <div class="skill-top">
-            <span>Excel & spreadsheet modelling</span>
-            <span>Developing</span>
-          </div>
-          <div class="skill-track">
-            <div class="skill-fill" data-width="68%"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <div class="skill-top">
-            <span>Data visualisation</span>
-            <span>Learning</span>
-          </div>
-          <div class="skill-track">
-            <div class="skill-fill" data-width="60%"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <div class="skill-top">
-            <span>Research presentation</span>
-            <span>Developing</span>
-          </div>
-          <div class="skill-track">
-            <div class="skill-fill" data-width="66%"></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <p class="skill-note reveal">
-      Skill indicators are self-described learning-stage visuals, not
-      certifications or externally assessed ratings.
+    <p class="note">
+      Charts are decorative illustrations, not actual financial data.
+      Exact findings should be added only after reconciling the final
+      workbooks and reports.
     </p>
-  </div>
-</section>
+  </section>
 
-<!-- EDUCATION -->
-<section class="section" id="education">
-  <div class="wrap">
+  <!-- SKILLS -->
 
-    <div class="section-head reveal">
+  <section id="skills" class="content reveal">
+    <div class="head">
       <div>
-        <div class="kicker">05 / Education</div>
-        <h2 class="section-title">The foundation.</h2>
+        <div class="eyebrow">03 / Skills & tools</div>
+        <h2>Skills in progress.</h2>
       </div>
-      <p class="section-desc">
-        Academic background in finance, supported by practical financial
-        analysis projects.
+
+      <p>
+        Areas connected to academic projects—not claims of
+        expert-level proficiency.
+      </p>
+    </div>
+
+    <div class="skills">
+
+      <article class="skill">
+        <div class="symbol">⌁</div>
+        <h3>Finance & analysis</h3>
+
+        <div class="chips">
+          <span>Financial statements</span>
+          <span>Ratio analysis</span>
+          <span>Company comparison</span>
+          <span>Fundamental analysis</span>
+        </div>
+      </article>
+
+      <article class="skill">
+        <div class="symbol">▦</div>
+        <h3>Tools</h3>
+
+        <div class="chips">
+          <span>Microsoft Excel</span>
+          <span>PowerPoint</span>
+          <span>Word</span>
+        </div>
+      </article>
+
+      <article class="skill">
+        <div class="symbol">◎</div>
+        <h3>Professional focus</h3>
+
+        <div class="chips">
+          <span>Research</span>
+          <span>Structured reporting</span>
+          <span>Evidence-based thinking</span>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="note">
+      Review these lists before final submission and remove any
+      skill you cannot comfortably demonstrate.
+    </p>
+  </section>
+
+  <!-- EDUCATION -->
+
+  <section id="education" class="content reveal">
+    <div class="head">
+      <div>
+        <div class="eyebrow">04 / Education</div>
+        <h2>Academic background.</h2>
+      </div>
+
+      <p>
+        A snapshot of my academic journey in business and finance.
       </p>
     </div>
 
     <div class="education">
 
-      <article class="edu-card reveal">
-        <div class="edu-date">2026 — 2028 · CURRENT</div>
-        <h3>PGDM — Financial Management</h3>
-        <p>Fortune Institute of International Business (FIIB)</p>
-        <span class="edu-score">FINANCE SPECIALISATION</span>
+      <article class="edu">
+        <div class="year">2026–2028</div>
+        <div>
+          <h3>PGDM — Financial Management</h3>
+          <p>FIIB, New Delhi · Pursuing</p>
+        </div>
       </article>
 
-      <article class="edu-card reveal">
-        <div class="edu-date">2023 — 2026</div>
-        <h3>BBA — Finance</h3>
-        <p>Chandigarh Group of Colleges, Landran</p>
-        <span class="edu-score">CGPA · 8.05</span>
+      <article class="edu">
+        <div class="year">2023–2026</div>
+        <div>
+          <h3>BBA — Finance</h3>
+          <p>CGC Landran · CGPA 8.05/10</p>
+        </div>
+      </article>
+
+      <article class="edu">
+        <div class="year">2023</div>
+        <div>
+          <h3>Class XII — CBSE</h3>
+          <p>87.6%</p>
+        </div>
+      </article>
+
+      <article class="edu">
+        <div class="year">2021</div>
+        <div>
+          <h3>Class X — CBSE</h3>
+          <p>88.8%</p>
+        </div>
       </article>
 
     </div>
-  </div>
-</section>
 
-<!-- CONTACT -->
-<section class="section" id="contact">
-  <div class="wrap">
+    <p class="note">
+      Certifications: To Be Added after issuer details and
+      verification links are available.
+    </p>
+  </section>
 
-    <div class="contact-box reveal">
+  <!-- CONTACT -->
+
+  <section id="contact" class="content reveal">
+    <div class="contact">
+
       <div>
-        <div class="kicker">06 / Contact</div>
-        <h2>
-          Let’s talk finance<br>
-          <span class="accent">and opportunity.</span>
-        </h2>
+        <div class="eyebrow">05 / Contact</div>
+        <h2>Let’s connect.</h2>
         <p>
-          I’m interested in financial research, analysis projects and
-          opportunities to keep learning. Feel free to connect with me.
+          Open to connecting around finance, research and
+          learning opportunities.
         </p>
       </div>
 
-      <div class="contact-actions">
-        <a class="btn btn-primary" href="mailto:sujalbansal0077@gmail.com">
+      <div class="actions">
+        <a class="btn primary" href="mailto:sujalbansal0077@gmail.com">
           Email me ↗
         </a>
 
-        <a class="btn btn-secondary"
+        <a class="btn"
            href="https://www.linkedin.com/in/sujal-bansal-544842328/"
            target="_blank" rel="noopener">
-          LinkedIn profile ↗
-        </a>
-
-        <a class="btn btn-secondary"
-           href="https://github.com/sujalbansal0077-hub"
-           target="_blank" rel="noopener">
-          GitHub profile ↗
+          LinkedIn ↗
         </a>
       </div>
-    </div>
 
-  </div>
-</section>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Sujal Bansal · Finance portfolio</span>
+    <span>Content subject to final evidence review</span>
+  </footer>
 
 </main>
 
-<footer>
-  <div class="wrap footer-row">
-    <span>© <span id="year"></span> Sujal Bansal · Finance Portfolio</span>
-    <span>Built around curiosity, evidence and financial thinking.</span>
-    <a href="#overview" class="text-link">Back to top ↑</a>
-  </div>
-</footer>
+<!-- BACK TO TOP -->
 
-<!-- SEARCH -->
-<div class="search-overlay" id="searchOverlay" role="dialog"
-     aria-modal="true" aria-label="Search portfolio">
-  <div class="search-box">
-    <input id="searchInput" type="search"
-           placeholder="Search research, projects, skills…"
-           autocomplete="off" aria-label="Search portfolio">
-    <div class="search-results" id="searchResults"></div>
+<button class="topbtn" id="topbtn" aria-label="Back to top">↑</button>
+
+<!-- PROJECT DETAILS MODAL -->
+
+<div class="modal" id="modal" role="dialog"
+     aria-modal="true" aria-labelledby="mt">
+
+  <div class="modalbox">
+    <div class="modalhead">
+      <h3 id="mt">Project details</h3>
+      <button id="close">Close ✕</button>
+    </div>
+
+    <div id="mb"></div>
   </div>
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+/* PROJECT CONTENT */
 
-  const $ = (selector, parent = document) =>
-    parent.querySelector(selector);
+const copy = {
+  suzlon: {
+    purpose:
+      "Study the company’s financial performance over a five-year period and understand how key financial indicators changed over time.",
 
-  const $$ = (selector, parent = document) =>
-    [...parent.querySelectorAll(selector)];
+    process:
+      "Use the project workbook to inspect annual financial data, formula logic, ratios and trends. Confirm which calculations you personally prepared and which source reports support each figure.",
 
-  const body = document.body;
-  const canvas = $("#heroChart");
-  const ctx = canvas.getContext("2d");
+    outcome:
+      "A structured financial-analysis workbook. Specific conclusions are not stated here until the final workbook and calculations are verified."
+  },
 
-  let chartProgress = 0;
-  let animationFrame = 0;
-  let resizeTimer;
+  fmcg: {
+    purpose:
+      "Compare HUL, Britannia and Nestlé India to understand similarities and differences in financial performance across a multi-year period.",
 
-  /* THEME SWITCHER */
+    process:
+      "Review company financial statements and compare scale, profitability, returns and cash-flow performance. Keep reporting periods and ratio definitions consistent.",
 
-  try {
-    const savedTheme = localStorage.getItem("sujal-portfolio-theme");
-    if (savedTheme === "light") body.classList.add("light");
-  } catch (error) {
-    // Website still works if browser storage is unavailable.
+    outcome:
+      "A comparative report describing differences between the businesses. Numerical claims should be reconciled with the underlying workbook before publication."
   }
+};
 
-  $("#themeToggle").addEventListener("click", () => {
-    body.classList.toggle("light");
+/* PURPOSE / PROCESS / OUTCOME TABS */
 
-    try {
-      localStorage.setItem(
-        "sujal-portfolio-theme",
-        body.classList.contains("light") ? "light" : "dark"
-      );
-    } catch (error) {}
+document.querySelectorAll(".tab").forEach(button => {
+  button.addEventListener("click", () => {
+    const project = button.dataset.p;
 
-    drawChart();
+    document
+      .querySelectorAll('.tab[data-p="' + project + '"]')
+      .forEach(tab => tab.classList.remove("active"));
+
+    button.classList.add("active");
+
+    document.getElementById(project + "-case").textContent =
+      copy[project][button.dataset.t];
   });
-
-  /* ANIMATED CANVAS CHART
-     The data is illustrative, not company performance data. */
-
-  function css(variable) {
-    return getComputedStyle(body).getPropertyValue(variable).trim();
-  }
-
-  function drawChart() {
-    const rect = canvas.getBoundingClientRect();
-    const dpr = Math.max(1, window.devicePixelRatio || 1);
-
-    const width = Math.max(280, rect.width);
-    const height = Math.max(150, rect.height);
-
-    canvas.width = Math.round(width * dpr);
-    canvas.height = Math.round(height * dpr);
-
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.clearRect(0, 0, width, height);
-
-    const values = [
-      .25, .31, .28, .43, .39, .55,
-      .49, .67, .59, .75, .71, .88
-    ];
-
-    const left = 5;
-    const right = width - 5;
-    const top = 12;
-    const bottom = height - 12;
-
-    const x = i => left + i * (right-left) / (values.length-1);
-    const y = v => bottom - v * (bottom-top);
-
-    /* Grid */
-    ctx.strokeStyle = css("--line");
-    ctx.lineWidth = 1;
-
-    for (let i = 1; i <= 3; i++) {
-      ctx.beginPath();
-      ctx.moveTo(0, height*i/4);
-      ctx.lineTo(width, height*i/4);
-      ctx.stroke();
-    }
-
-    const visibleCount = Math.max(
-      2,
-      Math.ceil((values.length-1) * chartProgress) + 1
-    );
-
-    const visible = values.slice(0, visibleCount);
-
-    /* Area */
-    ctx.beginPath();
-
-    visible.forEach((value, i) => {
-      if (i === 0) ctx.moveTo(x(i), y(value));
-      else ctx.lineTo(x(i), y(value));
-    });
-
-    ctx.lineTo(x(visible.length-1), bottom);
-    ctx.lineTo(x(0), bottom);
-    ctx.closePath();
-
-    ctx.fillStyle = css("--accent") + "20";
-    ctx.fill();
-
-    /* Line */
-    ctx.beginPath();
-
-    visible.forEach((value, i) => {
-      if (i === 0) ctx.moveTo(x(i), y(value));
-      else ctx.lineTo(x(i), y(value));
-    });
-
-    ctx.strokeStyle = css("--accent");
-    ctx.lineWidth = 2.5;
-    ctx.lineJoin = "round";
-    ctx.lineCap = "round";
-    ctx.stroke();
-
-    /* Last point */
-    const last = visible.length - 1;
-
-    ctx.beginPath();
-    ctx.arc(x(last), y(visible[last]), 4, 0, Math.PI * 2);
-    ctx.fillStyle = css("--accent");
-    ctx.fill();
-  }
-
-  function animateChart() {
-    cancelAnimationFrame(animationFrame);
-
-    const start = performance.now();
-    const duration = 1200;
-
-    function tick(now) {
-      chartProgress = Math.min(1, (now-start)/duration);
-      drawChart();
-
-      if (chartProgress < 1) {
-        animationFrame = requestAnimationFrame(tick);
-      }
-    }
-
-    chartProgress = 0;
-    animationFrame = requestAnimationFrame(tick);
-  }
-
-  /* Important: initialise the chart only after the canvas exists. */
-  animateChart();
-
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(drawChart, 100);
-  });
-
-  /* FOOTER YEAR */
-
-  $("#year").textContent = new Date().getFullYear();
-
-  /* MOBILE NAVIGATION */
-
-  $("#menuToggle").addEventListener("click", () => {
-    $("#navLinks").classList.toggle("open");
-  });
-
-  $$("#navLinks a").forEach(link => {
-    link.addEventListener("click", () => {
-      $("#navLinks").classList.remove("open");
-    });
-  });
-
-  /* SCROLL PROGRESS */
-
-  const progress = $("#scrollProgress");
-
-  function updateProgress() {
-    const maxScroll =
-      document.documentElement.scrollHeight - window.innerHeight;
-
-    const percentage = maxScroll > 0
-      ? (window.scrollY / maxScroll) * 100
-      : 0;
-
-    progress.style.width = percentage + "%";
-  }
-
-  window.addEventListener("scroll", updateProgress, {passive:true});
-  updateProgress();
-
-  /* ACTIVE NAVIGATION */
-
-  const navObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-
-      $$(".nav-links a").forEach(link => {
-        link.classList.toggle(
-          "active",
-          link.getAttribute("href") === "#" + entry.target.id
-        );
-      });
-    });
-  }, {rootMargin:"-30% 0px -60% 0px"});
-
-  $$("main section[id]").forEach(section => {
-    navObserver.observe(section);
-  });
-
-  /* REVEAL ANIMATIONS */
-
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, {threshold:.12});
-
-  $$(".reveal").forEach(element => {
-    revealObserver.observe(element);
-  });
-
-  /* ANIMATED SKILL BARS */
-
-  const skillObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-
-      $$(".skill-fill", entry.target).forEach(fill => {
-        fill.style.width = fill.dataset.width;
-      });
-
-      skillObserver.unobserve(entry.target);
-    });
-  }, {threshold:.2});
-
-  $$(".tool-group").forEach(group => {
-    skillObserver.observe(group);
-  });
-
-  /* INTERACTIVE PROJECT TABS */
-
-  const projectCopy = {
-    suzlon: {
-      purpose:
-        "Review reported financial statements over five years to understand the company's financial trajectory.",
-
-      process:
-        "Organise multi-year statement data and examine selected profitability, liquidity, leverage and cash-flow indicators. Verify figures against underlying reports before drawing conclusions.",
-
-      outcome:
-        "A structured financial-analysis project. The repository contains the working materials; specific conclusions should be read alongside the underlying data and report."
-    },
-
-    fmcg: {
-      purpose:
-        "Compare HUL, Britannia Industries and Nestlé India using a consistent multi-year financial-analysis framework.",
-
-      process:
-        "Organise financial statement items into a comparable format, review selected ratios and trends, and consider how business models affect peer comparisons.",
-
-      outcome:
-        "A comparative FMCG financial-report analysis project, with company-level materials available in the project repository."
-    }
-  };
-
-  $$(".project-tabs button").forEach(button => {
-    button.addEventListener("click", () => {
-      const project = button.dataset.project;
-      const view = button.dataset.view;
-      const parent = button.closest(".project-body");
-
-      $$(".project-tabs button", parent).forEach(tab => {
-        tab.classList.toggle("active", tab === button);
-      });
-
-      $("#detail-" + project).textContent = projectCopy[project][view];
-    });
-  });
-
-  /* SEARCH */
-
-  const overlay = $("#searchOverlay");
-  const input = $("#searchInput");
-  const results = $("#searchResults");
-
-  const searchable = [
-    ["Overview", "Introduction to Sujal Bansal", "#overview"],
-    ["Research", "Fundamental analysis and research interests", "#research"],
-    ["Companies", "Suzlon Energy and FMCG projects", "#companies"],
-    ["Analysis", "Financial analysis workflow", "#analysis"],
-    ["Toolkit", "Excel, ratios, statements and skills", "#toolkit"],
-    ["Education", "PGDM Finance at FIIB and BBA Finance", "#education"],
-    ["Contact", "Email, LinkedIn and GitHub", "#contact"]
-  ];
-
-  function renderSearch(query = "") {
-    const term = query.toLowerCase().trim();
-
-    const matches = searchable.filter(item =>
-      item.join(" ").toLowerCase().includes(term)
-    );
-
-    if (matches.length === 0) {
-      results.innerHTML =
-        '<p style="padding:10px;color:var(--muted);font-size:12px">' +
-        'No matching section. Try “research”, “companies” or “education”.</p>';
-      return;
-    }
-
-    results.innerHTML = matches.map(item =>
-      `<a href="${item[2]}">
-        <strong>${item[0]}</strong><br>
-        <span>${item[1]}</span>
-      </a>`
-    ).join("");
-
-    $$("#searchResults a").forEach(link => {
-      link.addEventListener("click", () => {
-        overlay.classList.remove("open");
-        input.value = "";
-      });
-    });
-  }
-
-  $("#searchOpen").addEventListener("click", () => {
-    overlay.classList.add("open");
-    renderSearch();
-    input.focus();
-  });
-
-  input.addEventListener("input", () => {
-    renderSearch(input.value);
-  });
-
-  overlay.addEventListener("click", event => {
-    if (event.target === overlay) {
-      overlay.classList.remove("open");
-    }
-  });
-
-  document.addEventListener("keydown", event => {
-    if (event.key === "Escape") {
-      overlay.classList.remove("open");
-    }
-
-    if (
-      event.key === "/" &&
-      !["INPUT","TEXTAREA"].includes(document.activeElement.tagName)
-    ) {
-      event.preventDefault();
-      overlay.classList.add("open");
-      input.focus();
-    }
-  });
-
 });
+
+/* PROJECT DETAILS POP-UP */
+
+document.querySelectorAll("[data-detail]").forEach(button => {
+  button.addEventListener("click", () => {
+    const project = button.dataset.detail;
+
+    document.getElementById("mt").textContent =
+      project === "suzlon"
+        ? "Suzlon Energy — project details"
+        : "FMCG comparison — project details";
+
+    const repository =
+      project === "suzlon"
+        ? "https://github.com/sujalbansal0077-hub/Suzlon_Energy_5-Year_Financial_Analysis"
+        : "https://github.com/sujalbansal0077-hub/FMCG-5-year-Financial-Report-Analysis";
+
+    const content = copy[project];
+
+    document.getElementById("mb").innerHTML = `
+      <p><b>Purpose:</b> ${content.purpose}</p>
+      <p><b>Process:</b> ${content.process}</p>
+      <p><b>Outcome:</b> ${content.outcome}</p>
+      <p>
+        <a href="${repository}" target="_blank" rel="noopener">
+          Open project repository ↗
+        </a>
+      </p>
+      <p>
+        Before final submission, verify the years, calculations,
+        source reports and your individual contribution.
+      </p>
+    `;
+
+    document.getElementById("modal").classList.add("open");
+  });
+});
+
+/* CLOSE MODAL */
+
+function closeModal() {
+  document.getElementById("modal").classList.remove("open");
+}
+
+document.getElementById("close").addEventListener("click", closeModal);
+
+document.getElementById("modal").addEventListener("click", event => {
+  if (event.target.id === "modal") {
+    closeModal();
+  }
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    closeModal();
+  }
+});
+
+/* MOBILE NAVIGATION */
+
+const nav = document.getElementById("nav");
+
+document.getElementById("menu").addEventListener("click", () => {
+  nav.classList.toggle("open");
+});
+
+nav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+  });
+});
+
+/* SCROLL REVEAL ANIMATIONS */
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach(section => {
+  observer.observe(section);
+});
+
+/* SCROLL PROGRESS, ACTIVE NAV AND BACK TO TOP */
+
+const sections = [...document.querySelectorAll("main section[id]")];
+const links = [...nav.querySelectorAll("a")];
+const progress = document.getElementById("progress");
+const topbtn = document.getElementById("topbtn");
+
+function scrollUpdate() {
+  const max =
+    document.documentElement.scrollHeight - window.innerHeight;
+
+  progress.style.width =
+    (max ? window.scrollY / max * 100 : 0) + "%";
+
+  topbtn.classList.toggle("show", window.scrollY > 450);
+
+  let current = "";
+
+  sections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 130) {
+      current = section.id;
+    }
+  });
+
+  links.forEach(link => {
+    link.classList.toggle(
+      "active",
+      link.getAttribute("href") === "#" + current
+    );
+  });
+}
+
+window.addEventListener("scroll", scrollUpdate, {
+  passive: true
+});
+
+scrollUpdate();
+
+topbtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+/* AUTOMATIC FOOTER YEAR */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 </script>
+
 </body>
 </html>
