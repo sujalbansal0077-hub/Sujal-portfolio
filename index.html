@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0b100e">
+<meta name="description" content="Sujal Bansal, PGDM Financial Management student at FIIB. Explore financial analysis projects, company research, academic background and learning journey.">
+<meta name="author" content="Sujal Bansal">
 <title>Sujal Bansal | Finance Portfolio</title>
 
 <style>
@@ -752,6 +754,38 @@ section.content {
   text-decoration: underline;
 }
 
+
+/* UPGRADE: THEME CONTROL, FILTERS AND DETAIL SECTIONS */
+.nav-tools { display:flex; align-items:center; gap:9px; }
+.theme-toggle { width:36px; height:36px; border:1px solid var(--line); border-radius:8px; background:var(--panel); color:var(--gold); font-size:18px; }
+.profile-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px; }
+.profile-strip > div { padding:17px; border:1px solid var(--line); border-radius:10px; background:linear-gradient(145deg,#17231b99,#10171399); }
+.strip-label { display:block; color:var(--green); font-size:9px; letter-spacing:.13em; font-weight:850; margin-bottom:7px; }
+.profile-strip strong,.profile-strip small { display:block; }
+.profile-strip strong { font-size:13px; } .profile-strip small { color:var(--muted); font-size:11px; margin-top:3px; }
+.project-toolbar { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:0 0 18px; }
+.project-toolbar > span { color:var(--muted); font-size:9px; letter-spacing:.13em; margin-right:8px; }
+.filter { border:1px solid var(--line); border-radius:20px; padding:8px 12px; background:transparent; color:var(--muted); font-size:10px; }
+.filter b { color:var(--gold); margin-left:5px; } .filter.active,.filter:hover { color:var(--txt); border-color:var(--gold); background:#e2bb6914; }
+.project.is-hidden { display:none; }
+.method-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.method { border:1px solid var(--line); border-radius:12px; padding:21px; background:linear-gradient(145deg,#17231b,#101713); min-height:185px; }
+.method > span { color:var(--gold); font-size:11px; letter-spacing:.12em; font-weight:900; }
+.method h3 { margin:20px 0 8px; font-size:16px; } .method p,.journey-card p { color:var(--muted); font-size:12px; margin:0; }
+.journey-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.journey-card { border:1px solid var(--line); border-radius:12px; padding:22px; background:linear-gradient(145deg,#17231b,#101713); transition:transform .25s,border-color .25s; }
+.journey-card:hover { transform:translateY(-4px); border-color:var(--green); }
+.journey-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:22px; }
+.tag { color:var(--green); font-size:9px; letter-spacing:.12em; font-weight:850; } .journey-icon { color:var(--gold); font-size:22px; }
+.journey-card h3 { font-size:19px; margin:0 0 10px; } .journey-card small { display:block; color:#829184; font-size:10px; margin-top:18px; }
+.featured-journey { background:radial-gradient(circle at 100% 0%,#2b493355,transparent 50%),var(--panel); }
+/* Optional light theme */
+body.light { --bg:#f3f5ef; --panel:#ffffff; --panel2:#e6eee5; --txt:#18251b; --muted:#5f6e62; --green:#36764b; --gold:#a47720; --line:#d5dfd3; }
+body.light::before { opacity:.25; } body.light .top { background:#f3f5efed; } body.light .panel,body.light .project,body.light .skill,body.light .edu,body.light .method,body.light .journey-card { background:linear-gradient(145deg,#fff,#f3f6f0); }
+body.light .float { background:#fff; } body.light .menu { color:var(--txt); } body.light nav { color:var(--muted); } body.light .primary { color:#fff; }
+@media (max-width:780px) { .method-grid { grid-template-columns:1fr 1fr; } .journey-grid { grid-template-columns:1fr; } .profile-strip { grid-template-columns:1fr; } }
+@media (max-width:560px) { .nav-tools { margin-left:auto; } .method-grid { grid-template-columns:1fr; } .project-toolbar > span { width:100%; } }
+
 /* RESPONSIVE DESIGN */
 
 @media (max-width: 780px) {
@@ -869,12 +903,13 @@ section.content {
   <div class="wrap nav">
     <a class="brand" href="#home">SB<b>.</b> / FINANCE</a>
 
-    <button class="menu" id="menu">☰ Menu</button>
+    <div class="nav-tools"><button class="theme-toggle" id="themeToggle" aria-label="Switch colour theme" title="Switch colour theme">☼</button><button class="menu" id="menu" aria-expanded="false">☰ Menu</button></div>
 
     <nav id="nav">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
+      <a href="#journey">Journey</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -895,14 +930,13 @@ section.content {
       <h1>Sujal<br><span>Bansal.</span></h1>
 
       <p class="lead">
-        PGDM Finance Management student building a practical
-        understanding of businesses through financial statements,
-        ratio analysis and sector research.
+        PGDM Financial Management student at FIIB, interested in understanding businesses through financial statements, ratio analysis and sector research. I turn academic concepts into structured projects and keep building practical finance skills through hands-on work.
       </p>
 
       <div class="actions">
         <a class="btn primary" href="#projects">Explore my work ↘</a>
         <a class="btn" href="mailto:sujalbansal0077@gmail.com">Contact me ↗</a>
+        <a class="btn" href="https://github.com/sujalbansal0077-hub" target="_blank" rel="noopener">GitHub ↗</a>
         <a class="btn"
            href="https://www.linkedin.com/in/sujal-bansal-544842328/"
            target="_blank" rel="noopener">LinkedIn ↗</a>
@@ -910,8 +944,8 @@ section.content {
 
       <div class="meta">
         <div><strong>02</strong>Featured projects</div>
-        <div><strong>Finance</strong>PGDM focus</div>
-        <div><strong>2026–28</strong>FIIB · New Delhi</div>
+        <div><strong>8.05 / 10</strong>BBA CGPA</div>
+        <div><strong>2026–28</strong>PGDM · FIIB</div>
       </div>
     </div>
 
@@ -997,6 +1031,11 @@ section.content {
         </div>
       </article>
     </div>
+    <div class="profile-strip">
+      <div><span class="strip-label">CURRENT PROGRAMME</span><strong>PGDM · Financial Management</strong><small>FIIB, New Delhi</small></div>
+      <div><span class="strip-label">ACADEMIC FOUNDATION</span><strong>BBA · Finance</strong><small>CGPA 8.05 / 10</small></div>
+      <div><span class="strip-label">CAREER INTEREST</span><strong>Financial analysis</strong><small>Fundamentals · Research · Reporting</small></div>
+    </div>
   </section>
 
   <!-- PROJECTS -->
@@ -1014,11 +1053,17 @@ section.content {
       </p>
     </div>
 
+    <div class="project-toolbar" role="group" aria-label="Filter projects">
+      <span>EXPLORE BY TYPE</span>
+      <button class="filter active" data-filter="all">All work <b>02</b></button>
+      <button class="filter" data-filter="company">Company analysis</button>
+      <button class="filter" data-filter="sector">Sector comparison</button>
+    </div>
     <div class="projects">
 
       <!-- SUZLON PROJECT -->
 
-      <article class="project">
+      <article class="project" data-category="company">
 
         <div class="chart">
           <label>COMPANY ANALYSIS / 01</label>
@@ -1063,7 +1108,7 @@ section.content {
 
       <!-- FMCG PROJECT -->
 
-      <article class="project">
+      <article class="project" data-category="sector">
 
         <div class="chart fmcg">
           <label>SECTOR COMPARISON / 02</label>
@@ -1152,6 +1197,7 @@ section.content {
           <span>Microsoft Excel</span>
           <span>PowerPoint</span>
           <span>Word</span>
+          <span>Python workshop exposure</span>
         </div>
       </article>
 
@@ -1174,12 +1220,41 @@ section.content {
     </p>
   </section>
 
+  <!-- RESEARCH APPROACH -->
+
+  <section id="research" class="content reveal">
+    <div class="head">
+      <div><div class="eyebrow">04 / How I work</div><h2>A structured approach<br>to financial questions.</h2></div>
+      <p>I aim to connect reported numbers with business context, use consistent comparisons and communicate conclusions clearly.</p>
+    </div>
+    <div class="method-grid">
+      <article class="method"><span>01</span><h3>Define the question</h3><p>Set a clear objective before collecting data, so the analysis stays focused.</p></article>
+      <article class="method"><span>02</span><h3>Gather the evidence</h3><p>Work from company reports and organised financial statements, checking periods and definitions.</p></article>
+      <article class="method"><span>03</span><h3>Compare consistently</h3><p>Use trends, ratios and peer comparisons while keeping limitations visible.</p></article>
+      <article class="method"><span>04</span><h3>Explain the meaning</h3><p>Translate calculations into observations, without making claims the data cannot support.</p></article>
+    </div>
+  </section>
+
+  <!-- JOURNEY / ACHIEVEMENTS -->
+
+  <section id="journey" class="content reveal">
+    <div class="head">
+      <div><div class="eyebrow">05 / Development</div><h2>Learning through<br>projects and participation.</h2></div>
+      <p>A growing record of academic work, student activities and finance learning.</p>
+    </div>
+    <div class="journey-grid">
+      <article class="journey-card featured-journey"><div class="journey-top"><span class="tag">STUDENT ACTIVITY</span><span class="journey-icon">✳</span></div><h3>MINI SHARK TANK</h3><p>Secured first position in a PGDM club activity organised by Brand Rovers x FSE. The activity offered an opportunity to present and evaluate an idea in a competitive setting.</p><small>FIIB · FSE club activity</small></article>
+      <article class="journey-card"><div class="journey-top"><span class="tag">CONTINUOUS LEARNING</span><span class="journey-icon">↗</span></div><h3>Time Value of Money</h3><p>Completed a LinkedIn Learning topic focused on a foundational concept in finance. This supports my ongoing learning in financial decision-making.</p><small>LinkedIn Learning</small></article>
+      <article class="journey-card"><div class="journey-top"><span class="tag">PRACTICAL PROJECT</span><span class="journey-icon">⌁</span></div><h3>From statements to insight</h3><p>Developed company and sector financial analysis projects to practise organising data, comparing performance and presenting findings.</p><small>Suzlon Energy · FMCG comparison</small></article>
+    </div>
+  </section>
+
   <!-- EDUCATION -->
 
   <section id="education" class="content reveal">
     <div class="head">
       <div>
-        <div class="eyebrow">04 / Education</div>
+        <div class="eyebrow">06 / Education</div>
         <h2>Academic background.</h2>
       </div>
 
@@ -1210,7 +1285,7 @@ section.content {
         <div class="year">2023</div>
         <div>
           <h3>Class XII — CBSE</h3>
-          <p>87.6%</p>
+          <p>87%</p>
         </div>
       </article>
 
@@ -1218,7 +1293,7 @@ section.content {
         <div class="year">2021</div>
         <div>
           <h3>Class X — CBSE</h3>
-          <p>88.8%</p>
+          <p>87.6%</p>
         </div>
       </article>
 
@@ -1236,7 +1311,7 @@ section.content {
     <div class="contact">
 
       <div>
-        <div class="eyebrow">05 / Contact</div>
+        <div class="eyebrow">07 / Contact</div>
         <h2>Let’s connect.</h2>
         <p>
           Open to connecting around finance, research and
@@ -1249,11 +1324,13 @@ section.content {
           Email me ↗
         </a>
 
+        <a class="btn" href="https://github.com/sujalbansal0077-hub" target="_blank" rel="noopener">GitHub ↗</a>
         <a class="btn"
            href="https://www.linkedin.com/in/sujal-bansal-544842328/"
            target="_blank" rel="noopener">
           LinkedIn ↗
         </a>
+        <a class="btn" href="https://github.com/sujalbansal0077-hub" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
 
     </div>
@@ -1261,7 +1338,7 @@ section.content {
 
   <footer class="footer">
     <span>© <span id="year"></span> Sujal Bansal · Finance portfolio</span>
-    <span>Content subject to final evidence review</span>
+    <span>Built with curiosity · Focused on continuous learning</span>
   </footer>
 
 </main>
@@ -1461,6 +1538,40 @@ topbtn.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
+
+/* PROJECT FILTERS */
+document.querySelectorAll(".filter").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".filter").forEach(item => item.classList.remove("active"));
+    button.classList.add("active");
+    const filter = button.dataset.filter;
+    document.querySelectorAll(".project").forEach(card => {
+      card.classList.toggle("is-hidden", filter !== "all" && card.dataset.category !== filter);
+    });
+  });
+});
+
+/* THEME SWITCH; REMEMBER THE VISITOR'S CHOICE */
+const themeToggle = document.getElementById("themeToggle");
+try { if (localStorage.getItem("sujal-theme") === "light") document.body.classList.add("light"); } catch (e) {}
+function updateThemeButton() {
+  const light = document.body.classList.contains("light");
+  themeToggle.textContent = light ? "☾" : "☼";
+  themeToggle.setAttribute("aria-label", light ? "Switch to dark theme" : "Switch to light theme");
+  document.querySelector('meta[name="theme-color"]').setAttribute("content", light ? "#f3f5ef" : "#0b100e");
+}
+updateThemeButton();
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("light");
+  try { localStorage.setItem("sujal-theme", document.body.classList.contains("light") ? "light" : "dark"); } catch (e) {}
+  updateThemeButton();
+});
+
+/* MOBILE MENU ACCESSIBILITY */
+const menuButton = document.getElementById("menu");
+menuButton.addEventListener("click", () => menuButton.setAttribute("aria-expanded", nav.classList.contains("open") ? "true" : "false"));
+nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => menuButton.setAttribute("aria-expanded", "false")));
 
 /* AUTOMATIC FOOTER YEAR */
 
